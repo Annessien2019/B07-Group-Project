@@ -1,4 +1,4 @@
-package com.example.smartair;
+package com.example.smartair.view;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,14 +12,20 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class SigninFragment extends Fragment {
+import com.example.smartair.R;
+import com.example.smartair.model.SigninModel;
+import com.example.smartair.presenter.SigninPresenter;
 
+public class SigninFragmentView extends Fragment {
+
+    SigninPresenter presenter;
     Button recoverybutton, signInButton, signUpButton;
     EditText email, password;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        presenter = new SigninPresenter(this);
         View view = inflater.inflate(R.layout.fragment_signin, container, false);
         email = view.findViewById(R.id.emailAddress);
         password = view.findViewById(R.id.password);
@@ -33,7 +39,7 @@ public class SigninFragment extends Fragment {
             public void onClick(View v) {
                 getParentFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.main_fragment_container, new SignupFragment())
+                        .replace(R.id.main_fragment_container, new SignupFragmentView())
                         .commit();
             }
         });
@@ -42,14 +48,7 @@ public class SigninFragment extends Fragment {
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email_input = email.getText().toString();
-                String password_input = password.getText().toString();
-                if (email_input.isEmpty() || password_input.isEmpty()) {
-                    Toast.makeText(getContext(), "Please fill out all the fields", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                Toast.makeText(getContext(), "Signing In", Toast.LENGTH_SHORT).show();
-                System.out.println("Signing into \nEmail: " + email_input + "\nPassword: " + password_input);
+                presenter.onSignInClick(email.getText().toString(), password.getText().toString());
             }
         });
 
@@ -59,7 +58,7 @@ public class SigninFragment extends Fragment {
             public void onClick(View view) {
                 getParentFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.main_fragment_container, new SignupFragment())
+                        .replace(R.id.main_fragment_container, new SignupFragmentView())
                         .commit();
             }
         });
