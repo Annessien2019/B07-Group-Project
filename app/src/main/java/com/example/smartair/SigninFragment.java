@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment;
 
 public class SigninFragment extends Fragment {
 
-    Button signInButton;
+    Button recoverybutton, signInButton, signUpButton;
     EditText email, password;
 
     @Nullable
@@ -23,9 +23,22 @@ public class SigninFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_signin, container, false);
         email = view.findViewById(R.id.emailAddress);
         password = view.findViewById(R.id.password);
+        recoverybutton = view.findViewById(R.id.button_recover_account);
         signInButton = view.findViewById(R.id.sign_in_button);
+        signUpButton = view.findViewById(R.id.goToSignUpButton);
 
-        // Set up register button
+        // Set up recovery button
+        recoverybutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getParentFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.main_fragment_container, new SignupFragment())
+                        .commit();
+            }
+        });
+
+        // Set up sign in button
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,8 +53,7 @@ public class SigninFragment extends Fragment {
             }
         });
 
-
-        Button signUpButton = view.findViewById(R.id.goToSignUpButton);
+        // Set up sign up button
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
