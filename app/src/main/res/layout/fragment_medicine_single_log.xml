@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraint_layout_bg"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
-    android:background="@color/white">
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="10dp">
 
     <TextView
         android:id="@+id/text_view_label_doses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="Doses:"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/text_view_label_medicine"
@@ -30,9 +30,6 @@
         android:id="@+id/text_view_label_medicine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:text="Medicine:"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
