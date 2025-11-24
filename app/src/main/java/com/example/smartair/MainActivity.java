@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.smartair.view.MedicineLogsFragmentView;
 import com.example.smartair.view.SigninFragmentView;
 
 public class MainActivity extends AppCompatActivity {

@@ -11,4 +11,6 @@
     <color name="primary_text_light">#BCEDF6</color>
     <color name="primary_dark">#1C575E</color>
     <color name="primary_light">#DDF8FF</color>
+    <color name="rescue_log_bg">#CBB9FF</color>
+    <color name="control_log_bg">#FFDDDD</color>
 </resources>
