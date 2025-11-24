@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/text_view_new_log_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_corner"
@@ -39,7 +39,6 @@
         android:ems="10"
         android:inputType="text"
         android:padding="5dp"
-        android:text="Name"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/text_view_medicine_amount_label"
         app:layout_constraintTop_toBottomOf="@+id/text_view_medicine_amount_label" />
@@ -86,7 +85,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_new_log_amount"
         app:layout_constraintVertical_bias="0.1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

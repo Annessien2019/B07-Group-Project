@@ -27,7 +27,10 @@ public class MedicineLogsFragmentView extends Fragment{
         newDoseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                getParentFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.main_fragment_container, new NewMedicineLogView())
+                        .commit();
             }
         });
         return view;
