@@ -134,4 +134,17 @@
         app:layout_constraintStart_toStartOf="@+id/text_view_purchase_date_label2"
         app:layout_constraintTop_toBottomOf="@+id/text_view_purchase_date_label2" />
 
+    <Button
+        android:id="@+id/button_add_new_canister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/primary_dark"
+        android:padding="10dp"
+        android:text="Add new canister"
+        android:textColor="@color/primary_text_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
