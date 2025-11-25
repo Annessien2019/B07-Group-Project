@@ -14,6 +14,7 @@ public class InventoryItem {
         this.purchaseDate = purchaseDate;
         this.expiryDate = expiryDate;
         logs = new ArrayList<Integer>();
+        logs.add(remainingPuffs);
     }
 
     public InventoryItem(int startingPuffs, Date purchaseDate, Date expiryDate) {

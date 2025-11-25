@@ -56,9 +56,9 @@ public class InventoryFragmentView extends Fragment {
     public void setInventoryLogs(InventoryItem[] items) {
         if (items.length == 0) return;
         InventoryItem current = items[0];
-        remainingNum.setText(String.valueOf(current.remainingPuffs));
+        remainingNum.setText(String.valueOf(current.logs.get(0)));
         remainingDenom.setText(String.valueOf(current.startingPuffs));
-        percentage.setText(String.valueOf((int)(100*((float)current.remainingPuffs/current.startingPuffs))));
+        percentage.setText(String.valueOf((int)(100*((float)current.logs.get(0)/current.startingPuffs))));
         purchDate.setText(current.purchaseDate.toString());
         expDate.setText(current.expiryDate.toString());
     }
