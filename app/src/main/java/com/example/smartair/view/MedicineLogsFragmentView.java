@@ -30,6 +30,8 @@ public class MedicineLogsFragmentView extends Fragment{
                 getParentFragmentManager()
                         .beginTransaction()
                         .replace(R.id.main_fragment_container, new NewMedicineLogView())
+                        .setReorderingAllowed(true)
+                        .addToBackStack(null)
                         .commit();
             }
         });
