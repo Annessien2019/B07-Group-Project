@@ -19,7 +19,7 @@ public class NewMedicineLogPresenter extends Fragment {
             Toast.makeText(view.getContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(view.getContext(), "Added new log", Toast.LENGTH_SHORT).show();
+            view.getParentFragmentManager().popBackStack();
         }
-
     }
 }
