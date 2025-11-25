@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.smartair.view.InventoryFragmentView;
 import com.example.smartair.view.MedicineLogsFragmentView;
 import com.example.smartair.view.SigninFragmentView;
 
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.main_fragment_container, new MedicineLogsFragmentView())
+                    .replace(R.id.main_fragment_container, new InventoryFragmentView())
                     .commit();
         }
     }
