@@ -9,6 +9,7 @@ import com.example.smartair.view.ChildrenMainView;
 import com.example.smartair.view.ParentMainView;
 import com.example.smartair.view.ProviderMainView;
 import com.example.smartair.view.MedicineLogsFragmentView;
+import com.example.smartair.view.RecoveryView;
 import com.example.smartair.view.SigninFragmentView;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.main_fragment_container, new ProviderMainView())
+                    .replace(R.id.main_fragment_container, new RecoveryView())
                     .commit();
         }
     }
