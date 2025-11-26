@@ -12,16 +12,19 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.smartair.R;
+import com.example.smartair.presenter.InventoryPresenter;
 
 import java.util.Date;
 
 public class InventoryFragmentView extends Fragment {
 
+    private InventoryPresenter presenter;
     TextView remainingNum, remainingDenom, percentage, purchDate, expDate;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        presenter = new InventoryPresenter(this);
         View view = inflater.inflate(R.layout.fragment_inventory, container, false);
 
         remainingNum = view.findViewById(R.id.text_view_remaining_numerator);
@@ -48,9 +51,7 @@ public class InventoryFragmentView extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        InventoryItem item = new InventoryItem(200, 70, new Date(2024, 11, 25), new Date(2026, 4, 30));
-        InventoryItem[] items = {item};
-        setInventoryLogs(items);
+        presenter.loadInventoryLogs();
     }
 
     public void setInventoryLogs(InventoryItem[] items) {

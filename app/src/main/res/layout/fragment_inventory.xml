@@ -30,7 +30,7 @@
 
 
     <ScrollView
-        android:id="@+id/scroll_view_inventory_updates"
+        android:id="@+id/scroll_view_inventory_logs"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -80,7 +80,7 @@
             android:id="@+id/text_view_remaining_numerator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="70"
+            android:text="40"
             android:textSize="50sp"
             app:layout_constraintStart_toStartOf="@+id/text_view_remaining_label"
             app:layout_constraintTop_toBottomOf="@+id/text_view_remaining_label" />
