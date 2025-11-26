@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primary_light">
+
+        <TextView
+            android:id="@+id/text_view_recovery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recovery"
+            android:textColor="@color/primary_text_dark"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.07" />
+
+        <EditText
+            android:id="@+id/edit_text_recovery_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="@color/primary_dark"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="10dp"
+            app:layout_constraintStart_toStartOf="@+id/text_view_recovery_email_label"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_recovery_email_label" />
+
+        <TextView
+            android:id="@+id/text_view_recovery_email_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:text="Email"
+            android:textColor="@color/primary_text_dark"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_recovery" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="@color/primary_dark"
+            android:padding="10dp"
+            android:text="Send recovery email"
+            android:textColor="@color/primary_text_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_recovery_email" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
