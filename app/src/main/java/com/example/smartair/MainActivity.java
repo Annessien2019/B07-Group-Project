@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.smartair.view.ChildrenMainView;
 import com.example.smartair.view.ParentMainView;
 import com.example.smartair.view.ProviderMainView;
+import com.example.smartair.view.MedicineLogsFragmentView;
 import com.example.smartair.view.SigninFragmentView;
 
 public class MainActivity extends AppCompatActivity {
