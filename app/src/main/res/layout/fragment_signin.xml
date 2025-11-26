@@ -90,7 +90,7 @@
             android:layout_height="wrap_content"
             android:text="Sign-In"
             android:textColor="@color/primary_text_dark"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
