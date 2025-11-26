@@ -1,15 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#1B3C53"
+    android:backgroundTint="#1B3C53">
 
-    <FrameLayout
-        android:id="@+id/main_fragment_container"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:padding="20dp"
+        android:dividerHeight="20dp">
 
-    </FrameLayout>
+        <ImageButton
+            android:id="@+id/imageButton1"
+            android:layout_width="344dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="0dp"
+            android:backgroundTint="#C8C0C0"
+            android:scaleType="fitStart"
+            tools:srcCompat="@tools:sample/avatars" />
+
+
+        <EditText
+            android:id="@+id/editTextText1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="20"
+            android:ems="10"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:inputType="text"
+            android:paddingTop="0dp"
+            android:text="Jack Boyd"
+            android:textColor="#B0B0B0"
+            android:textSize="22sp" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="344dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="0dp"
+            android:backgroundTint="#C8C0C0"
+            android:scaleType="fitStart"
+            tools:srcCompat="@tools:sample/avatars" />
+
+
+        <EditText
+            android:id="@+id/editTextText2"
+            android:layout_width="322dp"
+            android:layout_height="match_parent"
+            android:layout_weight="20"
+            android:ems="10"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:inputType="text"
+            android:paddingTop="0dp"
+            android:text="Warren Nash
+"
+            android:textColor="#B0B0B0"
+            android:textSize="22sp" />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="344dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="0dp"
+            android:backgroundTint="#C8C0C0"
+            android:scaleType="fitStart"
+            tools:srcCompat="@tools:sample/avatars" />
+
+
+        <EditText
+            android:id="@+id/editTextText3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="20"
+            android:ems="10"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:inputType="text"
+            android:paddingTop="0dp"
+            android:text="Anthony Starr"
+            android:textColor="#B0B0B0"
+            android:textSize="22sp" />
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="344dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="0dp"
+            android:backgroundTint="#C8C0C0"
+            android:scaleType="fitStart"
+            tools:srcCompat="@tools:sample/avatars" />
+
+
+        <EditText
+            android:id="@+id/editTextText4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="20"
+            android:ems="10"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:inputType="text"
+            android:paddingTop="0dp"
+            android:text="Martin Stett"
+            android:textColor="#B0B0B0"
+            android:textSize="22sp" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

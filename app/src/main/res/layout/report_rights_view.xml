@@ -7,29 +7,95 @@
     android:background="#1B3C53"
     android:backgroundTint="#1B3C53">
 
+    <LinearLayout
+        android:layout_width="417dp"
+        android:layout_height="785dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="-51dp">
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch1"
+            android:layout_width="315dp"
+            android:layout_height="122dp"
+            android:text="Controller medicine"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#D2C1B6"
+            android:textSize="24sp" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch2"
+            android:layout_width="315dp"
+            android:layout_height="122dp"
+            android:text="Peak-flow (PEF)"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#D2C1B6"
+            android:textSize="24sp" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch3"
+            android:layout_width="315dp"
+            android:layout_height="122dp"
+            android:text="Personal best (PB)"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#D2C1B6"
+            android:textSize="24sp" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch4"
+            android:layout_width="315dp"
+            android:layout_height="122dp"
+            android:text="Triggers"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#D2C1B6"
+            android:textSize="24sp" />
+
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch5"
+            android:layout_width="315dp"
+            android:layout_height="122dp"
+            android:text="Dose Counts"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#D2C1B6"
+            android:textSize="24sp" />
+
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch6"
+            android:layout_width="315dp"
+            android:layout_height="122dp"
+            android:text="Rapid rescue repeats "
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#D2C1B6"
+            android:textSize="24sp" />
+
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch7"
+            android:layout_width="315dp"
+            android:layout_height="122dp"
+            android:text="Low rescue month"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#D2C1B6"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="WELCOME TO SMARTAIR"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="Provider View"
+        android:textAlignment="center"
+        android:textColor="#D2C1B6"
+
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
-        android:layout_width="932dp"
-        android:layout_height="1388dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="116dp"/>
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="54dp" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
