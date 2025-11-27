@@ -64,4 +64,12 @@ public class SignupFragmentView extends Fragment {
 
         return view;
     }
+
+    public void signUpSuccessToast(String user_id){
+        Toast.makeText(getContext(), "Logging in with " + user_id , Toast.LENGTH_SHORT).show();
+    }
+    public void signUpFailureToast(String e) {
+        Toast.makeText(getContext(), e, Toast.LENGTH_LONG).show();
+    }
+
 }

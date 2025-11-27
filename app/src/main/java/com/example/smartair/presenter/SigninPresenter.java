@@ -6,32 +6,28 @@ import com.example.smartair.model.SigninModel;
 import com.example.smartair.view.SigninFragmentView;
 import com.google.firebase.auth.FirebaseUser;
 
-public class SigninPresenter implements SignInCallback{
+public class SigninPresenter implements CallbackAbility{
 
     private SigninFragmentView view;
     private SigninModel model;
     private FirebaseUser currentUser;
     public SigninPresenter(SigninFragmentView view) {
         this.view = view;
+        this.model = new SigninModel();
     }
     @Override
-    public void onSignInSuccess(FirebaseUser user){
+    public void onSuccess(FirebaseUser user){
         this.currentUser = user;
-        Toast.makeText(view.getContext(), "Logging in with " + String.valueOf(user.getUid()) , Toast.LENGTH_SHORT).show();
+        this.view.signInSuccessToast(String.valueOf(user.getUid()));
     }
     @Override
-    public void onSignInFailure(Exception e) {
-        Toast.makeText(view.getContext(), "User doesn't exist ", Toast.LENGTH_SHORT).show();
+    public void onFailure(Exception e) {
+        this.view.signInFailureToast(e.getMessage());
     }
 
     public void onSignInClick(String email, String password) {
-        if (email.isEmpty() || password.isEmpty()) {
-            Toast.makeText(view.getContext(), "Please fill out all the fields", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        model = new SigninModel(email, password);
+        this.model.getData(email, password);
         model.signInAttempt(this);
-
     }
 
 }
