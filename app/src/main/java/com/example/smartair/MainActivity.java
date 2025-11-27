@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.smartair.view.DoseCheckView;
 import com.example.smartair.view.InventoryFragmentView;
 import com.example.smartair.view.ChildrenMainView;
 import com.example.smartair.view.ParentMainView;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.main_fragment_container, new InventoryFragmentView())
+                    .replace(R.id.main_fragment_container, new DoseCheckView())
                     .commit();
         }
     }
