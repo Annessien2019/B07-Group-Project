@@ -5,7 +5,7 @@ import com.example.smartair.model.SignupModel;
 import com.example.smartair.view.SignupFragmentView;
 import com.google.firebase.auth.FirebaseUser;
 
-public class SignupPresenter  implements SignInCallback{
+public class SignupPresenter  implements CallbackAbility{
 
     private SignupFragmentView view;
     private SignupModel model;
@@ -15,14 +15,14 @@ public class SignupPresenter  implements SignInCallback{
         this.model = new SignupModel();
     }
     @Override
-    public void onSignInSuccess(FirebaseUser user){
+    public void onSuccess(FirebaseUser user){
         this.currentUser = user;
-        this.view.signInSuccessToast(String.valueOf(user.getUid()));
+        this.view.signUpSuccessToast(String.valueOf(user.getUid()));
     }
 
     @Override
-    public void onSignInFailure(Exception e) {
-        this.view.signUpFailureToast(String.valueOf(e.getMessage()));
+    public void onFailure(Exception e) {
+        this.view.signUpFailureToast(e.getMessage());
         }
 
     public void onSignUpClick(String role, String email, String password) {

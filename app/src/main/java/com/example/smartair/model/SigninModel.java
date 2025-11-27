@@ -1,6 +1,6 @@
 package com.example.smartair.model;
 
-import com.example.smartair.presenter.SignInCallback;
+import com.example.smartair.presenter.CallbackAbility;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -19,16 +19,16 @@ public class SigninModel{
 
     }
 
-    public void signInAttempt(SignInCallback callback) {
+    public void signInAttempt(CallbackAbility callback) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         // Success -> pass FirebaseUser to presenter
                         this.currentUser = mAuth.getCurrentUser();
-                        callback.onSignInSuccess(this.currentUser);
+                        callback.onSuccess(this.currentUser);
                     } else {
                         // Failure -> pass exception to presenter
-                        callback.onSignInFailure(task.getException());
+                        callback.onFailure(task.getException());
                     }
                 });
         }
