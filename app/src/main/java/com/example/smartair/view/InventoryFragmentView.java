@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment;
 import com.example.smartair.R;
 import com.example.smartair.presenter.InventoryPresenter;
 
-import java.util.Date;
+import java.util.ArrayList;
 
 public class InventoryFragmentView extends Fragment {
 
@@ -54,13 +54,24 @@ public class InventoryFragmentView extends Fragment {
         presenter.loadInventoryLogs();
     }
 
-    public void setInventoryLogs(InventoryItem[] items) {
-        if (items.length == 0) return;
-        InventoryItem current = items[0];
-        remainingNum.setText(String.valueOf(current.logs.get(0)));
-        remainingDenom.setText(String.valueOf(current.startingPuffs));
-        percentage.setText(String.valueOf((int)(100*((float)current.logs.get(0)/current.startingPuffs))));
-        purchDate.setText(current.purchaseDate.toString());
-        expDate.setText(current.expiryDate.toString());
+    public void setActiveCanister(String numerator,
+                                  String denominator,
+                                  String percent,
+                                  String purchaseDate,
+                                  String expiryDate) {
+        remainingNum.setText(numerator);
+        remainingDenom.setText(denominator);
+        percentage.setText(percent);
+        purchDate.setText(purchaseDate);
+        expDate.setText(expiryDate);
+    }
+
+    public void setInventoryLogs(ArrayList<InventoryLogView> logs) {
+        for (InventoryLogView log : logs) {
+            getParentFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.linear_layout_inventory, log)
+                    .commit();
+        }
     }
 }

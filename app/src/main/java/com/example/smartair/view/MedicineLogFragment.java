@@ -33,7 +33,7 @@ public class MedicineLogFragment extends Fragment {
         ((TextView) view.findViewById(R.id.text_view_medicine_type)).setText(medicineType);
         ((TextView)view.findViewById(R.id.text_view_dose_count)).setText(doseCount);
         ((TextView)view.findViewById(R.id.text_view_unit)).setText(unit);
-        ((TextView)view.findViewById(R.id.text_view_inventory_log_date)).setText(date);
+        ((TextView)view.findViewById(R.id.text_view_medicine_log_date)).setText(date);
         view.setBackground(ResourcesCompat.getDrawable(getResources(), bgColorId, null));
         return view;
     }

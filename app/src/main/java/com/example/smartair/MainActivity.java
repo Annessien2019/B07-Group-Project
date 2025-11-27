@@ -12,6 +12,7 @@ import com.example.smartair.view.ProviderMainView;
 import com.example.smartair.view.MedicineLogsFragmentView;
 import com.example.smartair.view.RecoveryView;
 import com.example.smartair.view.SigninFragmentView;
+import com.example.smartair.view.SignupFragmentView;
 
 public class MainActivity extends AppCompatActivity {
 

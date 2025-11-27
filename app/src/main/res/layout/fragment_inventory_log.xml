@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text_view_inventory_log_remaining_puffs"
+        android:id="@+id/text_view_inventory_log_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="70"
@@ -34,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text_view_inventory_log_remaining_puffs_label" />
 
     <TextView
-        android:id="@+id/text_view_marked_by"
+        android:id="@+id/text_view_inventory_log_marked_by"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Parent"
