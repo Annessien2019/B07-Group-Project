@@ -7,12 +7,19 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
     <color name="primary_text_dark">#266267</color>
     <color name="primary_text_light">#BCEDF6</color>
     <color name="primary_dark">#1C575E</color>
     <color name="primary_light">#DDF8FF</color>
+
+    <!-- Teammate's colors -->
     <color name="rescue_log_bg">#CBB9FF</color>
     <color name="control_log_bg">#FFDDDD</color>
     <color name="inventory_log_parent_bg">#B7D3FA</color>
     <color name="inventory_log_child_bg">#BCFFCD</color>
+
+    <!-- Your colors -->
+    <color name="grey">#D3D3D3</color>
+    <color name="light_blue">#ADD8E6</color>
 </resources>

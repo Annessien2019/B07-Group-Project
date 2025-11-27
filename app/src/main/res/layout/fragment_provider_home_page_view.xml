@@ -26,12 +26,12 @@
 
 
     <Button
-        android:id="@+id/provider_manage_children"
+        android:id="@+id/provider_existing_patients"
         android:layout_width="326dp"
         android:layout_height="70dp"
         android:background="@drawable/button_rect"
         android:backgroundTint="@color/black"
-        android:text="Manage Children"
+        android:text="Existing Patients"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
