@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -22,37 +23,49 @@ public class SignupFragmentView extends Fragment {
     private SignupPresenter presenter;
     private EditText email, password;
     private Spinner role;
-    private Button register;
+    private Button register, signIn;
+    private TextView signInrequest;
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         presenter = new SignupPresenter(this);
         View view = inflater.inflate(R.layout.fragment_signup, container, false);
+        // Initialize attributes, Set up role spinner, setup ClickListeners
+        initializeAttributes(view);
+        setupSpinner();
+        setupClickListeners();
+        return view;
+    }
+
+    private void initializeAttributes(View view){
         role = view.findViewById(R.id.role_spinner);
         email = view.findViewById(R.id.emailAddress);
         password = view.findViewById(R.id.password);
         register = view.findViewById(R.id.register);
-
-        // Set up role spinner
+        signIn = view.findViewById(R.id.goToSignInButton);
+        signInrequest = view.findViewById(R.id.textView7);
+    }
+    private void setupSpinner(){
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
                 R.array.roles_array,
                 android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         role.setAdapter(adapter);
+    }
 
-        // Set up register button
+    private void setupClickListeners(){
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 presenter.onSignUpClick(role.getSelectedItem().toString(),
-                                        email.getText().toString(),
-                                        password.getText().toString());
+                        email.getText().toString(),
+                        password.getText().toString());
             }
         });
 
-        // Set up sign in redirection button
-        Button signInButton = view.findViewById(R.id.goToSignInButton);
-        signInButton.setOnClickListener(new View.OnClickListener() {
+        signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getParentFragmentManager()
@@ -62,14 +75,15 @@ public class SignupFragmentView extends Fragment {
             }
         });
 
-        return view;
+        signInrequest.setOnClickListener(v->{
+            getParentFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.main_fragment_container, new SigninFragmentView())
+                    .commit();
+        });
     }
-
-    public void signUpSuccessToast(String user_id){
-        Toast.makeText(getContext(), "Logging in with " + user_id , Toast.LENGTH_SHORT).show();
-    }
-    public void signUpFailureToast(String e) {
-        Toast.makeText(getContext(), e, Toast.LENGTH_LONG).show();
+    public void makeToast(String to_display){
+        Toast.makeText(getContext(), to_display , Toast.LENGTH_SHORT).show();
     }
 
 }
