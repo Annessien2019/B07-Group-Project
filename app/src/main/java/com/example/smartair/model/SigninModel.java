@@ -9,15 +9,14 @@ public class SigninModel{
     private String email, password;
     private FirebaseUser currentUser;
 
-    public SigninModel(String email, String password) {
+    public SigninModel(){
         mAuth = FirebaseAuth.getInstance();
+    }
+
+    public void getData(String email, String password){
         this.email = email;
         this.password = password;
 
-        this.currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            currentUser.reload();
-        }
     }
 
     public void signInAttempt(SignInCallback callback) {
