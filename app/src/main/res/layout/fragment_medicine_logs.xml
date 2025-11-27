@@ -30,7 +30,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
-        android:id="@+id/scroll_view"
+        android:id="@+id/scroll_view_medicine_logs"
         android:layout_width="409dp"
         android:layout_height="649dp"
         android:backgroundTint="@color/primary_light"
@@ -38,7 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/view2">
 
         <LinearLayout
-            android:id="@+id/linear_layout"
+            android:id="@+id/linear_layout_medicine_logs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" />

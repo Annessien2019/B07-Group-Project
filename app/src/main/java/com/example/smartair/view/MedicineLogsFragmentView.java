@@ -42,7 +42,7 @@ public class MedicineLogsFragmentView extends Fragment{
         for (MedicineLogFragment log : logs) {
             getParentFragmentManager()
                     .beginTransaction()
-                    .add(R.id.linear_layout, log)
+                    .add(R.id.linear_layout_medicine_logs, log)
                     .commit();
         }
     }

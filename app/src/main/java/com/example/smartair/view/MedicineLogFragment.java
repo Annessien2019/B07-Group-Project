@@ -16,13 +16,14 @@ import com.example.smartair.R;
 
 public class MedicineLogFragment extends Fragment {
 
-    private String medicineType, doseCount, unit;
+    private String medicineType, doseCount, unit, date;
     int bgColorId;
 
-    public void setLogInfo(String medicineType, String doseCount, String unit, int bgColorId) {
+    public void setLogInfo(String medicineType, String doseCount, String unit, String date, int bgColorId) {
         this.medicineType = medicineType;
         this.doseCount = doseCount;
         this.unit = unit;
+        this.date = date;
         this.bgColorId = bgColorId;
     }
 
@@ -32,6 +33,7 @@ public class MedicineLogFragment extends Fragment {
         ((TextView) view.findViewById(R.id.text_view_medicine_type)).setText(medicineType);
         ((TextView)view.findViewById(R.id.text_view_dose_count)).setText(doseCount);
         ((TextView)view.findViewById(R.id.text_view_unit)).setText(unit);
+        ((TextView)view.findViewById(R.id.text_view_medicine_log_date)).setText(date);
         view.setBackground(ResourcesCompat.getDrawable(getResources(), bgColorId, null));
         return view;
     }

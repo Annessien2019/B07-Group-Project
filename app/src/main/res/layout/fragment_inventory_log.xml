@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentStart="false"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/text_view_inventory_log_remaining_puffs_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remaining puffs: "
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view_inventory_log_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="70"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_inventory_log_remaining_puffs_label"
+        app:layout_constraintStart_toEndOf="@+id/text_view_inventory_log_remaining_puffs_label" />
+
+    <TextView
+        android:id="@+id/text_view_marked_by_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Marked by: "
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/text_view_inventory_log_remaining_puffs_label"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_inventory_log_remaining_puffs_label" />
+
+    <TextView
+        android:id="@+id/text_view_inventory_log_marked_by"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Parent"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_marked_by_label"
+        app:layout_constraintStart_toEndOf="@+id/text_view_marked_by_label" />
+
+    <TextView
+        android:id="@+id/text_view_inventory_log_date_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logged on: "
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/text_view_marked_by_label"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_marked_by_label" />
+
+    <TextView
+        android:id="@+id/text_view_inventory_log_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_inventory_log_date_label"
+        app:layout_constraintStart_toEndOf="@+id/text_view_inventory_log_date_label" />
+</androidx.constraintlayout.widget.ConstraintLayout>
