@@ -16,6 +16,7 @@ public class DoseCheckPresenter {
     }
 
     public void submitCheck(int selectedButtonId, float breathRating) {
-        Toast.makeText(view.getContext(), "Selected button: " + selectedButtonId + "\nRating: " + breathRating, Toast.LENGTH_LONG).show();
+        if (selectedButtonId == -1) view.makeToast("Please select a mood", Toast.LENGTH_SHORT);
+            else view.makeToast("Selected button: " + selectedButtonId + "\nRating: " + breathRating, Toast.LENGTH_SHORT);
     }
 }

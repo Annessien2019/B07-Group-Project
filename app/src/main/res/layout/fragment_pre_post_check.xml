@@ -84,7 +84,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_buttons_label">
+        app:layout_constraintTop_toBottomOf="@+id/text_view_worse_same_better">
 
         <RadioButton
             android:id="@+id/radio_button_worse"
@@ -114,12 +114,23 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="10dp"
+            android:alpha="0.5"
             android:background="@drawable/better"
             android:button="@drawable/rectangle"
             android:gravity="center|center_horizontal"
             app:layout_constraintBottom_toBottomOf="@+id/radio_button_same"
-            app:layout_constraintStart_toEndOf="@+id/radio_button_same"
-            android:alpha="0.5" />
+            app:layout_constraintStart_toEndOf="@+id/radio_button_same" />
     </RadioGroup>
+
+    <TextView
+        android:id="@+id/text_view_worse_same_better"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Worse | Same | Better"
+        android:textColor="@color/primary_text_dark"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_buttons_label" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

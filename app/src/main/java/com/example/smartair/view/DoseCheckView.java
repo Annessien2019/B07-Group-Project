@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -40,6 +41,7 @@ public class DoseCheckView extends Fragment {
                 presenter.submitCheck(checkGroup.getCheckedRadioButtonId(), breathRating.getRating());
             }
         });
+
         checkGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(@NonNull RadioGroup group, int checkedId) {
@@ -52,5 +54,9 @@ public class DoseCheckView extends Fragment {
         });
 
         return view;
+    }
+
+    public void makeToast(String message, int length) {
+        Toast.makeText(getContext(), message, length).show();
     }
 }
