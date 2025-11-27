@@ -10,16 +10,13 @@ public class SignupModel{
     private String email, password, role;
     private FirebaseUser currentUser;
 
-    public SignupModel(String role, String email, String password) {
+    public SignupModel() {
         mAuth = FirebaseAuth.getInstance();
-        this.email = email;
-        this.password = password;
+    }
+    public void getData(String role, String email, String password){
         this.role = role;
-
-        this.currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            currentUser.reload();
-        }
+        this.password = password;
+        this.email = email;
     }
     public void signUpAttempt(SignInCallback callback){
         mAuth.createUserWithEmailAndPassword(email, password)
