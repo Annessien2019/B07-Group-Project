@@ -5,11 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.smartair.R;
@@ -36,6 +38,16 @@ public class DoseCheckView extends Fragment {
             @Override
             public void onClick(View v) {
                 presenter.submitCheck(checkGroup.getCheckedRadioButtonId(), breathRating.getRating());
+            }
+        });
+        checkGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(@NonNull RadioGroup group, int checkedId) {
+                int[] ids = {R.id.radio_button_worse, R.id.radio_button_same, R.id.radio_button_better};
+                for (int id : ids) {
+                    if (id == checkedId) view.findViewById(id).setAlpha(1.0f);
+                    else view.findViewById(id).setAlpha(0.5f);
+                }
             }
         });
 

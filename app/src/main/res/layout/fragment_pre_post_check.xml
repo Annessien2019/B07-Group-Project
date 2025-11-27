@@ -91,6 +91,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="10dp"
+            android:alpha="0.5"
             android:background="@drawable/worse"
             android:button="@drawable/rectangle"
             app:layout_constraintBottom_toBottomOf="@+id/radio_button_same"
@@ -101,6 +102,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="10dp"
+            android:alpha="0.5"
             android:background="@drawable/same"
             android:button="@drawable/rectangle"
             app:layout_constraintEnd_toEndOf="parent"
@@ -116,7 +118,8 @@
             android:button="@drawable/rectangle"
             android:gravity="center|center_horizontal"
             app:layout_constraintBottom_toBottomOf="@+id/radio_button_same"
-            app:layout_constraintStart_toEndOf="@+id/radio_button_same" />
+            app:layout_constraintStart_toEndOf="@+id/radio_button_same"
+            android:alpha="0.5" />
     </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
