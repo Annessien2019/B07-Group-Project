@@ -7,13 +7,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
 import com.example.smartair.R;
-import com.example.smartair.model.SigninModel;
 import com.example.smartair.presenter.SigninPresenter;
 
 public class SigninFragmentView extends Fragment {
@@ -24,7 +21,8 @@ public class SigninFragmentView extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         presenter = new SigninPresenter(this);
         View view = inflater.inflate(R.layout.fragment_signin, container, false);
         email = view.findViewById(R.id.emailAddress);
@@ -39,7 +37,7 @@ public class SigninFragmentView extends Fragment {
             public void onClick(View v) {
                 getParentFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.main_fragment_container, new SignupFragmentView())
+                        .replace(R.id.main_fragment_container, new RecoveryView())
                         .commit();
             }
         });
@@ -64,11 +62,7 @@ public class SigninFragmentView extends Fragment {
         });
         return view;
     }
-
-    public void signInSuccessToast(String user_id){
-        Toast.makeText(getContext(), "Logging in with " + user_id , Toast.LENGTH_SHORT).show();
-    }
-    public void signInFailureToast(String e) {
-        Toast.makeText(getContext(), e, Toast.LENGTH_LONG).show();
+    public void makeToast(String to_display){
+        Toast.makeText(getContext(), to_display, Toast.LENGTH_LONG).show();
     }
 }
