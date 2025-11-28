@@ -10,7 +10,11 @@
     <color name="primary_text_dark">#266267</color>
     <color name="primary_text_light">#BCEDF6</color>
     <color name="primary_dark">#1C575E</color>
+    <color name="primary_dark_shade_1">#12383D</color>
+    <color name="primary_dark_shade_2">#0A1F22</color>
     <color name="primary_light">#DDF8FF</color>
+    <color name="primary_light_shade_1">#9DBBC2</color>
+    <color name="primary_light_shade_2">#658D97</color>
     <color name="rescue_log_bg">#CBB9FF</color>
     <color name="control_log_bg">#FFDDDD</color>
     <color name="inventory_log_parent_bg">#B7D3FA</color>

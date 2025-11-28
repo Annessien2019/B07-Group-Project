@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_light">
+
+    <View
+        android:id="@+id/view_daily_check_in_bar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/rectangle"
+        android:backgroundTint="@color/primary_dark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></View>
+
+    <TextView
+        android:id="@+id/text_view_daily_check_in_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Daily Check-In"
+        android:textColor="@color/primary_text_light"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_daily_check_in_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="@+id/view_daily_check_in_bar"
+        app:layout_constraintTop_toTopOf="@+id/view_daily_check_in_bar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_light_shade_1"
+        android:padding="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_daily_check_in_bar">
+
+        <Button
+            android:id="@+id/button_check_in_modify_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="@color/primary_light_shade_2"
+            android:padding="5dp"
+            android:text="Modify Filters"
+            android:textColor="@color/primary_text_light"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_daily_check_in_clear_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="@color/primary_light_shade_2"
+            android:padding="5dp"
+            android:text="Clear Filters"
+            android:textColor="@color/primary_text_light"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/button_check_in_modify_filter"
+            app:layout_constraintStart_toEndOf="@+id/button_check_in_modify_filter" />
+
+        <Button
+            android:id="@+id/button_daily_check_in_add_log"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="@color/primary_dark"
+            android:text="Add log"
+            android:textColor="@color/primary_light"
+            tools:layout_editor_absoluteX="257dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/scroll_view_daily_check_in"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <LinearLayout
+            android:id="@+id/linear_layout_daily_check_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
