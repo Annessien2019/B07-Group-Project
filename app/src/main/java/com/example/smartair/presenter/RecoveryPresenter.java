@@ -1,11 +1,9 @@
 package com.example.smartair.presenter;
 
-import android.util.Patterns;
 import android.widget.Toast;
-
-import com.example.smartair.R;
 import com.example.smartair.model.RecoveryModel;
 import com.example.smartair.view.RecoveryView;
+import com.example.smartair.view.SigninFragmentView;
 
 public class RecoveryPresenter implements CallbackRecovery{
 
@@ -21,11 +19,6 @@ public class RecoveryPresenter implements CallbackRecovery{
             Toast.makeText(view.getContext(), "Please enter an email", Toast.LENGTH_SHORT).show();
             return;
         }
-//        else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-//            Toast.makeText(view.getContext(), "Email is invalid", Toast.LENGTH_SHORT).show();
-//        } else {
-//            Toast.makeText(view.getContext(), "Email sent", Toast.LENGTH_SHORT).show();
-//        }
         this.model.attemptRecovery(this, email);
     }
 
@@ -36,5 +29,8 @@ public class RecoveryPresenter implements CallbackRecovery{
     @Override
     public void onRecoveryFailure(Exception e){
         this.view.makeToast(e.getMessage());
+    }
+    public void goBack() {
+        this.view.backToSignIn(new SigninFragmentView());
     }
 }
