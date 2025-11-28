@@ -7,11 +7,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import com.example.smartair.view.FragmentListener;
+import com.example.smartair.view.SigninFragmentView;
 
-import com.example.smartair.view.DoseCheckView;
-import com.example.smartair.view.InventoryLogListFragment;
-import com.example.smartair.view.MedicineLogFragment;
-import com.example.smartair.view.MedicineLogListFragment;
 
 public class MainActivity extends AppCompatActivity implements FragmentListener {
 
