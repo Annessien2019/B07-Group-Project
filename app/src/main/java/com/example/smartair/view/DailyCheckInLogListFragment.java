@@ -11,13 +11,22 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.smartair.R;
+import com.example.smartair.presenter.DailyCheckInLogListPresenter;
 
-public class DailyCheckInLogListFragment extends Fragment {
+public class DailyCheckInLogListFragment extends LogListFragment<DailyCheckInLogFragment> {
+
+    DailyCheckInLogListPresenter presenter;
+    public DailyCheckInLogListFragment() {
+        super();
+        linearLayoutLogsId = R.id.linear_layout_daily_check_in;
+    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_daily_check_in_log, container, false);
+
+        presenter = new DailyCheckInLogListPresenter(this);
+        View view = inflater.inflate(R.layout.fragment_daily_check_in, container, false);
 
         Button modifyFiltersButton = view.findViewById(R.id.button_check_in_modify_filter);
         Button resetFiltersButton = view.findViewById(R.id.button_daily_check_in_clear_filter);
@@ -25,13 +34,10 @@ public class DailyCheckInLogListFragment extends Fragment {
         return view;
     }
 
-    public void setCheckInLogs(DailyCheckInLogFragment[] logs) {
-        for (DailyCheckInLogFragment log : logs) {
-            getParentFragmentManager()
-                    .beginTransaction()
-                    .add(R.id.linear_layout_daily_check_in, log)
-                    .commit();
-        }
+    @Override
+    public void onStart() {
+        super.onStart();
+        presenter.loadCheckInLogs();
     }
 }
 

@@ -61,19 +61,23 @@
             android:padding="5dp"
             android:text="Clear Filters"
             android:textColor="@color/primary_text_light"
-            android:textSize="10dp"
+            android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="@+id/button_check_in_modify_filter"
             app:layout_constraintStart_toEndOf="@+id/button_check_in_modify_filter" />
 
         <Button
             android:id="@+id/button_daily_check_in_add_log"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="25dp"
             android:background="@drawable/rounded_corner"
             android:backgroundTint="@color/primary_dark"
+            android:padding="5dp"
             android:text="Add log"
             android:textColor="@color/primary_light"
-            tools:layout_editor_absoluteX="257dp" />
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
