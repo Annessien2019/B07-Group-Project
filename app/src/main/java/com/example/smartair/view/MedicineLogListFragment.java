@@ -8,14 +8,18 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import com.example.smartair.R;
 import com.example.smartair.presenter.MedicineLogsPresenter;
 
-public class MedicineLogsFragmentView extends Fragment{
+public class MedicineLogListFragment extends LogListFragment<MedicineLogFragment> {
 
     private MedicineLogsPresenter presenter;
+
+    public MedicineLogListFragment() {
+        super();
+        linearLayoutLogsId = R.id.linear_layout_medicine_logs;
+    }
 
     @Nullable
     @Override
@@ -38,12 +42,9 @@ public class MedicineLogsFragmentView extends Fragment{
         return view;
     }
 
-    public void setLogs(MedicineLogFragment[] logs) {
-        for (MedicineLogFragment log : logs) {
-            getParentFragmentManager()
-                    .beginTransaction()
-                    .add(R.id.linear_layout_medicine_logs, log)
-                    .commit();
-        }
+    @Override
+    public void onStart() {
+        super.onStart();
+        presenter.loadInventoryLogs();
     }
 }

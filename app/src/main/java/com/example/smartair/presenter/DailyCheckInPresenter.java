@@ -1,14 +1,14 @@
 package com.example.smartair.presenter;
 
 import com.example.smartair.model.DailyCheckInModel;
-import com.example.smartair.view.DailyCheckInFragment;
+import com.example.smartair.view.DailyCheckInLogListFragment;
 
 public class DailyCheckInPresenter {
 
-    DailyCheckInFragment view;
+    DailyCheckInLogListFragment view;
     DailyCheckInModel model;
 
-    public DailyCheckInPresenter(DailyCheckInFragment view) {
+    public DailyCheckInPresenter(DailyCheckInLogListFragment view) {
         this.view = view;
         model = new DailyCheckInModel();
     }

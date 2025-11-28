@@ -6,14 +6,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.smartair.view.DoseCheckView;
-import com.example.smartair.view.InventoryFragmentView;
-import com.example.smartair.view.ChildrenMainView;
-import com.example.smartair.view.ParentMainView;
-import com.example.smartair.view.ProviderMainView;
-import com.example.smartair.view.MedicineLogsFragmentView;
-import com.example.smartair.view.RecoveryView;
-import com.example.smartair.view.SigninFragmentView;
-import com.example.smartair.view.SignupFragmentView;
+import com.example.smartair.view.InventoryLogListFragment;
+import com.example.smartair.view.MedicineLogFragment;
+import com.example.smartair.view.MedicineLogListFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.main_fragment_container, new DoseCheckView())
+                    .replace(R.id.main_fragment_container, new InventoryLogListFragment())
                     .commit();
         }
     }

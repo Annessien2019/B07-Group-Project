@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.smartair.R;
 
-public class DailyCheckInFragment extends Fragment {
+public class DailyCheckInLogListFragment extends Fragment {
 
     @Nullable
     @Override
