@@ -9,16 +9,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.example.smartair.view.DoseCheckView;
-import com.example.smartair.view.FragmentListener;
-import com.example.smartair.view.InventoryFragmentView;
-import com.example.smartair.view.ChildrenMainView;
-import com.example.smartair.view.InventoryLogView;
-import com.example.smartair.view.ParentMainView;
-import com.example.smartair.view.ProviderMainView;
-import com.example.smartair.view.MedicineLogsFragmentView;
-import com.example.smartair.view.RecoveryView;
-import com.example.smartair.view.SigninFragmentView;
-import com.example.smartair.view.SignupFragmentView;
+import com.example.smartair.view.InventoryLogListFragment;
+import com.example.smartair.view.MedicineLogFragment;
+import com.example.smartair.view.MedicineLogListFragment;
 
 public class MainActivity extends AppCompatActivity implements FragmentListener {
 
