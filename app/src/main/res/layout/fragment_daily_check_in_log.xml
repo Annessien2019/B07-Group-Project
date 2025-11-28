@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/text_view_check_in_entry_symptom_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Symptom: "
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view_check_in_entry_trigger_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trigger: "
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/text_view_check_in_entry_symptom_label"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_check_in_entry_symptom_label" />
+
+    <TextView
+        android:id="@+id/text_view_check_in_entry_marked_by_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Marked by: "
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/text_view_check_in_entry_date_label"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_check_in_entry_date_label" />
+
+    <TextView
+        android:id="@+id/text_view_check_in_entry_date_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date: "
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/text_view_check_in_entry_trigger_label"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_check_in_entry_trigger_label" />
+
+    <TextView
+        android:id="@+id/text_view_check_in_entry_symptom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_check_in_entry_symptom_label"
+        app:layout_constraintStart_toEndOf="@+id/text_view_check_in_entry_symptom_label" />
+
+    <TextView
+        android:id="@+id/text_view_check_in_entry_trigger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_check_in_entry_trigger_label"
+        app:layout_constraintStart_toEndOf="@+id/text_view_check_in_entry_trigger_label" />
+
+    <TextView
+        android:id="@+id/text_view_check_in_entry_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_check_in_entry_date_label"
+        app:layout_constraintStart_toEndOf="@+id/text_view_check_in_entry_date_label" />
+
+    <TextView
+        android:id="@+id/text_view_check_in_entry_marked_by"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_check_in_entry_marked_by_label"
+        app:layout_constraintStart_toEndOf="@+id/text_view_check_in_entry_marked_by_label" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

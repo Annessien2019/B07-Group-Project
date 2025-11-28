@@ -16,10 +16,15 @@ import com.example.smartair.presenter.InventoryPresenter;
 
 import java.util.ArrayList;
 
-public class InventoryFragmentView extends Fragment {
+public class InventoryLogListFragment extends LogListFragment<InventoryLogFragment> {
 
     private InventoryPresenter presenter;
     TextView remainingNum, remainingDenom, percentage, purchDate, expDate;
+
+    public InventoryLogListFragment() {
+        super();
+        linearLayoutLogsId = R.id.linear_layout_inventory;
+    }
 
     @Nullable
     @Override
@@ -39,7 +44,7 @@ public class InventoryFragmentView extends Fragment {
             public void onClick(View v) {
                 getParentFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.main_fragment_container, new InventoryFragmentView())
+                        .replace(R.id.main_fragment_container, new InventoryLogListFragment())
                         .setReorderingAllowed(true)
                         .addToBackStack(null)
                         .commit();
@@ -64,14 +69,5 @@ public class InventoryFragmentView extends Fragment {
         percentage.setText(percent);
         purchDate.setText(purchaseDate);
         expDate.setText(expiryDate);
-    }
-
-    public void setInventoryLogs(ArrayList<InventoryLogView> logs) {
-        for (InventoryLogView log : logs) {
-            getParentFragmentManager()
-                    .beginTransaction()
-                    .add(R.id.linear_layout_inventory, log)
-                    .commit();
-        }
     }
 }

@@ -3,19 +3,19 @@ package com.example.smartair.presenter;
 import com.example.smartair.R;
 import com.example.smartair.model.CanisterLog;
 import com.example.smartair.model.InventoryModel;
-import com.example.smartair.view.InventoryFragmentView;
+import com.example.smartair.view.InventoryLogListFragment;
 import com.example.smartair.model.Canister;
-import com.example.smartair.view.InventoryLogView;
+import com.example.smartair.view.InventoryLogFragment;
 
 import java.util.ArrayList;
 import java.util.Date;
 
 public class InventoryPresenter {
 
-    private InventoryFragmentView view;
+    private InventoryLogListFragment view;
     private InventoryModel model;
 
-    public InventoryPresenter(InventoryFragmentView view) {
+    public InventoryPresenter(InventoryLogListFragment view) {
         this.view = view;
         model = new InventoryModel();
     }
@@ -34,10 +34,10 @@ public class InventoryPresenter {
         item.logs.add(new CanisterLog(10, new Date(2026, 3, 20), CanisterLog.CANISTER_LOG_MARKER.CHILD));
         item.logs.add(new CanisterLog(3, new Date(2026, 4, 1), CanisterLog.CANISTER_LOG_MARKER.CHILD));
 
-        ArrayList<InventoryLogView> logs = new ArrayList<>();
-        InventoryLogView tempView;
+        ArrayList<InventoryLogFragment> logs = new ArrayList<>();
+        InventoryLogFragment tempView;
         for (CanisterLog log : item.logs) {
-            tempView = new InventoryLogView();
+            tempView = new InventoryLogFragment();
             tempView.setInfo(String.valueOf(log.amount),
                             log.date.toString(),
                             (log.marker == CanisterLog.CANISTER_LOG_MARKER.PARENT)
@@ -46,7 +46,9 @@ public class InventoryPresenter {
             logs.add(tempView);
         }
 
-        view.setInventoryLogs(logs);
+        InventoryLogFragment[] logArr = new InventoryLogFragment[10];
+        logs.toArray(logArr);
+        view.setLogs(logArr);
         view.setActiveCanister(String.valueOf(item.remainingPuffs),
                                 String.valueOf(item.startingPuffs),
                                 String.valueOf((int)(100.0*item.remainingPuffs/item.startingPuffs)),
