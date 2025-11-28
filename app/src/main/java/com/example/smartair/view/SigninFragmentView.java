@@ -27,7 +27,7 @@ public class SigninFragmentView extends Fragment{
         try {
             listener = (FragmentListener) context;
         } catch (ClassCastException e) {
-            throw new ClassCastException(context.toString() + " must implement FragmentListener");
+            throw new ClassCastException(context + " must implement FragmentListener");
         }
     }
 
@@ -57,36 +57,10 @@ public class SigninFragmentView extends Fragment{
         signUpButton = view.findViewById(R.id.goToSignUpButton);
     }
     private void setClickListeners(){
-        // Set up recovery button
-        recoverybutton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                getParentFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.main_fragment_container, new RecoveryView())
-                        .commit();
-            }
-        });
-
-        // Set up sign in button
-        signInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                presenter.onSignInClick(email.getText().toString(), password.getText().toString());
-            }
-        });
-
-        // Set up sign up button
-        signUpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getParentFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.main_fragment_container, new SignupFragmentView())
-                        .commit();
-            }
-        });
-
+        recoverybutton.setOnClickListener(v -> presenter.onRecoveryClick(email.getText().toString()));
+        signUpButton.setOnClickListener(v -> presenter.onSignUpClick());
+        signInButton.setOnClickListener(v-> presenter.onSignInClick(email.getText().toString(),
+                password.getText().toString()));
     }
     public void displayNextFragment(Fragment fragment, Bundle bundle, boolean stackState){
         listener.onFragmentAction(fragment, bundle, stackState);
