@@ -8,6 +8,8 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.fragment.app.Fragment;
 
 import com.example.smartair.R;
@@ -16,6 +18,7 @@ import com.example.smartair.presenter.DailyCheckInLogListPresenter;
 public class DailyCheckInLogListFragment extends LogListFragment<DailyCheckInLogFragment> {
 
     DailyCheckInLogListPresenter presenter;
+    DailyCheckInFiltersFragment filterFragment;
 
     public DailyCheckInLogListFragment() {
         super();
@@ -27,6 +30,7 @@ public class DailyCheckInLogListFragment extends LogListFragment<DailyCheckInLog
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         presenter = new DailyCheckInLogListPresenter(this);
+        filterFragment = new DailyCheckInFiltersFragment();
         View view = inflater.inflate(R.layout.fragment_daily_check_in, container, false);
 
         setUpButtons(view);
@@ -48,6 +52,25 @@ public class DailyCheckInLogListFragment extends LogListFragment<DailyCheckInLog
         modifyFiltersButton.setOnClickListener(v -> presenter.modifyFilterButtonClicked());
         clearFiltersButton.setOnClickListener(v -> presenter.clearFilterButtonClicked());
         addLogButton.setOnClickListener(v -> presenter.addLogButtonClicked());
+    }
+
+    public void showFilters() {
+        getParentFragmentManager()
+                .beginTransaction()
+                .add(R.id.constraint_layout_daily_check_in, filterFragment)
+                .commit();
+        ConstraintSet set = new ConstraintSet();
+        ConstraintLayout layout = getView().findViewById(R.id.constraint_layout_daily_check_in);
+        set.clone(layout);
+        set.connect(filterFragment.getId(), ConstraintSet.TOP, R.layout.fragment_filter_daily_check_in_logs, ConstraintSet.BOTTOM);
+        set.applyTo(layout);
+    }
+
+    public void hideFilters() {
+        getParentFragmentManager()
+                .beginTransaction()
+                .remove(filterFragment)
+                .commit();
     }
 }
 

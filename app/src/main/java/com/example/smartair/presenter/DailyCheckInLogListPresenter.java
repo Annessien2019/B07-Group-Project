@@ -3,6 +3,7 @@ package com.example.smartair.presenter;
 import com.example.smartair.R;
 import com.example.smartair.model.DailyCheckInLog;
 import com.example.smartair.model.DailyCheckInModel;
+import com.example.smartair.view.DailyCheckInFiltersFragment;
 import com.example.smartair.view.DailyCheckInLogFragment;
 import com.example.smartair.view.DailyCheckInLogListFragment;
 import org.checkerframework.checker.units.qual.A;
@@ -160,7 +161,7 @@ public class DailyCheckInLogListPresenter {
         filter.setSymptomsAndTriggers(bM);
     }
     public void modifyFilterButtonClicked() {
-
+        view.showFilters();
     }
 
     public void clearFilterButtonClicked() {

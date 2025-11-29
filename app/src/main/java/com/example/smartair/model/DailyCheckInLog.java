@@ -54,9 +54,6 @@ public class DailyCheckInLog extends Log{
         if ((symptomTriggerBitMap & ILLNESS) != 0) triggers.add("Illness");
         if ((symptomTriggerBitMap & PERFUME) != 0) triggers.add("Perfume/Cleaners/Strong Odors");
         if ((symptomTriggerBitMap & OTHER_TRIGGER) != 0) triggers.add("Other Trigger");
-
-        System.out.println(symptoms);
-        System.out.println(triggers + "\n");
     }
 
 
