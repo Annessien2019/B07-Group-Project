@@ -80,8 +80,6 @@ public class DailyCheckInLogListPresenter {
         DailyCheckInLogFragment logFragment;
         String tempSymptoms, tempTriggers;
 
-        filter.setSymptomsAndTriggers(DailyCheckInLog.DUST_PETS);
-        filterLogs(logData, filter, null, null);
         for (DailyCheckInLog log : logData) {
             logFragment = new DailyCheckInLogFragment();
 

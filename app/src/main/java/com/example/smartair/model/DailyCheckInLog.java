@@ -34,6 +34,10 @@ public class DailyCheckInLog extends Log{
         this.bgColorId = bgColorId;
     }
 
+    /**
+     * Setter for the bit-map corresponding to this object's symptoms and triggers
+     * @param symptomTriggerBitMap A bit-map specifying the symptoms and triggers to set
+     */
     public void setSymptomsAndTriggers(int symptomTriggerBitMap) {
         this.symptomTriggerBitMap = symptomTriggerBitMap;
         symptoms.clear();
