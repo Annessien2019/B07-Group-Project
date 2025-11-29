@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OneTapTriage">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#1B3C53"
+            android:text="This is guidance, not a diagnosis. If in
+ doubt, call emergency."
+
+            android:textColor="#FF0000"
+            android:textSize="25dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="260dp"
+            android:layout_height="43dp"
+            android:gravity="center"
+            android:text="Current PEF [Optional]"
+            android:textColor="#D2C1B6"
+            android:textSize="25sp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="141dp" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="260dp"
+            android:layout_height="43dp"
+            android:gravity="center"
+            android:text="Chest Pain?"
+            android:textColor="#D2C1B6"
+            android:textSize="25sp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="212dp" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="260dp"
+            android:layout_height="43dp"
+            android:gravity="center"
+            android:text="Chest movment?"
+            android:textColor="#D2C1B6"
+            android:textSize="25sp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="322dp" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="260dp"
+            android:layout_height="43dp"
+            android:gravity="center"
+            android:text="Lips are blue or gray?"
+            android:textColor="#D2C1B6"
+            android:textSize="25sp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="408dp" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="260dp"
+            android:layout_height="43dp"
+            android:gravity="center"
+            android:text="Can't talk?"
+            android:textColor="#D2C1B6"
+            android:textSize="25sp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="511dp" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="260dp"
+            android:layout_height="43dp"
+            android:gravity="center"
+            android:text="Nails look gray or blue?"
+            android:textColor="#D2C1B6"
+            android:textSize="25sp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="583dp" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:gravity="center"
+            android:text="100"
+            android:textColor="#D2C1B6"
+            android:textSize="35sp"
+            tools:layout_editor_absoluteX="261dp"
+            tools:layout_editor_absoluteY="141dp" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#D7C931"
+            android:text="ToggleButton"
+            android:textOff="No"
+            android:textOn="Yes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.548"
+            app:layout_constraintStart_toEndOf="@+id/textView15"
+            tools:layout_editor_absoluteY="212dp" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#D7C931"
+            android:text="ToggleButton"
+            android:textOff="No"
+            android:textOn="Yes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.548"
+            app:layout_constraintStart_toEndOf="@+id/textView18"
+            tools:layout_editor_absoluteY="317dp" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#D7C931"
+            android:text="ToggleButton"
+            android:textOff="No"
+            android:textOn="Yes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.548"
+            app:layout_constraintStart_toEndOf="@+id/textView18"
+            tools:layout_editor_absoluteY="403dp" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#D7C931"
+            android:text="ToggleButton"
+            android:textOff="No"
+            android:textOn="Yes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.548"
+            app:layout_constraintStart_toEndOf="@+id/textView18"
+            tools:layout_editor_absoluteY="506dp" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#D7C931"
+            android:text="ToggleButton"
+            android:textOff="No"
+            android:textOn="Yes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.548"
+            app:layout_constraintStart_toEndOf="@+id/textView18"
+            tools:layout_editor_absoluteY="578dp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="215dp"
+            android:layout_height="75dp"
+            android:layout_marginBottom="16dp"
+            android:background="#4CAF50"
+            android:text="Submit"
+            app:backgroundTint="#429745"
+            app:cornerRadius="30dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView22"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>
