@@ -14,12 +14,14 @@ import androidx.fragment.app.Fragment;
 
 import com.example.smartair.R;
 
+import java.util.ArrayList;
+
 public class DailyCheckInLogFragment extends LogFragment {
 
-    String symptom, trigger, date, markedBy;
+    String symptoms, triggers, date, markedBy;
     int bgColorId;
     View view;
-    TextView symptomTV, triggerTV, dateTV, markedByTV;
+    TextView symptomTV, triggersTV, dateTV, markedByTV;
 
     @Nullable
     @Override
@@ -27,7 +29,7 @@ public class DailyCheckInLogFragment extends LogFragment {
         view = inflater.inflate(R.layout.fragment_daily_check_in_log, container, false);
 
         symptomTV = view.findViewById(R.id.text_view_check_in_entry_symptom);
-        triggerTV = view.findViewById(R.id.text_view_check_in_entry_trigger);
+        triggersTV = view.findViewById(R.id.text_view_check_in_entry_trigger);
         dateTV = view.findViewById(R.id.text_view_check_in_entry_date);
         markedByTV = view.findViewById(R.id.text_view_check_in_entry_marked_by);
 
@@ -36,17 +38,17 @@ public class DailyCheckInLogFragment extends LogFragment {
 
     @Override
     public void displayInfo() {
-        symptomTV.setText(symptom);
-        triggerTV.setText(trigger);
+        symptomTV.setText(symptoms);
+        triggersTV.setText(triggers);
         dateTV.setText(date);
         markedByTV.setText(markedBy);
         view.setBackground(ResourcesCompat.getDrawable(getResources(), bgColorId, null));
     }
 
 
-    public void setInfo(String symptom, String trigger, String date, String markedBy, int bgColorId) {
-        this.symptom = symptom;
-        this.trigger = trigger;
+    public void setInfo(String symptom, String triggers, String date, String markedBy, int bgColorId) {
+        this.symptoms = symptom;
+        this.triggers = triggers;
         this.date = date;
         this.markedBy = markedBy;
         this.bgColorId = bgColorId;

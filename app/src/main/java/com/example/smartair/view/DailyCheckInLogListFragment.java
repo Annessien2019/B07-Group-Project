@@ -16,6 +16,7 @@ import com.example.smartair.presenter.DailyCheckInLogListPresenter;
 public class DailyCheckInLogListFragment extends LogListFragment<DailyCheckInLogFragment> {
 
     DailyCheckInLogListPresenter presenter;
+
     public DailyCheckInLogListFragment() {
         super();
         linearLayoutLogsId = R.id.linear_layout_daily_check_in;
@@ -28,8 +29,7 @@ public class DailyCheckInLogListFragment extends LogListFragment<DailyCheckInLog
         presenter = new DailyCheckInLogListPresenter(this);
         View view = inflater.inflate(R.layout.fragment_daily_check_in, container, false);
 
-        Button modifyFiltersButton = view.findViewById(R.id.button_check_in_modify_filter);
-        Button resetFiltersButton = view.findViewById(R.id.button_daily_check_in_clear_filter);
+        setUpButtons(view);
 
         return view;
     }
@@ -38,6 +38,16 @@ public class DailyCheckInLogListFragment extends LogListFragment<DailyCheckInLog
     public void onStart() {
         super.onStart();
         presenter.loadCheckInLogs();
+    }
+
+    public void setUpButtons(View view) {
+        Button modifyFiltersButton = view.findViewById(R.id.button_check_in_modify_filter);
+        Button clearFiltersButton = view.findViewById(R.id.button_daily_check_in_clear_filter);
+        Button addLogButton = view.findViewById(R.id.button_daily_check_in_add_log);
+
+        modifyFiltersButton.setOnClickListener(v -> presenter.modifyFilterButtonClicked());
+        clearFiltersButton.setOnClickListener(v -> presenter.clearFilterButtonClicked());
+        addLogButton.setOnClickListener(v -> presenter.addLogButtonClicked());
     }
 }
 
