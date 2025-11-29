@@ -1,6 +1,8 @@
 package com.example.smartair.view;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,21 +13,23 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import com.example.smartair.R;
 import com.example.smartair.presenter.DailyCheckInLogListPresenter;
 
-public class DailyCheckInFiltersFragment extends Fragment {
+public class DailyCheckInFiltersFragment extends DialogFragment {
 
     DailyCheckInLogListPresenter presenter;
 
-    @Nullable
+    @NonNull
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_filter_daily_check_in_logs, container, false);
+    public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+        View view = inflater.inflate(R.layout.fragment_filter_daily_check_in_logs, null);
 
-        Button applyFiltersButton = view.findViewById(R.id.button_apply_filters);
         CheckBox nightWakingCB = view.findViewById(R.id.check_box_night_waking);
         CheckBox activityLimitsCB = view.findViewById(R.id.check_box_activity_limits);
         CheckBox otherSymptomCB = view.findViewById(R.id.check_box_other_symptom);
@@ -40,22 +44,30 @@ public class DailyCheckInFiltersFragment extends Fragment {
         EditText afterDate = view.findViewById(R.id.edit_text_after_date);
         EditText beforeDate = view.findViewById(R.id.edit_text_before_date);
 
+        builder.setView(view)
+                .setPositiveButton("Apply filters",
+                        (dialog, which) ->
+                        presenter.applyFiltersButtonClicked(
+                                nightWakingCB.isChecked(),
+                                activityLimitsCB.isChecked(),
+                                coughWheezeCB.isChecked(),
+                                otherSymptomCB.isChecked(),
+                                exerciseCB.isChecked(),
+                                coldAirCB.isChecked(),
+                                dustPetsCB.isChecked(),
+                                smokeCB.isChecked(),
+                                illnessCB.isChecked(),
+                                perfumeCB.isChecked(),
+                                otherTriggerCB.isChecked()
+                        ))
+                .setNegativeButton("Cancel",
+                        (dialog, which) ->
+                        getDialog().cancel());
 
-        applyFiltersButton.setOnClickListener(
-                v -> presenter.applyFiltersButtonClicked(
-                        nightWakingCB.isChecked(),
-                        activityLimitsCB.isChecked(),
-                        coughWheezeCB.isChecked(),
-                        otherSymptomCB.isChecked(),
-                        exerciseCB.isChecked(),
-                        coldAirCB.isChecked(),
-                        dustPetsCB.isChecked(),
-                        smokeCB.isChecked(),
-                        illnessCB.isChecked(),
-                        perfumeCB.isChecked(),
-                        otherTriggerCB.isChecked()
-                ));
+        return builder.create();
+    }
 
-        return view;
+    public void setPresenter(DailyCheckInLogListPresenter presenter) {
+        this.presenter = presenter;
     }
 }

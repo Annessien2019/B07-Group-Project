@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.example.smartair.R;
 import com.example.smartair.presenter.DailyCheckInLogListPresenter;
@@ -31,6 +32,7 @@ public class DailyCheckInLogListFragment extends LogListFragment<DailyCheckInLog
 
         presenter = new DailyCheckInLogListPresenter(this);
         filterFragment = new DailyCheckInFiltersFragment();
+        filterFragment.setPresenter(presenter);
         View view = inflater.inflate(R.layout.fragment_daily_check_in, container, false);
 
         setUpButtons(view);
@@ -55,22 +57,7 @@ public class DailyCheckInLogListFragment extends LogListFragment<DailyCheckInLog
     }
 
     public void showFilters() {
-        getParentFragmentManager()
-                .beginTransaction()
-                .add(R.id.constraint_layout_daily_check_in, filterFragment)
-                .commit();
-        ConstraintSet set = new ConstraintSet();
-        ConstraintLayout layout = getView().findViewById(R.id.constraint_layout_daily_check_in);
-        set.clone(layout);
-        set.connect(filterFragment.getId(), ConstraintSet.TOP, R.layout.fragment_filter_daily_check_in_logs, ConstraintSet.BOTTOM);
-        set.applyTo(layout);
-    }
-
-    public void hideFilters() {
-        getParentFragmentManager()
-                .beginTransaction()
-                .remove(filterFragment)
-                .commit();
+        filterFragment.show(getActivity().getSupportFragmentManager(), "CHECK_IN_FILTER");
     }
 }
 

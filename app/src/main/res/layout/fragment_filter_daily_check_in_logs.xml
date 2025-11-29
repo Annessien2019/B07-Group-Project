@@ -111,19 +111,6 @@
         app:layout_constraintStart_toStartOf="@+id/check_box_other_symptom"
         app:layout_constraintTop_toBottomOf="@+id/check_box_other_symptom" />
 
-    <Button
-        android:id="@+id/button_apply_filters"
-        android:layout_width="wrap_content"
-        android:layout_height="30sp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_corner"
-        android:backgroundTint="@color/primary_dark"
-        android:padding="5dp"
-        android:text="Apply Filters"
-        android:textColor="@color/primary_light"
-        app:layout_constraintStart_toStartOf="@+id/edit_text_before_date"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_before_date" />
-
     <CheckBox
         android:id="@+id/check_box_other_symptom"
         android:layout_width="wrap_content"

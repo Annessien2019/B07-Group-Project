@@ -16,7 +16,7 @@ public class DailyCheckInLogListPresenter {
     DailyCheckInLogListFragment view;
     DailyCheckInModel model;
     DailyCheckInLog filter;
-
+    Date afterDate, beforeDate;
 
     public DailyCheckInLogListPresenter(DailyCheckInLogListFragment view) {
         this.view = view;
@@ -77,6 +77,9 @@ public class DailyCheckInLogListPresenter {
      */
     public void loadCheckInLogs() {
         ArrayList<DailyCheckInLog> logData = queryCheckInLogs();
+
+        System.out.println("Filtering: " + filter.getSymptomTriggerBitMap());
+        filterLogs(logData, filter, beforeDate, afterDate);
         ArrayList<DailyCheckInLogFragment> logFragments = new ArrayList<>();
         DailyCheckInLogFragment logFragment;
         String tempSymptoms, tempTriggers;
@@ -122,8 +125,7 @@ public class DailyCheckInLogListPresenter {
         DailyCheckInLog temp;
         for (int i = 0; i < logs.size(); i++) {
             temp = logs.get(i);
-            if ((filter.getSymptomTriggerBitMap() != 0
-                    && (filter.getSymptomTriggerBitMap() & temp.getSymptomTriggerBitMap()) != 0)
+            if ((filter.getSymptomTriggerBitMap() == 0 || (filter.getSymptomTriggerBitMap() & temp.getSymptomTriggerBitMap()) != 0)
                     && (filter.getMarkedBy() == null || temp.getMarkedBy().equals(filter.getMarkedBy()))
                     && (after == null || after.before(temp.getDate()))
                     && (before == null || before.after(temp.getDate()))
@@ -159,6 +161,7 @@ public class DailyCheckInLogListPresenter {
         if (otherTrigger) bM |= DailyCheckInLog.OTHER_TRIGGER;
 
         filter.setSymptomsAndTriggers(bM);
+        loadCheckInLogs();
     }
     public void modifyFilterButtonClicked() {
         view.showFilters();
