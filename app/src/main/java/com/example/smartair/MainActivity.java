@@ -10,6 +10,12 @@ import androidx.fragment.app.FragmentManager;
 import com.example.smartair.view.FragmentListener;
 import com.example.smartair.view.SigninFragmentView;
 
+import com.example.smartair.view.DailyCheckInLogFragment;
+import com.example.smartair.view.DailyCheckInLogListFragment;
+import com.example.smartair.view.DoseCheckView;
+import com.example.smartair.view.InventoryLogListFragment;
+import com.example.smartair.view.MedicineLogFragment;
+import com.example.smartair.view.MedicineLogListFragment;
 
 public class MainActivity extends AppCompatActivity implements FragmentListener {
 
@@ -24,8 +30,9 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
-            manager.beginTransaction()
-                    .replace(R.id.main_fragment_container, new SigninFragmentView())
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.main_fragment_container, new DailyCheckInLogListFragment())
                     .commit();
         }
     }

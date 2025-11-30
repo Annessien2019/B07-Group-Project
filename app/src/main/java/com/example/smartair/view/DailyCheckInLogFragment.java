@@ -14,45 +14,43 @@ import androidx.fragment.app.Fragment;
 
 import com.example.smartair.R;
 
-public class DailyCheckInLogFragment extends Fragment {
+import java.util.ArrayList;
 
-    TextView symptom, trigger, date, markedBy;
-    String stringSymptom, stringTrigger, stringDate, stringMarkedBy;
+public class DailyCheckInLogFragment extends LogFragment {
+
+    String symptoms, triggers, date, markedBy;
     int bgColorId;
+    View view;
+    TextView symptomTV, triggersTV, dateTV, markedByTV;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_daily_check_in_log, container, false);
+        view = inflater.inflate(R.layout.fragment_daily_check_in_log, container, false);
 
-        symptom = view.findViewById(R.id.text_view_check_in_entry_symptom);
-        trigger = view.findViewById(R.id.text_view_check_in_entry_trigger);
-        date = view.findViewById(R.id.text_view_check_in_entry_date);
-        markedBy = view.findViewById(R.id.text_view_check_in_entry_marked_by);
-
-        stringSymptom = "N/A";
-        stringTrigger = "N/A";
-        stringDate = "N/A";
-        stringMarkedBy = "N/A";
+        symptomTV = view.findViewById(R.id.text_view_check_in_entry_symptom);
+        triggersTV = view.findViewById(R.id.text_view_check_in_entry_trigger);
+        dateTV = view.findViewById(R.id.text_view_check_in_entry_date);
+        markedByTV = view.findViewById(R.id.text_view_check_in_entry_marked_by);
 
         return view;
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-        symptom.setText(stringSymptom);
-        trigger.setText(stringTrigger);
-        date.setText(stringDate);
-        markedBy.setText(stringMarkedBy);
-        getView().setBackground(ResourcesCompat.getDrawable(getResources(), bgColorId, null));
+    public void displayInfo() {
+        symptomTV.setText(symptoms);
+        triggersTV.setText(triggers);
+        dateTV.setText(date);
+        markedByTV.setText(markedBy);
+        view.setBackground(ResourcesCompat.getDrawable(getResources(), bgColorId, null));
     }
 
-    public void setInfo(String symptom, String trigger, String date, String markedBy, int bgColorId) {
-        stringSymptom = symptom;
-        stringTrigger = trigger;
-        stringDate = date;
-        stringMarkedBy = markedBy;
+
+    public void setInfo(String symptom, String triggers, String date, String markedBy, int bgColorId) {
+        this.symptoms = symptom;
+        this.triggers = triggers;
+        this.date = date;
+        this.markedBy = markedBy;
         this.bgColorId = bgColorId;
     }
 }

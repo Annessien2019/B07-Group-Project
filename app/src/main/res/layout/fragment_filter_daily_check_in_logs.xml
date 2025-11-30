@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/primary_light_shade_1"
+    android:padding="20dp">
+
+    <CheckBox
+        android:id="@+id/check_box_night_waking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Waking up at night"
+        android:textColor="@color/primary_text_dark"
+        app:layout_constraintStart_toStartOf="@+id/text_view_filter_symptoms_label"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_filter_symptoms_label" />
+
+    <CheckBox
+        android:id="@+id/check_box_activity_limits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Limiting physical activity"
+        android:textColor="@color/primary_text_dark"
+        app:layout_constraintStart_toStartOf="@+id/check_box_night_waking"
+        app:layout_constraintTop_toBottomOf="@+id/check_box_night_waking" />
+
+    <CheckBox
+        android:id="@+id/check_box_coughing_wheezing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Coughing or wheezing"
+        android:textColor="@color/primary_text_dark"
+        app:layout_constraintStart_toStartOf="@+id/check_box_activity_limits"
+        app:layout_constraintTop_toBottomOf="@+id/check_box_activity_limits" />
+
+    <CheckBox
+        android:id="@+id/check_box_exercise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exercise"
+        android:textColor="@color/primary_text_dark"
+        app:layout_constraintStart_toStartOf="@+id/text_view_filter_triggers_label"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_filter_triggers_label" />
+
+    <CheckBox
+        android:id="@+id/check_box_cold_air"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cold air"
+        android:textColor="@color/primary_text_dark"
+        app:layout_constraintStart_toStartOf="@+id/check_box_exercise"
+        app:layout_constraintTop_toBottomOf="@+id/check_box_exercise" />
+
+    <CheckBox
+        android:id="@+id/check_box_dust"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dust or pets"
+        android:textColor="@color/primary_text_dark"
+        app:layout_constraintStart_toStartOf="@+id/check_box_cold_air"
+        app:layout_constraintTop_toBottomOf="@+id/check_box_cold_air" />
+
+    <CheckBox
+        android:id="@+id/check_box_smoke"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Smoke"
+        android:textColor="@color/primary_text_dark"
+        app:layout_constraintStart_toStartOf="@+id/check_box_dust"
+        app:layout_constraintTop_toBottomOf="@+id/check_box_dust" />
+
+    <CheckBox
+        android:id="@+id/check_box_illness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Illness"
+        android:textColor="@color/primary_text_dark"
+        app:layout_constraintStart_toStartOf="@+id/check_box_smoke"
+        app:layout_constraintTop_toBottomOf="@+id/check_box_smoke" />
+
+    <CheckBox
+        android:id="@+id/check_box_perfume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Perfume, cleaners, or strong odors"
+        android:textColor="@color/primary_text_dark"
+        app:layout_constraintStart_toStartOf="@+id/check_box_illness"
+        app:layout_constraintTop_toBottomOf="@+id/check_box_illness" />
+
+    <TextView
+        android:id="@+id/text_view_filter_symptoms_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Symptoms"
+        android:textColor="@color/primary_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view_filter_triggers_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Triggers"
+        android:textColor="@color/primary_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/check_box_other_symptom"
+        app:layout_constraintTop_toBottomOf="@+id/check_box_other_symptom" />
+
+    <CheckBox
+        android:id="@+id/check_box_other_symptom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Other"
+        android:textColor="@color/primary_dark"
+        app:layout_constraintStart_toStartOf="@+id/check_box_coughing_wheezing"
+        app:layout_constraintTop_toBottomOf="@+id/check_box_coughing_wheezing" />
+
+    <CheckBox
+        android:id="@+id/check_box_other_trigger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Other"
+        android:textColor="@color/primary_text_dark"
+        app:layout_constraintStart_toStartOf="@+id/check_box_perfume"
+        app:layout_constraintTop_toBottomOf="@+id/check_box_perfume" />
+
+    <TextView
+        android:id="@+id/text_view_before_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="@color/primary_dark"
+        android:ems="10"
+        android:hint="DD/MM/YYYY"
+        android:padding="5dp"
+        android:textColor="@color/primary_text_light"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/text_view_logged_before_label"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_logged_before_label" />
+
+    <TextView
+        android:id="@+id/text_view_logged_before_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Logged before"
+        android:textColor="@color/primary_text_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/edit_text_after_date"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_after_date" />
+
+    <TextView
+        android:id="@+id/text_view_logged_after_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Logged after"
+        android:textColor="@color/primary_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/check_box_other_trigger"
+        app:layout_constraintTop_toBottomOf="@+id/check_box_other_trigger" />
+
+    <TextView
+        android:id="@+id/edit_text_after_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="@color/primary_dark"
+        android:ems="10"
+        android:hint="DD/MM/YYYY"
+        android:padding="5dp"
+        android:textColor="@color/primary_text_light"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/text_view_logged_after_label"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_logged_after_label" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
