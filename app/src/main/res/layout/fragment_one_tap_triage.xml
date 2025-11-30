@@ -179,6 +179,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="303dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="612dp"
+            android:background="#F44336"
+            android:text="CLICK HERE TO CALL 911"
+            app:backgroundTint="#C5382B"
+            app:cornerRadius="30dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView22"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
