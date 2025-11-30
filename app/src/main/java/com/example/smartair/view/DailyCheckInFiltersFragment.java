@@ -6,15 +6,12 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
 
 import com.example.smartair.R;
 import com.example.smartair.presenter.DailyCheckInLogListPresenter;
@@ -41,8 +38,28 @@ public class DailyCheckInFiltersFragment extends DialogFragment {
         CheckBox illnessCB = view.findViewById(R.id.check_box_illness);
         CheckBox perfumeCB = view.findViewById(R.id.check_box_perfume);
         CheckBox otherTriggerCB = view.findViewById(R.id.check_box_other_trigger);
-        EditText afterDate = view.findViewById(R.id.edit_text_after_date);
-        EditText beforeDate = view.findViewById(R.id.edit_text_before_date);
+        TextView afterDate = view.findViewById(R.id.edit_text_after_date);
+        TextView beforeDate = view.findViewById(R.id.text_view_before_date);
+
+        afterDate.setOnClickListener(v -> {
+            DatePickerDialog datePicker = new DatePickerDialog(getContext());
+            datePicker.setOnDateSetListener((view1, year, month, dayOfMonth) -> {
+                String dayString = ((dayOfMonth < 10) ? "0" : "") + dayOfMonth;
+                String monthString = ((month < 10) ? "0" : "") + month;
+                afterDate.setText(dayString + "/" + monthString + "/" + year);
+            });
+            datePicker.show();
+        });
+
+        beforeDate.setOnClickListener(v -> {
+            DatePickerDialog datePicker = new DatePickerDialog(getContext());
+            datePicker.setOnDateSetListener((view1, year, month, dayOfMonth) -> {
+                String dayString = ((dayOfMonth < 10) ? "0" : "") + dayOfMonth;
+                String monthString = ((month < 10) ? "0" : "") + month;
+                beforeDate.setText(dayString + "/" + monthString + "/" + year);
+            });
+            datePicker.show();
+        });
 
         builder.setView(view)
                 .setPositiveButton("Apply filters",
@@ -54,11 +71,13 @@ public class DailyCheckInFiltersFragment extends DialogFragment {
                                 otherSymptomCB.isChecked(),
                                 exerciseCB.isChecked(),
                                 coldAirCB.isChecked(),
-                                dustPetsCB.isChecked(),
                                 smokeCB.isChecked(),
                                 illnessCB.isChecked(),
+                                dustPetsCB.isChecked(),
                                 perfumeCB.isChecked(),
-                                otherTriggerCB.isChecked()
+                                otherTriggerCB.isChecked(),
+                                afterDate.getText().toString(),
+                                beforeDate.getText().toString()
                         ))
                 .setNegativeButton("Cancel",
                         (dialog, which) ->
