@@ -1,7 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="Widget.Theme.SmartAir.ButtonBar.Fullscreen" parent="">
-        <item name="android:background">@color/black_overlay</item>
-        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+    <style name="InputStyle">
+        <item name="android:radius">20dp</item>
+        <item name="android:backgroundTint">#227780</item>
+        <item name="android:textColor">#0E3135</item>
+    </style>
+    <style name="BasicStyle">
+        <item name="android:textColor">#266267</item>
     </style>
 </resources>

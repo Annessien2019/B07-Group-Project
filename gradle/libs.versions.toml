@@ -8,10 +8,8 @@ material = "1.13.0"
 fragment = "1.8.9"
 activity = "1.11.0"
 constraintlayout = "2.2.1"
-cardview = "1.0.0"
-annotation = "1.9.1"
-lifecycleLivedataKtx = "2.10.0"
-lifecycleViewmodelKtx = "2.10.0"
+firebaseDatabase = "22.0.1"
+protoliteWellKnownTypes = "18.0.1"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -22,10 +20,8 @@ material = { group = "com.google.android.material", name = "material", version.r
 fragment = { group = "androidx.fragment", name = "fragment", version.ref = "fragment" }
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview" }
-annotation = { group = "androidx.annotation", name = "annotation", version.ref = "annotation" }
-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
+protolite-well-known-types = { group = "com.google.firebase", name = "protolite-well-known-types", version.ref = "protoliteWellKnownTypes" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
