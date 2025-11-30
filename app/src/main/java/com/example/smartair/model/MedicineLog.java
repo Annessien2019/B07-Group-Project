@@ -1,4 +1,4 @@
 package com.example.smartair.model;
 
-public class MedicineLogsModel {
+public class MedicineLog extends Log{
 }

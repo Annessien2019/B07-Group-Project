@@ -1,34 +1,27 @@
 package com.example.smartair.presenter;
 
-import android.widget.Toast;
-
-import com.example.smartair.MainActivity;
 import com.example.smartair.R;
 import com.example.smartair.model.DailyCheckInLog;
-import com.example.smartair.model.DailyCheckInModel;
-import com.example.smartair.view.DailyCheckInFiltersFragment;
+import com.example.smartair.model.DailyCheckInLogListModel;
 import com.example.smartair.view.DailyCheckInLogFragment;
 import com.example.smartair.view.DailyCheckInLogListFragment;
-import org.checkerframework.checker.units.qual.A;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-public class DailyCheckInLogListPresenter {
+public class DailyCheckInLogListPresenter implements LogListPresenter{
 
     DailyCheckInLogListFragment view;
 
-    DailyCheckInModel model;
+    DailyCheckInLogListModel model;
     DailyCheckInLog filter;
     Date afterDate, beforeDate;
     public static final String dateFormat = "../../....";
+    ArrayList<DailyCheckInLog> logData;
 
     public DailyCheckInLogListPresenter(DailyCheckInLogListFragment view) {
         this.view = view;
-        model = new DailyCheckInModel();
+        model = new DailyCheckInLogListModel();
         filter = new DailyCheckInLog((char)0, null, null, R.color.inventory_log_child_bg);
     }
 
@@ -37,47 +30,45 @@ public class DailyCheckInLogListPresenter {
      * Returns the an ArrayList of DailyCheckInLogs extracted from the database
      * @return The ArrayList of logs gathered from the database
      */
-    private ArrayList<DailyCheckInLog> queryCheckInLogs() {
-        ArrayList<DailyCheckInLog> data = new ArrayList<>();
+    public void queryLogs() {
+        logData = new ArrayList<>();
         DailyCheckInLog temp;
 
         // TODO: IMPLEMENT MODEL
         {
             temp = new DailyCheckInLog(50, "Parent", new Date(102, 1, 20), R.color.inventory_log_parent_bg);
-            data.add(temp);
+            logData.add(temp);
             temp = new DailyCheckInLog(35, "Child", new Date(102, 2, 14), R.color.inventory_log_child_bg);
-            data.add(temp);
+            logData.add(temp);
             temp = new DailyCheckInLog(42, "Parent", new Date(102, 2, 10), R.color.inventory_log_parent_bg);
-            data.add(temp);
+            logData.add(temp);
             temp = new DailyCheckInLog(45, "Child", new Date(102, 3, 22), R.color.inventory_log_child_bg);
-            data.add(temp);
+            logData.add(temp);
             temp = new DailyCheckInLog(150, "Parent", new Date(102, 3, 20), R.color.inventory_log_parent_bg);
-            data.add(temp);
+            logData.add(temp);
             temp = new DailyCheckInLog(345, "Child", new Date(102, 4, 14), R.color.inventory_log_child_bg);
-            data.add(temp);
+            logData.add(temp);
             temp = new DailyCheckInLog(408, "Parent", new Date(102, 5, 10), R.color.inventory_log_parent_bg);
-            data.add(temp);
+            logData.add(temp);
             temp = new DailyCheckInLog(458, "Child", new Date(102, 6, 22), R.color.inventory_log_child_bg);
-            data.add(temp);
+            logData.add(temp);
             temp = new DailyCheckInLog(500, "Parent", new Date(102, 7, 20), R.color.inventory_log_parent_bg);
-            data.add(temp);
+            logData.add(temp);
             temp = new DailyCheckInLog(1008, "Child", new Date(102, 7, 14), R.color.inventory_log_child_bg);
-            data.add(temp);
+            logData.add(temp);
             temp = new DailyCheckInLog(4204, "Parent", new Date(102, 8, 10), R.color.inventory_log_parent_bg);
-            data.add(temp);
+            logData.add(temp);
             temp = new DailyCheckInLog(454, "Child", new Date(102, 9, 22), R.color.inventory_log_child_bg);
-            data.add(temp);
+            logData.add(temp);
             temp = new DailyCheckInLog(250, "Parent", new Date(102, 10, 20), R.color.inventory_log_parent_bg);
-            data.add(temp);
+            logData.add(temp);
             temp = new DailyCheckInLog(395, "Child", new Date(102, 11, 14), R.color.inventory_log_child_bg);
-            data.add(temp);
+            logData.add(temp);
             temp = new DailyCheckInLog(422, "Parent", new Date(102, 12, 10), R.color.inventory_log_parent_bg);
-            data.add(temp);
+            logData.add(temp);
             temp = new DailyCheckInLog(450, "Child", new Date(102, 12, 22), R.color.inventory_log_child_bg);
-            data.add(temp);
+            logData.add(temp);
         }
-
-        return data;
     }
 
 
@@ -114,8 +105,8 @@ public class DailyCheckInLogListPresenter {
      * Load all DailyCheckInLogs requested by the user (considering filters),
      * into the View
      */
-    public void loadCheckInLogs() {
-        ArrayList<DailyCheckInLog> logData = queryCheckInLogs();
+    public void loadLogs() {
+        queryLogs();
 
         System.out.println("Filtering: " + filter.getSymptomTriggerBitMap() + "\nAfter: " + afterDate + "\nBefore: " + beforeDate);
         filterLogs(logData, filter, afterDate, beforeDate);
@@ -205,7 +196,7 @@ public class DailyCheckInLogListPresenter {
         this.beforeDate = getDateFromString(beforeDate);
         filter.setSymptomsAndTriggers(bM);
 
-        loadCheckInLogs();
+        loadLogs();
     }
 
     public boolean stringIsValidDate(String string) {
@@ -226,7 +217,7 @@ public class DailyCheckInLogListPresenter {
         filter.setSymptomsAndTriggers(0);
         afterDate = null;
         beforeDate = null;
-        loadCheckInLogs();
+        loadLogs();
     }
 
     public void addLogButtonClicked() {
