@@ -2,7 +2,8 @@ package com.example.smartair.presenter;
 
 import com.example.smartair.R;
 import com.example.smartair.model.CanisterLog;
-import com.example.smartair.model.InventoryModel;
+import com.example.smartair.model.InventoryLog;
+import com.example.smartair.model.InventoryLogListModel;
 import com.example.smartair.view.InventoryLogListFragment;
 import com.example.smartair.model.Canister;
 import com.example.smartair.view.InventoryLogFragment;
@@ -10,17 +11,18 @@ import com.example.smartair.view.InventoryLogFragment;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class InventoryPresenter {
+public class InventoryLogListPresenter implements LogListPresenter{
 
     private InventoryLogListFragment view;
-    private InventoryModel model;
+    private InventoryLogListModel model;
+    private ArrayList<InventoryLog> logData;
 
-    public InventoryPresenter(InventoryLogListFragment view) {
+    public InventoryLogListPresenter(InventoryLogListFragment view) {
         this.view = view;
-        model = new InventoryModel();
+        model = new InventoryLogListModel();
     }
 
-    public void loadInventoryLogs() {
+    public void loadLogs() {
 
 
         Canister item  = new Canister(200, 70, new Date(2024, 11, 25), new Date(2026, 4, 30));
@@ -56,5 +58,9 @@ public class InventoryPresenter {
                                 String.valueOf(item.startingPuffs),
                                 String.valueOf((int)(100.0*item.remainingPuffs/item.startingPuffs)),
                                 item.purchaseDate.toString(), item.expiryDate.toString());
+    }
+
+    public void queryLogs() {
+
     }
 }

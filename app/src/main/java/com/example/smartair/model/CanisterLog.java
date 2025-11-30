@@ -2,7 +2,7 @@ package com.example.smartair.model;
 
 import java.util.Date;
 
-public class CanisterLog {
+public class CanisterLog extends Log{
     public enum CANISTER_LOG_MARKER {PARENT, CHILD};
     public int amount;
     public Date date;

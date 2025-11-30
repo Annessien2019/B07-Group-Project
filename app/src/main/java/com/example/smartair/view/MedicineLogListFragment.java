@@ -10,11 +10,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.smartair.R;
-import com.example.smartair.presenter.MedicineLogsPresenter;
+import com.example.smartair.presenter.MedicineLogListPresenter;
 
 public class MedicineLogListFragment extends LogListFragment<MedicineLogFragment> {
 
-    private MedicineLogsPresenter presenter;
+    private MedicineLogListPresenter presenter;
 
     public MedicineLogListFragment() {
         super();
@@ -24,7 +24,7 @@ public class MedicineLogListFragment extends LogListFragment<MedicineLogFragment
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        presenter = new MedicineLogsPresenter(this);
+        presenter = new MedicineLogListPresenter(this);
         View view = inflater.inflate(R.layout.fragment_medicine_logs, container, false);
         Button newDoseButton = view.findViewById(R.id.button_new_dose);
 

@@ -1,26 +1,30 @@
 package com.example.smartair.presenter;
 
 import com.example.smartair.R;
-import com.example.smartair.model.MedicineLogsModel;
+import com.example.smartair.model.Log;
+import com.example.smartair.model.MedicineLog;
+import com.example.smartair.model.MedicineLogListModel;
 import com.example.smartair.view.MedicineLogFragment;
 import com.example.smartair.view.MedicineLogListFragment;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-public class MedicineLogsPresenter {
+public class MedicineLogListPresenter implements LogListPresenter {
     MedicineLogListFragment view;
-    MedicineLogsModel model;
+    MedicineLogListModel model;
+    ArrayList<MedicineLog> logs;
 
-    public MedicineLogsPresenter(MedicineLogListFragment view) {
+    public MedicineLogListPresenter(MedicineLogListFragment view) {
         this.view = view;
     }
 
-    public void loadInventoryLogs() {
+    public void loadLogs() {
+        queryLogs();
         ArrayList<MedicineLogFragment> logs = new ArrayList<>();
         MedicineLogFragment log;
 
-        // TEMPORARY: REMOVE WHEN IMPLEMENTING MODEL
+        // TODO: IMPLEMENT MODEL
         {
             log = new MedicineLogFragment();
             log.setInfo("Rescue", "10", "puffs", (new Date(2024, 2, 20)).toString(), R.color.rescue_log_bg);
@@ -69,5 +73,9 @@ public class MedicineLogsPresenter {
         MedicineLogFragment[] arr = new MedicineLogFragment[14];
         logs.toArray(arr);
         view.setLogs(arr);
+    }
+
+    public void queryLogs() {
+        // TODO: IMPLEMENT MODEL
     }
 }

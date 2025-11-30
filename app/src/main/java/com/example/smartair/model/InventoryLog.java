@@ -1,4 +1,4 @@
 package com.example.smartair.model;
 
-public class DailyCheckInModel {
+public class InventoryLog extends Log{
 }

@@ -9,16 +9,13 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import com.example.smartair.R;
-import com.example.smartair.presenter.InventoryPresenter;
-
-import java.util.ArrayList;
+import com.example.smartair.presenter.InventoryLogListPresenter;
 
 public class InventoryLogListFragment extends LogListFragment<InventoryLogFragment> {
 
-    private InventoryPresenter presenter;
+    private InventoryLogListPresenter presenter;
     TextView remainingNum, remainingDenom, percentage, purchDate, expDate;
 
     public InventoryLogListFragment() {
@@ -29,7 +26,7 @@ public class InventoryLogListFragment extends LogListFragment<InventoryLogFragme
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        presenter = new InventoryPresenter(this);
+        presenter = new InventoryLogListPresenter(this);
         View view = inflater.inflate(R.layout.fragment_inventory, container, false);
 
         remainingNum = view.findViewById(R.id.text_view_remaining_numerator);
