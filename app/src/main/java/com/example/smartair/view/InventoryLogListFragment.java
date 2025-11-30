@@ -18,14 +18,10 @@ public class InventoryLogListFragment extends LogListFragment<InventoryLogFragme
     private InventoryLogListPresenter presenter;
     TextView remainingNum, remainingDenom, percentage, purchDate, expDate;
 
-    public InventoryLogListFragment() {
-        super();
-        linearLayoutLogsId = R.id.linear_layout_inventory;
-    }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        linearLayoutLogsId = R.id.linear_layout_inventory;
         presenter = new InventoryLogListPresenter(this);
         View view = inflater.inflate(R.layout.fragment_inventory, container, false);
 

@@ -19,4 +19,6 @@
     <color name="control_log_bg">#FFDDDD</color>
     <color name="inventory_log_parent_bg">#D2F4FF</color>
     <color name="inventory_log_child_bg">#CFFFE8</color>
+    <color name="completed_badge_bg">#658D97</color>
+    <color name="incomplete_badge_bg">#4A5B63</color>
 </resources>

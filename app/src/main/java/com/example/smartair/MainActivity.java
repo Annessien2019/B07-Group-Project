@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import com.example.smartair.view.FragmentListener;
+import com.example.smartair.view.MotivationLogListFragment;
 import com.example.smartair.view.SigninFragmentView;
 
 import com.example.smartair.view.DailyCheckInLogFragment;
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.main_fragment_container, new MedicineLogListFragment())
+                    .replace(R.id.main_fragment_container, new MotivationLogListFragment())
                     .commit();
         }
     }
