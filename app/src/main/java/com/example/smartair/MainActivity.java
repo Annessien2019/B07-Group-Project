@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.main_fragment_container, new DailyCheckInLogListFragment())
+                    .replace(R.id.main_fragment_container, new MedicineLogListFragment())
                     .commit();
         }
     }

@@ -13,69 +13,61 @@ import java.util.Date;
 public class MedicineLogListPresenter implements LogListPresenter {
     MedicineLogListFragment view;
     MedicineLogListModel model;
-    ArrayList<MedicineLog> logs;
+    ArrayList<MedicineLog> logData;
 
     public MedicineLogListPresenter(MedicineLogListFragment view) {
         this.view = view;
     }
 
-    public void loadLogs() {
-        queryLogs();
-        ArrayList<MedicineLogFragment> logs = new ArrayList<>();
-        MedicineLogFragment log;
+    public void queryLogs() {
+
+        logData = new ArrayList<>();
 
         // TODO: IMPLEMENT MODEL
-        {
-            log = new MedicineLogFragment();
-            log.setInfo("Rescue", "10", "puffs", (new Date(2024, 2, 20)).toString(), R.color.rescue_log_bg);
-            logs.add(log);
-            log = new MedicineLogFragment();
-            log.setInfo("Controller", "10", "measures", (new Date(2024, 2, 20)).toString(), R.color.control_log_bg);
-            logs.add(log);
-            log = new MedicineLogFragment();
-            log.setInfo("Controller", "10", "measure", (new Date(2024, 2, 20)).toString(), R.color.control_log_bg);
-            logs.add(log);
-            log = new MedicineLogFragment();
-            log.setInfo("Rescue", "10", "puffs", (new Date(2024, 2, 20)).toString(), R.color.rescue_log_bg);
-            logs.add(log);
-            log = new MedicineLogFragment();
-            log.setInfo("Controller", "10", "measures", (new Date(2024, 2, 20)).toString(), R.color.control_log_bg);
-            logs.add(log);
-            log = new MedicineLogFragment();
-            log.setInfo("Rescue", "10", "puffs", (new Date(2024, 2, 20)).toString(), R.color.rescue_log_bg);
-            logs.add(log);
-            log = new MedicineLogFragment();
-            log.setInfo("Controller", "10", "measures", (new Date(2024, 2, 20)).toString(), R.color.control_log_bg);
-            logs.add(log);
-            log = new MedicineLogFragment();
-            log.setInfo("Controller", "10", "measure", (new Date(2024, 2, 20)).toString(), R.color.control_log_bg);
-            logs.add(log);
-            log = new MedicineLogFragment();
-            log.setInfo("Rescue", "10", "puffs", (new Date(2024, 2, 20)).toString(), R.color.rescue_log_bg);
-            logs.add(log);
-            log = new MedicineLogFragment();
-            log.setInfo("Controller", "10", "measures", (new Date(2024, 2, 20)).toString(), R.color.control_log_bg);
-            logs.add(log);
-            log = new MedicineLogFragment();
-            log.setInfo("Controller", "10", "measures", (new Date(2024, 2, 20)).toString(), R.color.control_log_bg);
-            logs.add(log);
-            log = new MedicineLogFragment();
-            log.setInfo("Controller", "10", "measures", (new Date(2024, 2, 20)).toString(), R.color.control_log_bg);
-            logs.add(log);
-            log = new MedicineLogFragment();
-            log.setInfo("Controller", "10", "measures", (new Date(2024, 2, 20)).toString(), R.color.control_log_bg);
-            logs.add(log);
-            log = new MedicineLogFragment();
-            log.setInfo("Controller", "10", "measures", (new Date(2024, 2, 20)).toString(), R.color.control_log_bg);
-            logs.add(log);
+        logData.add(new MedicineLog("Rescue", 2, new Date(2024, 2, 20)));
+        logData.add(new MedicineLog("Control", 2, new Date(2024, 2, 20)));
+        logData.add(new MedicineLog("Rescue", 2, new Date(2024, 2, 20)));
+        logData.add(new MedicineLog("Control", 2, new Date(2024, 2, 20)));
+        logData.add(new MedicineLog("Rescue", 2, new Date(2024, 2, 20)));
+        logData.add(new MedicineLog("Control", 2, new Date(2024, 2, 20)));
+        logData.add(new MedicineLog("Rescue", 2, new Date(2024, 2, 20)));
+        logData.add(new MedicineLog("Control", 2, new Date(2024, 2, 20)));
+        logData.add(new MedicineLog("Rescue", 2, new Date(2024, 2, 20)));
+        logData.add(new MedicineLog("Control", 2, new Date(2024, 2, 20)));
+        logData.add(new MedicineLog("Rescue", 2, new Date(2024, 2, 20)));
+        logData.add(new MedicineLog("Control", 2, new Date(2024, 2, 20)));
+        logData.add(new MedicineLog("Rescue", 2, new Date(2024, 2, 20)));
+        logData.add(new MedicineLog("Control", 2, new Date(2024, 2, 20)));
+    }
+
+    public void loadLogs() {
+        queryLogs();
+        ArrayList<MedicineLogFragment> fragments = new ArrayList<>();
+        MedicineLogFragment fragment;
+        String medicineType = "", doseCount = "", unit = "", date = "";
+        int bgColorId = 0;
+
+        for (MedicineLog log : logData) {
+            fragment = new MedicineLogFragment();
+
+            if (log.getMedicineType().equals("Rescue")) {
+                medicineType = "Rescue";
+                doseCount = "" + (int)log.getDoseCount();
+                unit = "puffs";
+                bgColorId = R.color.rescue_log_bg;
+            } else if (log.getMedicineType().equals("Control")) {
+                medicineType = "Control";
+                doseCount = "" + log.getDoseCount();
+                unit = "measures";
+                bgColorId = R.color.control_log_bg;
+            }
+            date = log.getDate().toString();
+            fragment.setInfo(medicineType, doseCount, unit, date, bgColorId);
+            fragments.add(fragment);
         }
 
         MedicineLogFragment[] arr = new MedicineLogFragment[14];
-        logs.toArray(arr);
+        fragments.toArray(arr);
         view.setLogs(arr);
-    }
-
-    public void queryLogs() {
-        // TODO: IMPLEMENT MODEL
     }
 }

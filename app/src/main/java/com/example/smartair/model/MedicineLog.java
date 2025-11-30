@@ -1,12 +1,17 @@
 package com.example.smartair.model;
 
+
+import java.util.Date;
+
 public class MedicineLog extends Log {
     private String medicineType;
     private float doseCount;
+    private Date date;
 
-    public MedicineLog(String medicineType, float doseCount) {
+    public MedicineLog(String medicineType, float doseCount, Date date) {
         this.medicineType = medicineType;
         this.doseCount = doseCount;
+        this.date = date;
     }
 
     public String getMedicineType() {
@@ -15,5 +20,9 @@ public class MedicineLog extends Log {
 
     public float getDoseCount() {
         return doseCount;
+    }
+
+    public Date getDate() {
+        return date;
     }
 }

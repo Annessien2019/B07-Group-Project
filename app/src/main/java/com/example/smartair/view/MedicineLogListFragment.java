@@ -45,6 +45,6 @@ public class MedicineLogListFragment extends LogListFragment<MedicineLogFragment
     @Override
     public void onStart() {
         super.onStart();
-        presenter.loadInventoryLogs();
+        presenter.loadLogs();
     }
 }
