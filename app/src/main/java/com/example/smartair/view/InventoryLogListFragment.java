@@ -53,7 +53,7 @@ public class InventoryLogListFragment extends LogListFragment<InventoryLogFragme
     @Override
     public void onStart() {
         super.onStart();
-        presenter.loadInventoryLogs();
+        presenter.loadLogs();
     }
 
     public void setActiveCanister(String numerator,

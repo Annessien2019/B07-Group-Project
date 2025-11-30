@@ -42,7 +42,7 @@ public class DailyCheckInLogListFragment extends LogListFragment<DailyCheckInLog
     @Override
     public void onStart() {
         super.onStart();
-        presenter.loadCheckInLogs();
+        presenter.loadLogs();
     }
 
     public void setUpButtons(View view) {
