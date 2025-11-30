@@ -17,6 +17,6 @@
     <color name="primary_light_shade_2">#658D97</color>
     <color name="rescue_log_bg">#CBB9FF</color>
     <color name="control_log_bg">#FFDDDD</color>
-    <color name="inventory_log_parent_bg">#B4C6CA</color>
-    <color name="inventory_log_child_bg">#A9C0B6</color>
+    <color name="inventory_log_parent_bg">#D2F4FF</color>
+    <color name="inventory_log_child_bg">#CFFFE8</color>
 </resources>
