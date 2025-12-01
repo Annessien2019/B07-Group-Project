@@ -16,7 +16,7 @@ import com.example.smartair.R;
  * Use the {@link ChildrenLearnView#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ChildrenLearnView extends Fragment {
+public class ChildrenLearnView extends ViewFragment {
     ImageView learn_back_button;
 
 

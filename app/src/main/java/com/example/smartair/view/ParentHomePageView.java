@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import com.example.smartair.R;
 
 
-public class ParentHomePageView extends Fragment {
+public class ParentHomePageView extends ViewFragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

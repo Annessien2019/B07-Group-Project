@@ -17,7 +17,7 @@ import com.example.smartair.R;
  * Use the {@link ChildrenHomePageView#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ChildrenHomePageView extends Fragment {
+public class ChildrenHomePageView extends ViewFragment {
 
     Button logs;
     Button learn;

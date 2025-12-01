@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment;
 import com.example.smartair.R;
 import com.example.smartair.presenter.NewMedicineLogPresenter;
 
-public class NewMedicineLogView extends Fragment{
+public class NewMedicineLogView extends ViewFragment{
 
     private NewMedicineLogPresenter presenter;
 

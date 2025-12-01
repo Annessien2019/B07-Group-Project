@@ -7,8 +7,6 @@ import com.example.smartair.model.MedicineLog;
 import com.example.smartair.view.BadgeLogFragment;
 import com.example.smartair.view.MotivationLogListFragment;
 
-import org.checkerframework.checker.units.qual.A;
-
 import java.util.ArrayList;
 import java.util.Date;
 

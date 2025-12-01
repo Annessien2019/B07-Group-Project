@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment;
 import com.example.smartair.R;
 import com.example.smartair.presenter.DoseCheckPresenter;
 
-public class DoseCheckView extends Fragment {
+public class DoseCheckView extends ViewFragment {
 
     DoseCheckPresenter presenter;
     RadioGroup checkGroup;
@@ -30,7 +30,7 @@ public class DoseCheckView extends Fragment {
         View view = inflater.inflate(R.layout.fragment_pre_post_check, container, false);
 
         checkGroup = view.findViewById(R.id.radio_group_check);
-        breathRating = view.findViewById(R.id.rating_bar_breath);
+        breathRating = view.findViewById(R.id.rating_bar_breath_after);
         submitButton = view.findViewById(R.id.button_check_submit);
 
         submitButton.setOnClickListener(new View.OnClickListener() {

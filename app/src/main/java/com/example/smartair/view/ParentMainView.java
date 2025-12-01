@@ -15,7 +15,7 @@ import com.example.smartair.R;
 import com.example.smartair.presenter.ParentMainPresenter;
 
 
-public class ParentMainView extends Fragment {
+public class ParentMainView extends ViewFragment {
 
     private ParentMainPresenter presenter;
 
