@@ -15,36 +15,34 @@ import com.example.smartair.presenter.MedicineLogsPresenter;
 public class MedicineLogListFragment extends LogListFragment<MedicineLogFragment> {
 
     private MedicineLogsPresenter presenter;
+    private FragmentListener listener;
 
     public MedicineLogListFragment() {
         super();
         linearLayoutLogsId = R.id.linear_layout_medicine_logs;
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        presenter = new MedicineLogsPresenter(this);
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        presenter = new MedicineLogsPresenter(this);
+
+        listener = (FragmentListener) this.getActivity();
         View view = inflater.inflate(R.layout.fragment_medicine_logs, container, false);
         Button newDoseButton = view.findViewById(R.id.button_new_dose);
 
         newDoseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getParentFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.main_fragment_container, new NewMedicineLogView())
-                        .setReorderingAllowed(true)
-                        .addToBackStack(null)
-                        .commit();
+                listener.onTopFragmentAction(new NewMedicineLogView(), null, true);
             }
         });
         return view;
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        presenter.loadInventoryLogs();
-    }
 }

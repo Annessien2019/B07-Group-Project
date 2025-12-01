@@ -94,9 +94,13 @@ public class NewMedicineLogView extends Fragment{
     }
 
     public void displayNextFragment(Fragment fragment, Bundle bundle, boolean stackState){
-        fragmentListener.onFragmentAction(fragment, bundle, stackState);
+        fragmentListener.onTopFragmentAction(fragment, bundle, stackState);
     }
     public void makeToast(String to_display){
         Toast.makeText(getContext(), to_display, Toast.LENGTH_LONG).show();
+    }
+
+    public void destroyFragment() {
+        fragmentListener.clearFragment();
     }
 }

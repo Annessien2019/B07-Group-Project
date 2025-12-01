@@ -14,11 +14,12 @@ import androidx.fragment.app.Fragment;
 
 import com.example.smartair.R;
 
+import java.util.Date;
 import java.util.HashMap;
 
 public class MedicineLogFragment extends LogFragment {
 
-    String medicineType, doseCount, unit, date;
+    String medicineType, doseCount, date;
     int bgColorId;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -31,16 +32,14 @@ public class MedicineLogFragment extends LogFragment {
         View view = getView();
         ((TextView)view.findViewById(R.id.text_view_medicine_type)).setText(medicineType);
         ((TextView)view.findViewById(R.id.text_view_dose_count)).setText(doseCount);
-        ((TextView)view.findViewById(R.id.text_view_unit)).setText(unit);
         ((TextView)view.findViewById(R.id.text_view_medicine_log_date)).setText(date);
         view.setBackground(ResourcesCompat.getDrawable(getResources(), bgColorId, null));
     }
 
-    public void setInfo(String medicineType, String doseCount, String unit, String date, int bgColorId) {
+    public void setInfo(String medicineType, String doseCount, Date date, int bgColorId) {
         this.medicineType = medicineType;
         this.doseCount = doseCount;
-        this.unit = unit;
-        this.date = date;
+        this.date = String.valueOf(date);
         this.bgColorId = bgColorId;
     }
 }

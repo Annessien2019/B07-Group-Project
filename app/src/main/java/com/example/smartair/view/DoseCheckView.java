@@ -1,6 +1,7 @@
 package com.example.smartair.view;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,15 +25,17 @@ public class DoseCheckView extends Fragment {
     RatingBar breathRating;
     Button submitButton;
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_pre_post_check, container, false);
+        listener = (FragmentListener) this.getActivity();
         setAttributes(view);
         setListeners(view);
         return view;
     }
-    public DoseCheckView(NewMedicineLogPresenter presenter){
+    public void setPresenterCheckView(NewMedicineLogPresenter presenter){
         this.presenter = presenter;
     }
     private void setAttributes(View view){
@@ -70,10 +73,26 @@ public class DoseCheckView extends Fragment {
     }
 
     public void destroyFragment(){
+        Log.i("TEST", "made it till here");
         listener.clearFragment();
     }
 
     public void makeToast(String message, int length) {
         Toast.makeText(getContext(), message, length).show();
+    }
+
+
+
+// Inside NewMedicineLogPresenter (Java/Kotlin)
+
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        // 1. Tell the Presenter the View is being destroyed
+        if (presenter != null) {
+            presenter.detachView();
+        }
+
     }
 }
