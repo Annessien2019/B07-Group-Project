@@ -9,67 +9,88 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#1B3C53">
+        android:background="@color/primary_light"
+        android:padding="20dp">
 
         <ImageButton
             android:id="@+id/imageButton7"
-            android:layout_width="119dp"
-            android:layout_height="114dp"
-            tools:layout_editor_absoluteX="44dp"
-            tools:layout_editor_absoluteY="31dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton9"
             tools:src="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/textView5"
-            android:background="#456882"
-            android:layout_width="157dp"
-            android:layout_height="40dp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="@color/primary_dark"
+            android:padding="10dp"
+
+
             android:text="Additional Notes:"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@color/primary_light"
             android:textSize="16sp"
-
-
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="334dp" />
+            app:layout_constraintStart_toStartOf="@+id/textView9"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
         <TextView
             android:id="@+id/textView9"
-            android:layout_width="157dp"
-            android:background="#456882"
-            android:layout_height="40dp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="@color/primary_dark"
+            android:padding="10dp"
             android:text="Age:"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@color/primary_text_light"
             android:textSize="16sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="250dp" />
+            app:layout_constraintStart_toStartOf="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
         <TextView
             android:id="@+id/textView8"
-            android:layout_width="157dp"
-            android:background="#456882"
-            android:layout_height="40dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="@color/primary_dark"
+            android:padding="10dp"
             android:text="Noelle Paraz"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@color/primary_text_light"
             android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton7"
-            tools:layout_editor_absoluteX="16dp" />
+            app:layout_constraintStart_toStartOf="@+id/imageButton7"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton7" />
 
         <TextView
             android:id="@+id/textView6"
-            android:layout_width="331dp"
-            android:layout_height="313dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="@color/primary_dark"
             android:text=""
-            android:background="#234C6A"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
-            tools:layout_editor_absoluteX="27dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView5"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
         <ImageButton
             android:id="@+id/imageButton9"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:background="#456882"
-            android:src="@android:drawable/ic_menu_revert" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circle"
+            android:backgroundTint="@color/primary_dark"
+            android:padding="10dp"
+            android:src="@android:drawable/ic_menu_revert"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/button"
@@ -79,37 +100,46 @@
             android:backgroundTint="#501414"
             android:text="My Provider"
             android:visibility="visible"
-            app:strokeColor="#401B1B"
-            tools:layout_editor_absoluteX="260dp"
-            tools:layout_editor_absoluteY="16dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="#401B1B" />
 
         <ImageButton
             android:id="@+id/imageButton10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/circle"
+            android:backgroundTint="@color/primary_dark"
             android:src="@android:drawable/ic_menu_edit"
+            app:layout_constraintBottom_toTopOf="@+id/textView5"
             app:layout_constraintStart_toEndOf="@+id/textView9"
-            android:background="#456882"
-            tools:layout_editor_absoluteY="239dp" />
+            app:layout_constraintTop_toTopOf="@+id/textView9" />
 
         <ImageButton
             android:id="@+id/imageButton13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_edit"
-            app:layout_constraintStart_toEndOf="@+id/textView5"
-            android:background="#456882"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/circle"
+            android:backgroundTint="@color/primary_dark"
 
-            tools:layout_editor_absoluteY="323dp" />
+            android:src="@android:drawable/ic_menu_edit"
+            app:layout_constraintBottom_toBottomOf="@+id/textView5"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toTopOf="@+id/textView5" />
 
         <ImageButton
             android:id="@+id/imageButton12"
-            android:background="#456882"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/circle"
+            android:backgroundTint="@color/primary_dark"
             android:src="@android:drawable/ic_menu_edit"
+            app:layout_constraintBottom_toBottomOf="@+id/textView8"
             app:layout_constraintStart_toEndOf="@+id/textView8"
-            tools:layout_editor_absoluteY="145dp" />
+            app:layout_constraintTop_toTopOf="@+id/textView8" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
