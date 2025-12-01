@@ -8,7 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.example.smartair.presenter.ChildDirectoryToolbarPresenter;
 import com.example.smartair.view.ChildrenHomePageView;
+import com.example.smartair.view.DirectoryToolbarFragment;
 import com.example.smartair.view.FragmentListener;
 import com.example.smartair.view.MotivationLogListFragment;
 import com.example.smartair.view.SigninFragmentView;
@@ -36,7 +38,9 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         if (savedInstanceState == null) {
             ViewFragment view = new ChildrenHomePageView();
             onFragmentAction(view, null, false);
-            view.showDirectoryBar(true);
+            DirectoryToolbarFragment toolbar = new DirectoryToolbarFragment();
+            toolbar.setDirectoryToolbarPresenter(new ChildDirectoryToolbarPresenter(toolbar));
+            view.showDirectoryBar(toolbar);
         }
     }
     @Override
@@ -60,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
                 .commit();
     }
     @Override
-    public void clearFragment(){
+    public void removeFragment(){
         Fragment fragmentToRemove = manager.findFragmentById(R.id.main_fragment_container);
         if (fragmentToRemove != null) {
             manager.beginTransaction()

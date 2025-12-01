@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment;
 public interface FragmentListener{
     public void onFragmentAction(Fragment nextFragment, Bundle dataBundle, boolean stackState);
     public void showToast(String to_display);
-    public void clearFragment();
-
+    public void removeFragment();
     public void clearFragments();
 }
