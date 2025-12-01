@@ -31,10 +31,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.main_fragment_container, new MotivationLogListFragment())
-                    .commit();
+            onFragmentAction(new MotivationLogListFragment(), null, false);
         }
     }
     @Override
