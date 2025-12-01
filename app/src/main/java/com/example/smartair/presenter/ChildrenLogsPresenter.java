@@ -14,14 +14,14 @@ public class ChildrenLogsPresenter {
     }
 
     public void onMedicineButtonClicked() {
-        view.displayNextFragment(new MedicineLogListFragment(), null, false);
+        view.displayNextFragment(new MedicineLogListFragment(), null, true);
     }
 
     public void onDailyCheckInButtonClicked() {
-        view.displayNextFragment(new DailyCheckInLogListFragment(), null, false);
+        view.displayNextFragment(new DailyCheckInLogListFragment(), null, true);
     }
 
     public void onInventoryButtonClicked() {
-        view.displayNextFragment(new InventoryLogListFragment(), null, false);
+        view.displayNextFragment(new InventoryLogListFragment(), null, true);
     }
 }
