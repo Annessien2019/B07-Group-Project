@@ -9,6 +9,6 @@ public interface CallbackMedLogsFetch {
     void onInitialFetchSuccess(List<MedicalLogSingleton> MedicalLogs);
     void onFetchFailure(Exception e);
 
-    void onItemAdded();
+    void onItemAdded(MedicalLogSingleton newLog);
 
 }
