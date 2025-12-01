@@ -39,6 +39,10 @@ public class ViewFragment extends Fragment {
     public void removeCurrentFragment(){
         listener.clearFragment();
     }
+
+    public void clearFragments() {
+        listener.clearFragments();
+    }
     public void makeToast(String to_display){
         Toast.makeText(getContext(), to_display, Toast.LENGTH_LONG).show();
     }
