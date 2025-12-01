@@ -18,7 +18,7 @@
         app:srcCompat="@drawable/back_button" />
 
     <Button
-        android:id="@+id/children_logs_medicinelogs"
+        android:id="@+id/button_children_logs_medicinelogs"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:background="@drawable/button_rect"
@@ -34,22 +34,22 @@
         app:layout_constraintVertical_bias="0.2" />
 
     <Button
-        android:id="@+id/children_logs_prepost_checkin"
+        android:id="@+id/button_children_logs_daily_checkin"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:background="@drawable/button_rect"
         android:backgroundTint="@color/primary_dark"
         android:padding="20dp"
-        android:text="Pre and Post CheckIn"
+        android:text="Daily Check-Ins"
         android:textColor="@color/primary_text_light"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/children_logs_medicinelogs" />
+        app:layout_constraintTop_toBottomOf="@+id/button_children_logs_medicinelogs" />
 
     <Button
-        android:id="@+id/children_logs_inventory"
+        android:id="@+id/button_children_logs_inventory"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -61,6 +61,6 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/children_logs_prepost_checkin" />
+        app:layout_constraintTop_toBottomOf="@+id/button_children_logs_daily_checkin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
