@@ -37,18 +37,22 @@ public class ViewFragment extends Fragment {
     }
 
     public void removeCurrentFragment(){
-        listener.clearFragment();
+        listener.removeFragment();
+    }
+
+    public void clearFragments() {
+        listener.clearFragments();
     }
     public void makeToast(String to_display){
         Toast.makeText(getContext(), to_display, Toast.LENGTH_LONG).show();
     }
 
-    public void showDirectoryBar(boolean show) {
-        if (show) {
+    public void showDirectoryBar(DirectoryToolbarFragment toolbar) {
+        if (toolbar != null) {
             getParentFragmentManager().beginTransaction()
-                    .add(R.id.constaint_layout_directory_bar, new DirectoryToolbarFragment())
+                    .add(R.id.constaint_layout_directory_bar, toolbar)
                     .commit();
-        } else {
+        } else if (getChildFragmentManager().getFragments().size() > 0){
             getParentFragmentManager().beginTransaction()
                     .remove(getChildFragmentManager().getFragments().get(0))
                     .commit();
