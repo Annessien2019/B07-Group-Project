@@ -6,12 +6,37 @@
     android:layout_height="match_parent"
     android:background="@color/primary_light">
 
-    <View
+    <RatingBar
+        android:id="@+id/rating_bar_breath_after"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Please rate your breathing before the dose"
+        android:textAlignment="center"
+        android:textColor="@color/primary_text_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rating_bar_breath_after" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/view4"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="@drawable/rectangle"
-        android:backgroundTint="@color/primary_dark"></View>
+        android:backgroundTint="@color/primary_dark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -41,10 +66,11 @@
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Please rate your breathing"
+        android:text="Please rate your breathing after the dose"
+        android:textAlignment="center"
         android:textColor="@color/primary_text_dark"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -53,26 +79,25 @@
         app:layout_constraintTop_toBottomOf="@+id/radio_group_check" />
 
     <RatingBar
-        android:id="@+id/rating_bar_breath"
+        android:id="@+id/rating_bar_breath_before"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <Button
         android:id="@+id/button_check_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/rounded_corner"
         android:backgroundTint="@color/primary_dark"
         android:text="Submit"
         android:textColor="@color/primary_text_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rating_bar_breath" />
+        app:layout_constraintTop_toBottomOf="@+id/rating_bar_breath_before" />
 
 
     <RadioGroup
