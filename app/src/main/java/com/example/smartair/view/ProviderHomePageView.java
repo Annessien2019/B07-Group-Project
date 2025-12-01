@@ -15,7 +15,7 @@ import com.example.smartair.R;
  * Use the {@link ProviderHomePageView#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ProviderHomePageView extends Fragment {
+public class ProviderHomePageView extends ViewFragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

@@ -17,7 +17,7 @@ import com.example.smartair.R;
  * Use the {@link ChildrenMainView#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ChildrenMainView extends Fragment {
+public class ChildrenMainView extends ViewFragment {
 
     public ChildrenMainView() {
         // Required empty public constructor

@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LogListFragment<L extends LogFragment> extends Fragment {
+public class LogListFragment<L extends LogFragment> extends ViewFragment {
 
     int linearLayoutLogsId;
 

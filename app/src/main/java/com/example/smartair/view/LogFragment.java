@@ -3,7 +3,7 @@ package com.example.smartair.view;
 import androidx.fragment.app.Fragment;
 import java.util.HashMap;
 
-public abstract class LogFragment extends Fragment {
+public abstract class LogFragment extends ViewFragment {
 
     public abstract void displayInfo();
     @Override
