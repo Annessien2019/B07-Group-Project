@@ -78,20 +78,9 @@ public class ChildrenHomePageView extends ViewFragment {
 
 
 
-        logs.setOnClickListener(v ->openFragment(new ChildrenLogsView()));
-        learn.setOnClickListener(v -> openFragment(new ChildrenLearnView()));
+        logs.setOnClickListener(v -> listener.onFragmentAction(new ChildrenLogsView(), null, true));
+        learn.setOnClickListener(v -> listener.onFragmentAction(new ChildrenLearnView(), null, true));
         return view;
     }
 
-    private void openFragment(Fragment fragment) {
-
-        requireActivity().getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.main_fragment_container, fragment)
-                .addToBackStack(null)
-                .commit();
-
-
-    }
-
-    }
+}

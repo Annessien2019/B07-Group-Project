@@ -7,6 +7,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+
+import com.example.smartair.view.ChildrenHomePageView;
 import com.example.smartair.view.FragmentListener;
 import com.example.smartair.view.MotivationLogListFragment;
 import com.example.smartair.view.SigninFragmentView;
@@ -17,6 +19,7 @@ import com.example.smartair.view.DoseCheckView;
 import com.example.smartair.view.InventoryLogListFragment;
 import com.example.smartair.view.MedicineLogFragment;
 import com.example.smartair.view.MedicineLogListFragment;
+import com.example.smartair.view.ViewFragment;
 
 public class MainActivity extends AppCompatActivity implements FragmentListener {
 
@@ -31,7 +34,9 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
-            onFragmentAction(new MotivationLogListFragment(), null, false);
+            ViewFragment view = new ChildrenHomePageView();
+            onFragmentAction(view, null, false);
+            view.showDirectoryBar(true);
         }
     }
     @Override
