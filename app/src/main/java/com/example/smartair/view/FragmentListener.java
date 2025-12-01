@@ -8,4 +8,7 @@ public interface FragmentListener{
     public void onFragmentAction(Fragment nextFragment, Bundle dataBundle, boolean stackState);
     public void showToast(String to_display);
     public void clearFragment();
+
+    public void onTopFragmentAction(Fragment nextFragment, Bundle dataBundle, boolean stackState);
+
 }
