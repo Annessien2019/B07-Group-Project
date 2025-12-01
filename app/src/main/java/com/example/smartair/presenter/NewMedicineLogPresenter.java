@@ -32,7 +32,11 @@ public class NewMedicineLogPresenter{
 
         this.model.addnewData(Integer.parseInt(amount),type, userInfo.get("userRole"));
         newLogview.makeToast("Added a new log");
-        newLogview.displayNextFragment(new DoseCheckView(this), null, false);
+        // 1. Use the Factory Method to create the Fragment
+
+        this.surveyview = new DoseCheckView();
+        this.surveyview.setPresenterCheckView(this);
+        newLogview.displayNextFragment(surveyview, null, true);
     }
 
     public void submitCheck(int affect, float preBreathing, float postBreathing){
@@ -42,6 +46,11 @@ public class NewMedicineLogPresenter{
         }
         this.model.addNewSurvey(affect, preBreathing, postBreathing);
         this.surveyview.destroyFragment();
+        this.newLogview.destroyFragment();
+    }
+
+    public void detachView() {
+        this.surveyview = null; // CRITICAL: Nullify the reference
     }
 
 
