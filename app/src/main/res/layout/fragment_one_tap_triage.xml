@@ -8,176 +8,186 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/rectangle"
+        android:backgroundTint="@color/primary_light"
+        android:padding="20dp">
 
 
         <TextView
             android:id="@+id/textView22"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#1B3C53"
-            android:text="This is guidance, not a diagnosis. If in
- doubt, call emergency."
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
 
-            android:textColor="#FF0000"
-            android:textSize="25dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp" />
+            android:backgroundTint="#FA4242"
+            android:padding="10dp"
+            android:text="This is guidance, not a diagnosis. If in doubt, call emergency."
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView12"
-            android:layout_width="260dp"
-            android:layout_height="43dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:gravity="center"
             android:text="Current PEF [Optional]"
-            android:textColor="#D2C1B6"
+            android:textColor="@color/primary_text_dark"
             android:textSize="25sp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="141dp" />
+            app:layout_constraintTop_toBottomOf="@+id/textView22"
+            tools:layout_editor_absoluteX="0dp" />
 
         <TextView
             android:id="@+id/textView15"
-            android:layout_width="260dp"
-            android:layout_height="43dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:gravity="center"
             android:text="Chest Pain?"
-            android:textColor="#D2C1B6"
+            android:textColor="@color/primary_text_dark"
             android:textSize="25sp"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="212dp" />
+            app:layout_constraintTop_toBottomOf="@+id/textView12"
+            tools:layout_editor_absoluteX="1dp" />
 
         <TextView
             android:id="@+id/textView18"
-            android:layout_width="260dp"
-            android:layout_height="43dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:gravity="center"
             android:text="Chest movment?"
-            android:textColor="#D2C1B6"
+            android:textColor="@color/primary_text_dark"
             android:textSize="25sp"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="322dp" />
+            app:layout_constraintTop_toBottomOf="@+id/textView15"
+            tools:layout_editor_absoluteX="1dp" />
 
         <TextView
             android:id="@+id/textView19"
-            android:layout_width="260dp"
-            android:layout_height="43dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:gravity="center"
             android:text="Lips are blue or gray?"
-            android:textColor="#D2C1B6"
+            android:textColor="@color/primary_text_dark"
             android:textSize="25sp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="408dp" />
+            app:layout_constraintTop_toBottomOf="@+id/textView18"
+            tools:layout_editor_absoluteX="0dp" />
 
         <TextView
             android:id="@+id/textView20"
-            android:layout_width="260dp"
-            android:layout_height="43dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:gravity="center"
             android:text="Can't talk?"
-            android:textColor="#D2C1B6"
+            android:textColor="@color/primary_text_dark"
             android:textSize="25sp"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="511dp" />
+            app:layout_constraintTop_toBottomOf="@+id/textView19"
+            tools:layout_editor_absoluteX="1dp" />
 
         <TextView
             android:id="@+id/textView21"
-            android:layout_width="260dp"
-            android:layout_height="43dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:gravity="center"
             android:text="Nails look gray or blue?"
-            android:textColor="#D2C1B6"
+            android:textColor="@color/primary_text_dark"
             android:textSize="25sp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="583dp" />
+            app:layout_constraintTop_toBottomOf="@+id/textView20"
+            tools:layout_editor_absoluteX="0dp" />
 
         <TextView
             android:id="@+id/textView14"
-            android:layout_width="150dp"
-            android:layout_height="44dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:text="100"
-            android:textColor="#D2C1B6"
-            android:textSize="35sp"
-            tools:layout_editor_absoluteX="261dp"
-            tools:layout_editor_absoluteY="141dp" />
+            android:textColor="@color/primary_text_dark"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView12"
+            app:layout_constraintEnd_toEndOf="@+id/toggleButton"
+            app:layout_constraintStart_toStartOf="@+id/toggleButton" />
 
         <ToggleButton
             android:id="@+id/toggleButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#D7C931"
+            android:layout_height="30dp"
+            android:background="@color/primary_dark"
             android:text="ToggleButton"
+            android:textColor="@color/primary_text_light"
             android:textOff="No"
             android:textOn="Yes"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.548"
-            app:layout_constraintStart_toEndOf="@+id/textView15"
-            tools:layout_editor_absoluteY="212dp" />
+            app:layout_constraintBottom_toBottomOf="@+id/textView15"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <ToggleButton
             android:id="@+id/toggleButton2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#D7C931"
+            android:layout_height="30dp"
+            android:background="@color/primary_dark"
             android:text="ToggleButton"
+            android:textColor="@color/primary_text_light"
             android:textOff="No"
             android:textOn="Yes"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.548"
-            app:layout_constraintStart_toEndOf="@+id/textView18"
-            tools:layout_editor_absoluteY="317dp" />
+            app:layout_constraintBottom_toBottomOf="@+id/textView18"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <ToggleButton
             android:id="@+id/toggleButton3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#D7C931"
+            android:layout_height="30dp"
+            android:background="@color/primary_dark"
             android:text="ToggleButton"
+            android:textColor="@color/primary_text_light"
             android:textOff="No"
             android:textOn="Yes"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.548"
-            app:layout_constraintStart_toEndOf="@+id/textView18"
-            tools:layout_editor_absoluteY="403dp" />
+            app:layout_constraintBottom_toBottomOf="@+id/textView19"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <ToggleButton
             android:id="@+id/toggleButton4"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#D7C931"
+            android:layout_height="30dp"
+            android:background="@color/primary_dark"
             android:text="ToggleButton"
+            android:textColor="@color/primary_text_light"
             android:textOff="No"
             android:textOn="Yes"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.548"
-            app:layout_constraintStart_toEndOf="@+id/textView18"
-            tools:layout_editor_absoluteY="506dp" />
+            app:layout_constraintBottom_toBottomOf="@+id/textView20"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <ToggleButton
             android:id="@+id/toggleButton5"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#D7C931"
+            android:layout_height="30dp"
+            android:background="@color/primary_dark"
             android:text="ToggleButton"
+            android:textColor="@color/primary_text_light"
             android:textOff="No"
             android:textOn="Yes"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.548"
-            app:layout_constraintStart_toEndOf="@+id/textView18"
-            tools:layout_editor_absoluteY="578dp" />
+            app:layout_constraintBottom_toBottomOf="@+id/textView21"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="215dp"
-            android:layout_height="75dp"
-            android:layout_marginBottom="16dp"
-            android:background="#4CAF50"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:padding="20dp"
             android:text="Submit"
+            android:textColor="@color/primary_text_light"
+            android:textSize="20sp"
             app:backgroundTint="#429745"
             app:cornerRadius="30dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView22"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
         <Button
             android:id="@+id/button4"

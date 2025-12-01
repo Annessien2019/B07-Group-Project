@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/primary_light"
     tools:context=".view.ChildrenHomePageView">
 
     <ImageView
@@ -25,12 +26,14 @@
 
     <Button
         android:id="@+id/children_home_log_data"
-        android:layout_width="326dp"
-        android:layout_height="70dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/button_rect"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/primary_dark"
+        android:padding="20dp"
         android:text="Logs"
-        android:textColor="@color/white"
+        android:textColor="@color/primary_text_light"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.522"
@@ -40,12 +43,14 @@
 
     <Button
         android:id="@+id/children_home_learn"
-        android:layout_width="326dp"
-        android:layout_height="70dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/button_rect"
-        android:backgroundTint="#000009"
+        android:backgroundTint="@color/primary_dark"
+        android:padding="20dp"
         android:text="learn"
-        android:textColor="@color/white"
+        android:textColor="@color/primary_text_light"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.518"
@@ -57,26 +62,18 @@
         android:id="@+id/streak_icon"
         android:layout_width="55dp"
         android:layout_height="45dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginBottom="218dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.245"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toEndOf="@+id/profile_pic"
+        app:layout_constraintTop_toTopOf="@+id/profile_pic"
         app:srcCompat="@drawable/streak_icon" />
 
     <ImageView
         android:id="@+id/badge_icon"
         android:layout_width="55dp"
         android:layout_height="45dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.817"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.167"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_pic"
+        app:layout_constraintStart_toStartOf="@+id/streak_icon"
+        app:layout_constraintTop_toBottomOf="@+id/streak_icon"
         app:srcCompat="@drawable/badge_icon" />
 
     <TextView
@@ -84,24 +81,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/badge_icon"
-        app:layout_constraintHorizontal_bias="0.291"
+        app:layout_constraintBottom_toBottomOf="@+id/streak_icon"
         app:layout_constraintStart_toEndOf="@+id/streak_icon"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.185" />
+        app:layout_constraintTop_toTopOf="@+id/streak_icon" />
 
     <TextView
         android:id="@+id/badge_counter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="@+id/badge_icon"
         app:layout_constraintStart_toEndOf="@+id/badge_icon"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.185" />
+        app:layout_constraintTop_toTopOf="@+id/badge_icon" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
