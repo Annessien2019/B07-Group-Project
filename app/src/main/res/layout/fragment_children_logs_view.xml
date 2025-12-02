@@ -37,11 +37,11 @@
 
         <Button
             android:id="@+id/children_logs_back_button"
-            android:layout_width="65dp"
-            android:layout_height="45dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/back_button"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:background="@drawable/back_button" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/button_children_logs_medicinelogs"
