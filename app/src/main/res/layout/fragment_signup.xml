@@ -86,11 +86,11 @@
             android:layout_height="22dp"
             android:backgroundTint="#478699"
             android:spinnerMode="dropdown"
-            app:layout_constraintStart_toStartOf="@+id/textView4"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintStart_toStartOf="@+id/texti_view_pbz_pef"
+            app:layout_constraintTop_toBottomOf="@+id/texti_view_pbz_pef" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/texti_view_pbz_pef"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"

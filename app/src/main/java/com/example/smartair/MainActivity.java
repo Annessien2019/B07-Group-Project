@@ -16,6 +16,7 @@ import com.example.smartair.view.FragmentListener;
 import com.example.smartair.view.MotivationLogListFragment;
 import com.example.smartair.view.OneTapTriageFragment;
 import com.example.smartair.view.ParentHomePageView;
+import com.example.smartair.view.PersonalBestZonesFragment;
 import com.example.smartair.view.SigninFragmentView;
 
 import com.example.smartair.view.DailyCheckInLogFragment;
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
-            ViewFragment view = new OneTapTriageFragment();
+            ViewFragment view = new PersonalBestZonesFragment();
             onFragmentAction(view, null, false);
             DirectoryToolbarFragment toolbar = new DirectoryToolbarFragment();
             toolbar.setDirectoryToolbarPresenter(new ChildDirectoryToolbarPresenter(toolbar));
