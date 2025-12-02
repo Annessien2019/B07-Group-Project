@@ -8,9 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 
 import com.example.smartair.R;
+import com.example.smartair.presenter.ChildrenHomePagePresenter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,13 +18,6 @@ import com.example.smartair.R;
  * create an instance of this fragment.
  */
 public class ChildrenHomePageView extends ViewFragment {
-
-    Button logs;
-    Button learn;
-
-
-
-
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,9 +27,10 @@ public class ChildrenHomePageView extends ViewFragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    ChildrenHomePagePresenter presenter;
 
     public ChildrenHomePageView() {
-        // Required empty public constructor
+        presenter = new ChildrenHomePagePresenter(this);
     }
 
     /**
@@ -72,15 +66,17 @@ public class ChildrenHomePageView extends ViewFragment {
         // 1. Inflate the layout and assign it to a variable named 'view'
         View view = inflater.inflate(R.layout.fragment_children_home_page_view, container, false);
 
-        // 2. Now 'view' is defined, and this code is reachable
-        logs = view.findViewById(R.id.children_home_log_data);
-        learn = view.findViewById(R.id.children_home_learn);
+        setUpInputs(view);
 
-
-
-        logs.setOnClickListener(v -> listener.onFragmentAction(new ChildrenLogsView(), null, true));
-        learn.setOnClickListener(v -> listener.onFragmentAction(new ChildrenLearnView(), null, true));
         return view;
+    }
+
+    public void setUpInputs(View view) {
+        Button logsButton = view.findViewById(R.id.children_home_log_data);
+        Button learnButton = view.findViewById(R.id.children_home_learn);
+
+        logsButton.setOnClickListener(v-> presenter.onLogsButtonClicked());
+        learnButton.setOnClickListener(v-> presenter.onLearnButtonClicked());
     }
 
 }

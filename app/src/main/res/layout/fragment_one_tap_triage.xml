@@ -1,18 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".OneTapTriage">
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout_ott_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_dark"
+        android:padding="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="One Tap Triage"
+            android:textColor="@color/primary_text_light"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/rectangle"
-        android:backgroundTint="@color/primary_light"
-        android:padding="20dp">
-
+        android:layout_height="0dp"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraint_layout_ott_bar">
 
         <TextView
             android:id="@+id/textView22"
@@ -38,8 +56,8 @@
             android:text="Current PEF [Optional]"
             android:textColor="@color/primary_text_dark"
             android:textSize="25sp"
-            app:layout_constraintTop_toBottomOf="@+id/textView22"
-            tools:layout_editor_absoluteX="0dp" />
+            app:layout_constraintStart_toStartOf="@+id/textView22"
+            app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
         <TextView
             android:id="@+id/textView15"
@@ -50,8 +68,8 @@
             android:text="Chest Pain?"
             android:textColor="@color/primary_text_dark"
             android:textSize="25sp"
-            app:layout_constraintTop_toBottomOf="@+id/textView12"
-            tools:layout_editor_absoluteX="1dp" />
+            app:layout_constraintStart_toStartOf="@+id/textView12"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
         <TextView
             android:id="@+id/textView18"
@@ -62,8 +80,8 @@
             android:text="Chest movement?"
             android:textColor="@color/primary_text_dark"
             android:textSize="25sp"
-            app:layout_constraintTop_toBottomOf="@+id/textView15"
-            tools:layout_editor_absoluteX="1dp" />
+            app:layout_constraintStart_toStartOf="@+id/textView15"
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
         <TextView
             android:id="@+id/textView19"
@@ -74,8 +92,8 @@
             android:text="Lips are blue or gray?"
             android:textColor="@color/primary_text_dark"
             android:textSize="25sp"
-            app:layout_constraintTop_toBottomOf="@+id/textView18"
-            tools:layout_editor_absoluteX="0dp" />
+            app:layout_constraintStart_toStartOf="@+id/textView18"
+            app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
         <TextView
             android:id="@+id/textView20"
@@ -86,8 +104,8 @@
             android:text="Can't talk?"
             android:textColor="@color/primary_text_dark"
             android:textSize="25sp"
-            app:layout_constraintTop_toBottomOf="@+id/textView19"
-            tools:layout_editor_absoluteX="1dp" />
+            app:layout_constraintStart_toStartOf="@+id/textView19"
+            app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
         <TextView
             android:id="@+id/textView21"
@@ -98,8 +116,8 @@
             android:text="Nails look blue or gray?"
             android:textColor="@color/primary_text_dark"
             android:textSize="25sp"
-            app:layout_constraintTop_toBottomOf="@+id/textView20"
-            tools:layout_editor_absoluteX="0dp" />
+            app:layout_constraintStart_toStartOf="@+id/textView20"
+            app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
         <EditText
             android:id="@+id/edit_text_ott_pef"
@@ -202,9 +220,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent" />
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

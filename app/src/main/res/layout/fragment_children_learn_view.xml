@@ -8,14 +8,26 @@
     tools:context=".view.ChildrenHomePageView">
 
 
-    <View
-        android:id="@+id/view_daily_check_in_bar2"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout_children_learn_bar"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
         android:background="@drawable/rectangle"
         android:backgroundTint="@color/primary_dark"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></View>
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Learn"
+            android:textColor="@color/primary_text_light"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -23,11 +35,11 @@
         android:background="@color/primary_light"
         android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_daily_check_in_bar2"
+        app:layout_constraintTop_toBottomOf="@+id/constraint_layout_children_learn_bar"
         tools:layout_editor_absoluteX="1dp">
 
         <Button
-            android:id="@+id/children_learn_technique_helper"
+            android:id="@+id/button_children_learn_technique_helper"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_rect"
@@ -43,7 +55,7 @@
             app:layout_constraintVertical_bias="0.16000003" />
 
         <Button
-            android:id="@+id/children_learn_glossary"
+            android:id="@+id/button_children_learn_glossary"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -55,16 +67,15 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/children_learn_technique_helper" />
+            app:layout_constraintTop_toBottomOf="@+id/button_children_learn_technique_helper" />
 
-        <ImageView
-            android:id="@+id/learn_back_button"
+        <Button
+            android:id="@+id/button_children_learn_back_button"
             android:layout_width="65dp"
             android:layout_height="45dp"
-            android:background="@drawable/circle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/back_button" />
+            android:background="@drawable/back_button" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

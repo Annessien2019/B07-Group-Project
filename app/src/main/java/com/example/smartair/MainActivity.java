@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
-            ViewFragment view = new PersonalBestZonesFragment();
+            ViewFragment view = new ChildrenHomePageView();
             onFragmentAction(view, null, false);
             DirectoryToolbarFragment toolbar = new DirectoryToolbarFragment();
             toolbar.setDirectoryToolbarPresenter(new ChildDirectoryToolbarPresenter(toolbar));
@@ -69,12 +69,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     }
     @Override
     public void removeFragment(){
-        Fragment fragmentToRemove = manager.findFragmentById(R.id.main_fragment_container);
-        if (fragmentToRemove != null) {
-            manager.beginTransaction()
-                    .remove(fragmentToRemove)
-                    .commit();
-        }
+        manager.popBackStack();
     }
 
     public void clearFragments() {
