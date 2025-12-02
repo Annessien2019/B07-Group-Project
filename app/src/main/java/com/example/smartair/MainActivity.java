@@ -9,9 +9,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.example.smartair.presenter.ChildDirectoryToolbarPresenter;
+import com.example.smartair.view.ChildrenHomePageView;
 import com.example.smartair.view.DirectoryToolbarFragment;
 import com.example.smartair.view.FragmentListener;
 import com.example.smartair.view.InventoryFragment;
+import com.example.smartair.view.ParentHomePageView;
 import com.example.smartair.view.PersonalBestZonesFragment;
 
 import com.example.smartair.view.ViewFragment;
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
-            ViewFragment view = new InventoryFragment();
+            ViewFragment view = new ChildrenHomePageView();
             onFragmentAction(view, null, false);
             DirectoryToolbarFragment toolbar = new DirectoryToolbarFragment();
             toolbar.setDirectoryToolbarPresenter(new ChildDirectoryToolbarPresenter(toolbar));
@@ -58,12 +60,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     }
     @Override
     public void removeFragment(){
-        Fragment fragmentToRemove = manager.findFragmentById(R.id.main_fragment_container);
-        if (fragmentToRemove != null) {
-            manager.beginTransaction()
-                    .remove(fragmentToRemove)
-                    .commit();
-        }
+        manager.popBackStack();
     }
 
     public void clearFragments() {

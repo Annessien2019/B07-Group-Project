@@ -7,9 +7,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.smartair.R;
+import com.example.smartair.presenter.ChildrenLearnPresenter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,9 +19,6 @@ import com.example.smartair.R;
  * create an instance of this fragment.
  */
 public class ChildrenLearnView extends ViewFragment {
-    ImageView learn_back_button;
-
-
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -29,8 +28,10 @@ public class ChildrenLearnView extends ViewFragment {
     private String mParam1;
     private String mParam2;
 
+    ChildrenLearnPresenter presenter;
+
     public ChildrenLearnView() {
-        // Required empty public constructor
+        presenter = new ChildrenLearnPresenter(this);
     }
 
     /**
@@ -67,24 +68,17 @@ public class ChildrenLearnView extends ViewFragment {
 
 
         View view = inflater.inflate(R.layout.fragment_children_learn_view, container, false);
-
-        // 2. Now 'view' is defined, and this code is reachable
-
-        learn_back_button = view.findViewById(R.id.learn_back_button);
-
-        learn_back_button.setOnClickListener(v ->openFragment(new ChildrenHomePageView()));
-
+        setUpInputs(view);
         return view;
     }
 
-    private void openFragment(Fragment fragment) {
+    public void setUpInputs(View view) {
+        Button backButton = view.findViewById(R.id.button_children_learn_back_button);
+        Button techniqueHelper = view.findViewById(R.id.button_children_learn_technique_helper);
+        Button glossaryButton = view.findViewById(R.id.button_children_learn_glossary);
 
-        requireActivity().getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.main_fragment_container, fragment)
-                .addToBackStack(null)
-                .commit();
-
-
+        backButton.setOnClickListener(v -> presenter.backButtonClicked());
+        techniqueHelper.setOnClickListener(v -> presenter.techniqueHelpereButtonClicked());
+        glossaryButton.setOnClickListener(v -> presenter.glossaryButtonClicked());
     }
 }

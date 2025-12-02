@@ -13,6 +13,10 @@ public class ChildrenLogsPresenter {
         this.view = view;
     }
 
+    public void onBackButtonClicked() {
+        view.removeCurrentFragment();
+    }
+
     public void onMedicineButtonClicked() {
         view.displayNextFragment(new MedicineLogListFragment(), null, true);
     }
