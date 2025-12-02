@@ -74,9 +74,11 @@ public class ChildrenHomePageView extends ViewFragment {
     public void setUpInputs(View view) {
         Button logsButton = view.findViewById(R.id.children_home_log_data);
         Button learnButton = view.findViewById(R.id.children_home_learn);
+        Button motivationButton = view.findViewById(R.id.children_home_motivation);
 
-        logsButton.setOnClickListener(v-> presenter.onLogsButtonClicked());
-        learnButton.setOnClickListener(v-> presenter.onLearnButtonClicked());
+        logsButton.setOnClickListener(v-> presenter.logsButtonClicked());
+        learnButton.setOnClickListener(v-> presenter.learnButtonClicked());
+        motivationButton.setOnClickListener(v -> presenter.motivationButtonClicked());
     }
 
 }
