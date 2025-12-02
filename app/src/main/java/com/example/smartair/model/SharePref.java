@@ -1,6 +1,4 @@
-package com.example.smartair.presenter;
-
-import com.example.smartair.R;
+package com.example.smartair.model;
 
 public class SharePref {
 
@@ -10,7 +8,7 @@ public class SharePref {
     private boolean rapidRescueSwitch;
     private boolean pbSwitch;
     private boolean triggersSwitch;
-    private boolean doseCountsSwitch;
+    private boolean doseCountSwitch;
     private boolean lowRescueSwitch;
 
     /**
@@ -24,13 +22,13 @@ public class SharePref {
     /**
      * Parameterized constructor for easily creating a SharePref object with all values set.
      */
-    public SharePref(boolean controllerMedicine, boolean pefSwitch, boolean rapidRescueSwitch, boolean pbSwitch, boolean triggersSwitch, boolean doseCountsSwitch, boolean lowRescueSwitch) {
+    public SharePref(boolean controllerMedicine, boolean pefSwitch, boolean rapidRescueSwitch, boolean pbSwitch, boolean triggersSwitch, boolean doseCountSwitch, boolean lowRescueSwitch) {
         this.controllerMedicine = controllerMedicine;
         this.pefSwitch = pefSwitch;
         this.rapidRescueSwitch = rapidRescueSwitch;
         this.pbSwitch = pbSwitch;
         this.triggersSwitch = triggersSwitch;
-        this.doseCountsSwitch = doseCountsSwitch;
+        this.doseCountSwitch = doseCountSwitch;
         this.lowRescueSwitch = lowRescueSwitch;
     }
 
@@ -56,8 +54,8 @@ public class SharePref {
         return triggersSwitch;
     }
 
-    public boolean isDoseCountsSwitch() {
-        return doseCountsSwitch;
+    public boolean isDoseCountSwitch() {
+        return doseCountSwitch;
     }
 
     public boolean isLowRescueSwitch() {
@@ -86,8 +84,8 @@ public class SharePref {
         this.triggersSwitch = triggersSwitch;
     }
 
-    public void setDoseCountsSwitch(boolean doseCountsSwitch) {
-        this.doseCountsSwitch = doseCountsSwitch;
+    public void setDoseCountSwitch(boolean doseCountSwitch) {
+        this.doseCountSwitch = doseCountSwitch;
     }
 
     public void setLowRescueSwitch(boolean lowRescueSwitch) {
