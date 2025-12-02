@@ -15,7 +15,7 @@ import androidx.fragment.app.Fragment;
 import com.example.smartair.R;
 import com.example.smartair.presenter.RecoveryPresenter;
 
-public class RecoveryView extends Fragment {
+public class RecoveryView extends ViewFragment {
 
     private RecoveryPresenter presenter;
     private FragmentListener listener;

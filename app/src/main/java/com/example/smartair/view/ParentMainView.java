@@ -4,18 +4,16 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import com.example.smartair.R;
 import com.example.smartair.presenter.ParentMainPresenter;
 
 
-public class ParentMainView extends Fragment {
+public class ParentMainView extends ViewFragment {
 
     private ParentMainPresenter presenter;
 
@@ -30,7 +28,7 @@ public class ParentMainView extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_parent_main_view, container, false);
+        return inflater.inflate(R.layout.fragment_directory_bar, container, false);
     }
 
     @Override

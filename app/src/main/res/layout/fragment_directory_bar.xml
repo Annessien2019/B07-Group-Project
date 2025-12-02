@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    tools:context=".view.ParentMainView">
+
+
+    <Button
+        android:id="@+id/button_home_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="64dp"
+        android:background="@drawable/home_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/button_notification_icon"
+        app:layout_constraintEnd_toStartOf="@+id/button_notification_icon" />
+
+    <Button
+        android:id="@+id/button_notification_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/notification_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_profile_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="64dp"
+        android:background="@drawable/profile_pic_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/button_notification_icon"
+        app:layout_constraintStart_toEndOf="@+id/button_notification_icon" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

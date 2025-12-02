@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment;
 import com.example.smartair.R;
 import com.example.smartair.presenter.NewMedicineLogPresenter;
 
-public class NewMedicineLogView extends Fragment{
+public class NewMedicineLogView extends ViewFragment{
 
     private NewMedicineLogPresenter presenter;
 
@@ -24,7 +24,7 @@ public class NewMedicineLogView extends Fragment{
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         presenter = new NewMedicineLogPresenter(this);
-        View view = inflater.inflate(R.layout.fragment_new_medicine_log, container, false);
+        View view = inflater.inflate(R.layout.fragment_new_dose_log, container, false);
 
         Button addNewLogButton = view.findViewById(R.id.button_add_log);
         Spinner medicineType = view.findViewById(R.id.spinner_medicine_type);

@@ -17,7 +17,7 @@ import com.example.smartair.R;
  * Use the {@link ChildrenHomePageView#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ChildrenHomePageView extends Fragment {
+public class ChildrenHomePageView extends ViewFragment {
 
     Button logs;
     Button learn;
@@ -78,20 +78,9 @@ public class ChildrenHomePageView extends Fragment {
 
 
 
-        logs.setOnClickListener(v ->openFragment(new ChildrenLogsView()));
-        learn.setOnClickListener(v -> openFragment(new ChildrenLearnView()));
+        logs.setOnClickListener(v -> listener.onFragmentAction(new ChildrenLogsView(), null, true));
+        learn.setOnClickListener(v -> listener.onFragmentAction(new ChildrenLearnView(), null, true));
         return view;
     }
 
-    private void openFragment(Fragment fragment) {
-
-        requireActivity().getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.main_fragment_container, fragment)
-                .addToBackStack(null)
-                .commit();
-
-
-    }
-
-    }
+}

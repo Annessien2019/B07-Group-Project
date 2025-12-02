@@ -18,7 +18,7 @@ import androidx.fragment.app.Fragment;
 import com.example.smartair.R;
 import com.example.smartair.presenter.SignupPresenter;
 
-public class SignupFragmentView extends Fragment {
+public class SignupFragmentView extends ViewFragment {
 
     private SignupPresenter presenter;
     private EditText email, password;
@@ -81,9 +81,6 @@ public class SignupFragmentView extends Fragment {
                     .replace(R.id.main_fragment_container, new SigninFragmentView())
                     .commit();
         });
-    }
-    public void makeToast(String to_display){
-        Toast.makeText(getContext(), to_display , Toast.LENGTH_SHORT).show();
     }
 
 }
