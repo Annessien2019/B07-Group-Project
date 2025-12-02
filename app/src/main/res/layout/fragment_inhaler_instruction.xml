@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InhalerInstruction">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#456882"
+        android:backgroundTint="#456882">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="134dp"
+            android:layout_height="182dp"
+            android:src="@drawable/r"
+            tools:layout_editor_absoluteX="14dp"
+            tools:layout_editor_absoluteY="-2dp" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="236dp"
+            android:layout_height="91dp"
+            android:
+            android:gravity="center"
+            android:text="How to use my Inhaler?"
+            android:textColor="#D2C1B6"
+            android:textSize="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.333"
+            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            tools:layout_editor_absoluteY="7dp" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="343dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="112dp"
+            android:text="1. Remove the cap."
+            android:textColor="#D2C1B6"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="343dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="192dp"
+            android:text="2. Shake the inhaler. "
+            android:textColor="#D2C1B6"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="343dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="260dp"
+            android:text="3. Take a deep breath, in and out. "
+            android:textColor="#D2C1B6"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="343dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="340dp"
+            android:text="4.Put your chin up, then seal the mouthpiece around your lips. "
+            android:textColor="#D2C1B6"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="343dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="416dp"
+            android:text="5.Breath in, then press the inhaler. "
+            android:textColor="#D2C1B6"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="343dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="500dp"
+            android:text="6.Hold your breath for 10 seconds then release. "
+            android:textColor="#D2C1B6"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
