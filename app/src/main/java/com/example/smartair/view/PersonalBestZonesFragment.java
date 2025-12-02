@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -39,8 +40,11 @@ public class PersonalBestZonesFragment extends ViewFragment {
     }
 
     public void setUpInputs(View view) {
-        ImageButton ottButton = view.findViewById(R.id.button_one_tap_triage_enter);
-        ottButton.setOnClickListener(v->presenter.OneTapTriageEnterButtonClicked());
+        Button ottButton = view.findViewById(R.id.button_one_tap_triage_enter);
+        ottButton.setOnLongClickListener(v -> {
+            presenter.OneTapTriageEnterButtonClicked();
+            return true;
+        });
     }
 
     public void setPersonalBest(String personalBest) {
@@ -54,11 +58,18 @@ public class PersonalBestZonesFragment extends ViewFragment {
     }
 
     public void setZone(ZONE zone) {
-        int zoneImageId;
-
-        zoneImageId = (zone == ZONE.GREEN) ? R.drawable.better
-                        : (zone == ZONE.YELLOW) ? R.drawable.same
-                            : R.drawable.worse;
-        getView().findViewById(R.id.image_view_zone).setBackground(getResources().getDrawable(zoneImageId, null));
+        int zoneImageId, bgColorId;
+        if (zone == ZONE.GREEN) {
+            zoneImageId = R.drawable.better;
+            bgColorId = R.drawable.green_zone;
+        } else if (zone == ZONE.YELLOW) {
+            zoneImageId = R.drawable.same;
+            bgColorId = R.drawable.yellow_zone;
+        } else {
+            zoneImageId = R.drawable.worse;
+            bgColorId = R.drawable.red_zone;
+        }
+         getView().findViewById(R.id.image_view_zone).setBackground(getResources().getDrawable(zoneImageId, null));
+         getView().findViewById(R.id.constraint_layout_pbz).setBackground(getResources().getDrawable(bgColorId, null));
     }
 }
