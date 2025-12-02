@@ -1,5 +1,8 @@
 package com.example.smartair;
 
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+
 import com.example.smartair.presenter.SigninPresenter;
 import com.example.smartair.view.SigninFragmentView;
 

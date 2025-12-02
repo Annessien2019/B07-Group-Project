@@ -21,18 +21,18 @@ public class SignInPresentTest {
     @Test
     public void emptySignIn(){
         presenterSign.onSignInClick("", "");
-        verify(view).showError("Please fill the fields");
+        verify(view).makeToast("Please fill the fields");
     }
 
     @Test
     public void invalidSignUpOneEmpty(){
         presenterSign.onSignInClick("youngSheldon@gmail.com", "");
-        verify(view).showError("Please fill all the fields");
+        verify(view).makeToast("Please fill the fields");
     }
 
     @Test
     public void invalidSignUpOneOtherEmpty(){
         presenterSign.onSignInClick("", "bazinga");
-        verify(view).makeToast("Please fill all the fields");
+        verify(view).makeToast("Please fill the fields");
     }
 }
