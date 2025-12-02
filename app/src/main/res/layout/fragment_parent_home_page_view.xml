@@ -44,7 +44,7 @@
 
 
         <Button
-            android:id="@+id/parent_home_manage_children"
+            android:id="@+id/button_parent_home_manage_children"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -61,7 +61,7 @@
 
 
         <Button
-            android:id="@+id/parent_home_inventory"
+            android:id="@+id/button_parent_home_inventory"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -74,23 +74,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.529"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/parent_home_dashboards" />
+            app:layout_constraintTop_toBottomOf="@+id/button_parent_home_manage_children" />
 
-        <Button
-            android:id="@+id/parent_home_dashboards"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/button_rect"
-            android:backgroundTint="@color/primary_dark"
-            android:padding="20dp"
-            android:text="Dashboards"
-            android:textColor="@color/primary_text_light"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.518"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/parent_home_manage_children" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

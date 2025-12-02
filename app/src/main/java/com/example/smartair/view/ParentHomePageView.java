@@ -5,10 +5,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
 import com.example.smartair.R;
+import com.example.smartair.presenter.ParentHomePagePresenter;
 
 
 public class ParentHomePageView extends ViewFragment {
+
+    ParentHomePagePresenter presenter;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,10 +42,6 @@ public class ParentHomePageView extends ViewFragment {
         return fragment;
     }
 
-    public ParentHomePageView() {
-        // Required empty public constructor
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,9 +52,17 @@ public class ParentHomePageView extends ViewFragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_parent_home_page_view, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        presenter = new ParentHomePagePresenter(this);
+        View view = inflater.inflate(R.layout.fragment_parent_home_page_view, container, false);
+        setUpInputs(view);
+        return view;
+    }
+
+    public void setUpInputs(View view) {
+        Button manageChildrenButton = view.findViewById(R.id.button_parent_home_manage_children);
+        Button inventoryButton = view.findViewById(R.id.button_parent_home_inventory);
+        manageChildrenButton.setOnClickListener(v -> presenter.manageChildrenButtonClicked());
+        inventoryButton.setOnClickListener(v -> presenter.inventoryButtonClicked());
     }
 }

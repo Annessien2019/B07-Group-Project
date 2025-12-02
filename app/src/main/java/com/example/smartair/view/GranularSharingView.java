@@ -28,7 +28,8 @@ public class GranularSharingView extends Fragment {
     private SwitchCompat doseCountsSwitch;
     private SwitchCompat rapidRescueSwitch;
     private SwitchCompat lowRescueSwitch;
-    private SwitchCompat controllerMedicine;
+    private SwitchCompat controllerSwitch;
+    private TextView controllerMedicine;
 
     private TextView titleTextView; // For completeness
 
@@ -36,7 +37,7 @@ public class GranularSharingView extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle args = getArguments();
-        presenter = new GranularSharingPresenter(args.get("userID"));
+//        presenter = new GranularSharingPresenter(args.get("userID"));
 
     }
 
