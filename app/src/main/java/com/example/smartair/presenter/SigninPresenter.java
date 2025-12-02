@@ -35,7 +35,7 @@ public class SigninPresenter implements CallbackAuth, CallbackReadDB{
         this.view.displayNextFragment(new RecoveryView(), bundleData, true);
     }
     public void onSignUpClick(){
-         this.view.displayNextFragment(new SignupFragmentView(), null, true);
+        this.view.displayNextFragment(new SignupFragmentView(), null, true);
     }
     @Override
     public void onAuthSuccess(FirebaseUser user){
