@@ -18,18 +18,22 @@ public class ChildrenLogsView extends ViewFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         presenter = new ChildrenLogsPresenter(this);
         View view = inflater.inflate(R.layout.fragment_children_logs_view, container, false);
+        setUpInputs(view);
+        return view;
+    }
 
+    public void setUpInputs(View view) {
+        Button backButton = view.findViewById(R.id.children_logs_back_button);
         Button medicineLogsButton = view.findViewById(R.id.button_children_logs_medicinelogs);
         Button dailyCheckInButton = view.findViewById(R.id.button_children_logs_daily_checkin);
         Button inventoryButton = view.findViewById(R.id.button_children_logs_inventory);
 
+        backButton.setOnClickListener(v -> presenter.onBackButtonClicked());
         medicineLogsButton.setOnClickListener( v -> presenter.onMedicineButtonClicked());
         dailyCheckInButton.setOnClickListener( v -> presenter.onDailyCheckInButtonClicked());
         inventoryButton.setOnClickListener( v -> presenter.onInventoryButtonClicked());
 
-        return view;
+
     }
-
-
 
 }

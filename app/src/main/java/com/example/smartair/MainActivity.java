@@ -58,12 +58,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     }
     @Override
     public void removeFragment(){
-        Fragment fragmentToRemove = manager.findFragmentById(R.id.main_fragment_container);
-        if (fragmentToRemove != null) {
-            manager.beginTransaction()
-                    .remove(fragmentToRemove)
-                    .commit();
-        }
+        manager.popBackStack();
     }
 
     public void clearFragments() {
