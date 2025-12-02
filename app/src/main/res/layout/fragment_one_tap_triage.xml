@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:gravity="center"
-            android:text="Chest movment?"
+            android:text="Chest movement?"
             android:textColor="@color/primary_text_dark"
             android:textSize="25sp"
             app:layout_constraintTop_toBottomOf="@+id/textView15"
@@ -95,14 +95,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:gravity="center"
-            android:text="Nails look gray or blue?"
+            android:text="Nails look blue or gray?"
             android:textColor="@color/primary_text_dark"
             android:textSize="25sp"
             app:layout_constraintTop_toBottomOf="@+id/textView20"
             tools:layout_editor_absoluteX="0dp" />
 
-        <TextView
-            android:id="@+id/textView14"
+        <EditText
+            android:id="@+id/edit_text_ott_pef"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -111,11 +111,11 @@
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/textView12"
-            app:layout_constraintEnd_toEndOf="@+id/toggleButton"
-            app:layout_constraintStart_toStartOf="@+id/toggleButton" />
+            app:layout_constraintEnd_toEndOf="@+id/toggle_button_chest_pain"
+            app:layout_constraintStart_toStartOf="@+id/toggle_button_chest_pain" />
 
         <ToggleButton
-            android:id="@+id/toggleButton"
+            android:id="@+id/toggle_button_chest_pain"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:background="@color/primary_dark"
@@ -127,7 +127,7 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <ToggleButton
-            android:id="@+id/toggleButton2"
+            android:id="@+id/toggle_button_chest_movement"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:background="@color/primary_dark"
@@ -139,7 +139,7 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <ToggleButton
-            android:id="@+id/toggleButton3"
+            android:id="@+id/toggle_button_lips"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:background="@color/primary_dark"
@@ -151,7 +151,7 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <ToggleButton
-            android:id="@+id/toggleButton4"
+            android:id="@+id/toggle_button_cant_talk"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:background="@color/primary_dark"
@@ -163,7 +163,7 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <ToggleButton
-            android:id="@+id/toggleButton5"
+            android:id="@+id/toggle_button_nails"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:background="@color/primary_dark"
@@ -175,7 +175,7 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/button_ott_submit"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
