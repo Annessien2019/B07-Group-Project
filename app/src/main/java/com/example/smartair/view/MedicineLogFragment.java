@@ -17,23 +17,16 @@ import com.example.smartair.R;
 import java.util.Date;
 import java.util.HashMap;
 
-public class MedicineLogFragment extends LogFragment {
+public class MedicineLogFragment extends Fragment {
 
     String medicineType, doseCount, date;
     int bgColorId;
 
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_medicine_single_log, container, false);
-        return view;
-    }
-
     @Override
-    public void displayInfo() {
-        View view = getView();
-        ((TextView)view.findViewById(R.id.text_view_medicine_type)).setText(medicineType);
-        ((TextView)view.findViewById(R.id.text_view_dose_count)).setText(doseCount);
-        ((TextView)view.findViewById(R.id.text_view_medicine_log_date)).setText(date);
-        view.setBackground(ResourcesCompat.getDrawable(getResources(), bgColorId, null));
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_medicine_single_log, container, false);
     }
 
     public void setInfo(String medicineType, String doseCount, Date date, int bgColorId) {
@@ -41,5 +34,20 @@ public class MedicineLogFragment extends LogFragment {
         this.doseCount = doseCount;
         this.date = String.valueOf(date);
         this.bgColorId = bgColorId;
+    }
+
+    public void bindToView(View view) {
+        ((TextView)view.findViewById(R.id.text_view_medicine_type))
+                .setText(medicineType);
+
+        ((TextView)view.findViewById(R.id.text_view_dose_count))
+                .setText(doseCount);
+
+        ((TextView)view.findViewById(R.id.text_view_medicine_log_date))
+                .setText(date);
+
+        view.setBackground(
+                ResourcesCompat.getDrawable(view.getResources(), bgColorId, null)
+        );
     }
 }

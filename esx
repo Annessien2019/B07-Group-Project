@@ -1,0 +1,58 @@
+[33m0d1e686[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge pull request #16 from Annessien2019/feat/scrum-51/connect-backend
+[33m67fe5db[m[33m ([m[1;31morigin/feat/scrum-51/connect-backend[m[33m, [m[1;32mfeat/scrum-51/connect-backend[m[33m)[m Create new user in dB
+[33md995099[m Extract userID and role from dB to Presenter
+[33m218c493[m Refactored Sign In/Out Views
+[33m054c881[m Updated Callback Interfaces
+[33m8ee8a22[m Merge pull request #15 from Annessien2019/fix/no-ref/dose-check-MVP-refactor
+[33me2b6094[m fix: Fixed MVP alignment in Dose Check and added label to mood selection
+[33m693c321[m Merge pull request #14 from Annessien2019/feature/scrum-50/pre-post-check
+[33m61d1645[m Merge branch 'main' into feature/scrum-50/pre-post-check
+[33m97c5505[m fix: Selecting a radio button now highlights the selection
+[33m8d65ef4[m feat: Presenter successfully extracts selected information from the View
+[33ma9cc038[m Merge pull request #13 from Annessien2019/fix/scrum-49/fixed-style-leaks
+[33m5b6b578[m[33m ([m[1;31morigin/fix/scrum-49/fixed-style-leaks[m[33m, [m[1;32mfix/scrum-49/fixed-style-leaks[m[33m)[m Fixed naming-conventions and redundancies
+[33m91c2c0d[m fixed Sign-in-MVP issues
+[33m209e332[m fixed Sign-up-MVP issues
+[33m87718f1[m Merge pull request #12 from Annessien2019/feature/scrum-41/inventory-view
+[33m8176527[m[33m ([m[1;31morigin/feature/scrum-41/inventory-view[m[33m)[m feat: Created View for Inventory. Initialized Presenter and Model
+[33me801af3[m feat: Initialized Presenter and Model
+[33m89dc0e3[m fix: Commiting to pull from main
+[33mbb3acf1[m Merge pull request #11 from Annessien2019/feature/scrum-14/recovery-view
+[33m93ee702[m feat: Presenter now validates email input
+[33mb962ca2[m feat: Initial Recovery View created
+[33m213f7c9[m Merge pull request #10 from Annessien2019/feature/scrum-35/child-home-ui
+[33m6ba12bc[m Merge branch 'main' into feature/scrum-35/child-home-ui
+[33m9a96a9a[m feature: Added the parent, child and provider basic home page and transition pages
+[33mdf3d9af[m fix: Inventory now displays most recent log from an InventoryItem:
+[33m0ea9e06[m feat: Inventory now successfully displays data from InventoryLog objects
+[33m25406b5[m Merge pull request #9 from Annessien2019/feat/scrum-44/signUp-backend
+[33m96b7557[m Merge pull request #8 from Annessien2019/feat/scrum-28/singIn-presenter
+[33m908331b[m Merge pull request #7 from Annessien2019/feat/scrum-19/signIn-model
+[33mb0db260[m[33m ([m[1;31morigin/feat/scrum-44/signUp-backend[m[33m)[m Implemented basic Sign-up presenter
+[33m24312d8[m Implemented basic Sign-up model
+[33m257ff1b[m[33m ([m[1;31morigin/feat/scrum-28/singIn-presenter[m[33m, [m[1;32mfeat/scrum-28/singIn-presenter[m[33m)[m Implemented presenter and callback interface
+[33m5ad828d[m[33m ([m[1;31morigin/feat/scrum-19/signIn-model[m[33m, [m[1;32mfeat/scrum-19/signIn-model[m[33m)[m Implemented-SignIn-Model
+[33mc74d3d2[m feat: Created class for inventory items
+[33m44caadc[m feat: Created initial XML for inventory
+[33m6f3b273[m Merge pull request #6 from Annessien2019/feature/scrum-38/new-log-view
+[33mabcb1cc[m[33m ([m[1;31morigin/feature/scrum-38/new-log-view[m[33m)[m feat: User can now return to Medicine Logs using back button
+[33m6098553[m Merge pull request #5 from Annessien2019/feature/scrum-38/new-log-view
+[33m0f72d89[m feat: Added functionality between Presenter and View for adding a log
+[33m58a34b7[m feat: Created XML files for fragment
+[33mc09f6bc[m Merge pull request #4 from Annessien2019/feature/scrum-32/medicine-log-view
+[33m6e31e65[m feat: Created Presenter class for Medicine Logs
+[33m7bb84aa[m Merge branch 'main' of https://github.com/Annessien2019/B07-Group-Project into feature/scrum-32/medicine-log-view
+[33meda3597[m feat: Added button to log new medicine
+[33m196938c[m Merge pull request #3 from Annessien2019/feat/scrum-37/linking-database
+[33mef31d4c[m[33m ([m[1;31morigin/feat/scrum-37/linking-database[m[33m, [m[1;32mfeat/scrum-37/linking-database[m[33m)[m Integrated Firebase
+[33mcf7105b[m[33m ([m[1;31morigin/feature/scrum-32/medicine-log-view[m[33m)[m feat: Created working Medicine logs within Medicine Logs page
+[33mc263f23[m[33m ([m[1;31morigin/feature/no-ref/ui-main-pages[m[33m)[m Merge pull request #2 from Annessien2019/feature/scrum-12-13/sign-in-up
+[33mb9c1316[m feat: Created MVP files for Sign up/in fragments
+[33m2211e8b[m feat: Added button for upcoming recovery page
+[33mbed43ef[m feat: sign in/up buttons now log input data into the console
+[33m7107fba[m Added initial sign in and sign up fragments
+[33m4dc9388[m[33m ([m[1;31morigin/healthReport[m[33m)[m Merge pull request #1 from Annessien2019/init/no-ref/init-files
+[33m8598d2a[m init: Created initial Android Studio project files
+[33m2b2ccf4[m Delete pull_request_template.md
+[33m9bedf37[m Create pull_request_template.md
+[33m47bdb88[m Create pull_request_template.md

@@ -16,6 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.smartair.R;
+import com.example.smartair.presenter.MedicineLogsPresenter;
 import com.example.smartair.presenter.NewMedicineLogPresenter;
 
 import java.util.HashMap;
@@ -24,6 +25,7 @@ import java.util.Objects;
 public class NewMedicineLogView extends Fragment{
 
     private NewMedicineLogPresenter presenter;
+    private MedicineLogsPresenter callback;
     private FragmentListener fragmentListener;
 
     private HashMap<String,String> userInfo;

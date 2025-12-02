@@ -16,123 +16,112 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
-
 public class MedicineLogsModel {
 
     private DatabaseReference dbRefLinks;
     private DatabaseReference dbRefData;
-    private CallbackMedLogsFetch callback;
-    private List<MedicalLogSingleton> LoggedData = new ArrayList<>();
-    private ChildEventListener childListener;
-    private final String TAG = "MEDICINE_LOGS";
 
-    // Constructor remains the same, assuming callback is set elsewhere
-    public MedicineLogsModel(CallbackMedLogsFetch callback, String child_id) {
+    private final CallbackMedLogsFetch callback;
+    private final List<MedicalLogSingleton> loggedData = new ArrayList<>();
+
+    private ChildEventListener childListener = null;
+
+    public MedicineLogsModel(CallbackMedLogsFetch callback, String childId) {
         this.callback = callback;
-        dbRefData = FirebaseDatabase.getInstance().getReference("/MedicalLogData/");
-        dbRefLinks = FirebaseDatabase.getInstance().getReference("/MedicalLogLinks/" + child_id);
-
+        this.dbRefData = FirebaseDatabase.getInstance().getReference("MedicalLogData");
+        this.dbRefLinks = FirebaseDatabase.getInstance().getReference("MedicalLogLinks").child(childId);
     }
 
-    // --- STEP 1: INITIAL LOAD ---
-
+    // --------------------------------
+    // INITIAL LOAD — RUNS ONLY ONCE
+    // --------------------------------
     public void initializeAndFetchLogs() {
-        // One-Time Fetch of all existing links
-        dbRefLinks.get().addOnSuccessListener(dataSnapshot -> {
-                    if (!dataSnapshot.exists()) {return;}
+        if (childListener != null) return;   //
 
-                    List<String> loggedLinks = new ArrayList<>();
-                    for (DataSnapshot data : dataSnapshot.getChildren()) {
-                        loggedLinks.add(data.getKey());
+        dbRefLinks.get()
+                .addOnSuccessListener(snapshot -> {
+                    if (!snapshot.exists()) {
+                        callback.onInitialFetchSuccess(new ArrayList<>());
+                        setupChildListener();
+                        return;
                     }
-                    // Trigger the synchronized fetch of log details
-                    fetchAndSetInitialData(loggedLinks);
+
+                    List<String> ids = new ArrayList<>();
+                    for (DataSnapshot s : snapshot.getChildren()) {
+                        ids.add(s.getKey());
+                    }
+
+                    fetchLogsByIds(ids);
                 })
-                .addOnFailureListener(e -> {
-                    Log.e(TAG, "Initial link fetch failed.", e);
-                    // callback.onFetchFailure(e.getMessage());
-                });
+                .addOnFailureListener(e -> callback.onFetchFailure(e));
     }
 
-    // --- STEP 2: SYNCHRONIZED MULTI-FETCH ---
-
-    private void fetchAndSetInitialData(List<String> loggedLinks) {
-        LoggedData.clear(); // Ensure the list is empty before starting
-        if (loggedLinks.isEmpty()) {
-            callback.onInitialFetchSuccess(LoggedData);
-            setupChildListener(); // Still set up the listener for future additions
+    // ----------------------------
+    // BATCH FETCH OF EXISTING LOGS
+    // ----------------------------
+    private void fetchLogsByIds(List<String> ids) {
+        if (ids.isEmpty()) {
+            callback.onInitialFetchSuccess(loggedData);
+            setupChildListener();
             return;
         }
 
-        List<Task<DataSnapshot>> fetchTasks = new ArrayList<>();
-        for (String medLogLink : loggedLinks) {
-            fetchTasks.add(dbRefData.child(medLogLink).get());
+        List<Task<DataSnapshot>> tasks = new ArrayList<>();
+        for (String id : ids) {
+            tasks.add(dbRefData.child(id).get());
         }
 
-        // Wait for ALL individual log fetches to complete
-        Tasks.whenAllSuccess(fetchTasks)
+        Tasks.whenAllSuccess(tasks)
                 .addOnSuccessListener(results -> {
+                    loggedData.clear();
+
                     for (Object result : results) {
-                        DataSnapshot dataSnapshot = (DataSnapshot) result;
-                        if (!dataSnapshot.exists()) {return;}
-                        MedicalLogSingleton log = dataSnapshot.getValue(MedicalLogSingleton.class);
-                        if (log != null) {
-                            LoggedData.add(log);
-                        }
+                        DataSnapshot snap = (DataSnapshot) result;
+                        MedicalLogSingleton log = snap.getValue(MedicalLogSingleton.class);
+
+                        if (log != null) loggedData.add(log);
                     }
-                    // Initial data loaded. Notify the callback and then attach the delta listener.
-                    callback.onInitialFetchSuccess(LoggedData);
+
+                    callback.onInitialFetchSuccess(new ArrayList<>(loggedData));
                     setupChildListener();
                 })
-                .addOnFailureListener(e -> {
-                    Log.e(TAG, "Initial detailed log fetch failed.", e);
-                    // callback.onFetchFailure(...)
-                });
+                .addOnFailureListener(callback::onFetchFailure);
     }
 
-    // --- STEP 3: DELTA LISTENER SETUP ---
-
+    // ----------------------------
+    // REAL-TIME LISTENER
+    // ----------------------------
     private void setupChildListener() {
+        if (childListener != null) return;
+
         childListener = new ChildEventListener() {
             @Override
-            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                String newLink = snapshot.getKey();
-                // Trigger a new fetch only for the single new link
-                fetchSingleNewLog(newLink);
+            public void onChildAdded(DataSnapshot snapshot, String previousChildName) {
+                String newId = snapshot.getKey();
+                fetchSingleLog(newId);
             }
 
+            public void onChildChanged(DataSnapshot s, String p) {}
+            public void onChildRemoved(DataSnapshot s) {}
+            public void onChildMoved(DataSnapshot s, String p) {}
             @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {}
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot snapshot) {}
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {}
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.e(TAG, "Child listener cancelled.", error.toException());
-            }
+            public void onCancelled(DatabaseError error) {}
         };
 
-        // Attach the listener to the list of links (Path A) for future deltas
         dbRefLinks.addChildEventListener(childListener);
     }
 
-    // --- STEP 4: SINGLE NEW LOG FETCH ---
-
-    private void fetchSingleNewLog(String medLogLink) {
-        dbRefData.child(medLogLink).get()
-                .addOnSuccessListener(dataSnapshot -> {
-                    if (dataSnapshot.exists()) {
-                        MedicalLogSingleton log = dataSnapshot.getValue(MedicalLogSingleton.class);
-                        if (log != null) {
-                            LoggedData.add(log); // Add the single new item
-                            // CRITICAL: Notify the Presenter/View about the SINGLE addition
-                            callback.onItemAdded(log);
-                        }
+    // ----------------------------
+    // FETCH NEW LOGS ONLY ONCE
+    // ----------------------------
+    private void fetchSingleLog(String id) {
+        dbRefData.child(id).get()
+                .addOnSuccessListener(snap -> {
+                    MedicalLogSingleton log = snap.getValue(MedicalLogSingleton.class);
+                    if (log != null) {
+                        loggedData.add(log);
+                        callback.onItemAdded(log);
                     }
-                })
-                .addOnFailureListener(e -> Log.e(TAG, "Failed to fetch single new log: " + medLogLink, e));
+                });
     }
-
-
 }
