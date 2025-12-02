@@ -9,36 +9,36 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SwitchCompat;
-import androidx.fragment.app.Fragment;
 
 import com.example.smartair.R;
 import com.example.smartair.presenter.GranularSharingPresenter;
+import com.example.smartair.model.SharePref;
 
 // Note: This class assumes your XML file is named 'fragment_provider_settings.xml'
 // or whatever filename corresponds to the provided layout content.
 // I'll use a placeholder R.layout.fragment_provider_settings for demonstration.
 
-public class GranularSharingView extends Fragment {
+public class GranularSharingView extends ViewFragment{
 
     // Declare fields for all interactive elements
     private GranularSharingPresenter presenter;
     private SwitchCompat pefSwitch;
     private SwitchCompat pbSwitch;
     private SwitchCompat triggersSwitch;
-    private SwitchCompat doseCountsSwitch;
+    private SwitchCompat doseCountSwitch;
     private SwitchCompat rapidRescueSwitch;
     private SwitchCompat lowRescueSwitch;
-    private SwitchCompat controllerSwitch;
-    private TextView controllerMedicine;
+    private SwitchCompat controllerMedicine;
+    private SharePref pref;
 
     private TextView titleTextView; // For completeness
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Bundle args = getArguments();
-//        presenter = new GranularSharingPresenter(args.get("userID"));
-
+        //Bundle args = getArguments();
+        //TODO: Fix the hsrdcoded value
+        presenter = new GranularSharingPresenter(this, "CHILD_ID");
     }
 
     @Nullable
@@ -49,33 +49,81 @@ public class GranularSharingView extends Fragment {
 
         // 2. Initialize the views by finding their IDs
 
-        controllerMedicine = view.findViewById(R.id.textView);
+        controllerMedicine = view.findViewById(R.id.switch1);
         pefSwitch = view.findViewById(R.id.switch2);
         pbSwitch = view.findViewById(R.id.switch3);
         triggersSwitch = view.findViewById(R.id.switch4);
-        doseCountsSwitch = view.findViewById(R.id.switch5);
+        doseCountSwitch = view.findViewById(R.id.switch5);
         rapidRescueSwitch = view.findViewById(R.id.switch6);
         lowRescueSwitch = view.findViewById(R.id.switch7);
-
+        presenter.getPreference();
 
         return view;
     }
 
-    /**
-     * Public method to retrieve the current state of the 'Controller medicine' switch.
-     * @return true if the switch is checked, false otherwise.
-     */
-    public boolean isControllerMedicineEnabled() {
-        if (controllerSwitch != null) {
-            return controllerSwitch.isChecked();
-        }
-        return false;
+
+    private void setOnCheckListeners(){
+
+        controllerMedicine.setOnCheckedChangeListener((buttonView, isChecked)
+                -> {
+            pref.setControllerMedicine(isChecked);
+            presenter.setPreference(pref);
+        });
+
+// Listener for pefSwitch
+        pefSwitch.setOnCheckedChangeListener((buttonView, isChecked)
+                -> {
+            pref.setPefSwitch(isChecked);
+            presenter.setPreference(pref);
+        });
+
+// Listener for rapidRescueSwitch
+        rapidRescueSwitch.setOnCheckedChangeListener((buttonView, isChecked)
+                -> {
+            pref.setRapidRescueSwitch(isChecked);
+            presenter.setPreference(pref);
+        });
+
+// Listener for pbSwitch (Personal Best)
+        pbSwitch.setOnCheckedChangeListener((buttonView, isChecked)
+                -> {
+            pref.setPbSwitch(isChecked);
+            presenter.setPreference(pref);
+        });
+
+// Listener for triggersSwitch
+        triggersSwitch.setOnCheckedChangeListener((buttonView, isChecked)
+                -> {
+            pref.setTriggersSwitch(isChecked);
+            presenter.setPreference(pref);
+        });
+
+// Listener for doseCountsSwitch
+        doseCountSwitch.setOnCheckedChangeListener((buttonView, isChecked)
+                -> {
+            pref.setDoseCountSwitch(isChecked);
+            presenter.setPreference(pref);
+        });
+
+// Listener for lowRescueSwitch
+        lowRescueSwitch.setOnCheckedChangeListener((buttonView, isChecked)
+                -> {
+            pref.setLowRescueSwitch(isChecked);
+            presenter.setPreference(pref);
+        });
     }
 
-    private void setOnCLickListeners(){
-        controllerSwitch.setOnClickListener(v->{});
+    public void setPref(SharePref pref) {
 
+        this.controllerMedicine.setChecked(pref.isControllerMedicine());
+        this.pefSwitch.setChecked(pref.isPefSwitch());
+        this.pbSwitch.setChecked(pref.isPbSwitch());
+        this.triggersSwitch.setChecked(pref.isTriggersSwitch());
+        this.doseCountSwitch.setChecked(pref.isDoseCountSwitch());
+        this.rapidRescueSwitch.setChecked(pref.isRapidRescueSwitch());
+        this.lowRescueSwitch.setChecked(pref.isLowRescueSwitch());
+        this.pref = pref;
+        setOnCheckListeners();
     }
 
-    // You can add similar public getters/setters for the state of all 7 switches as needed.
 }
