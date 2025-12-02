@@ -9,22 +9,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.example.smartair.presenter.ChildDirectoryToolbarPresenter;
-import com.example.smartair.presenter.ParentDirectoryToolbarPresenter;
-import com.example.smartair.view.ChildrenHomePageView;
 import com.example.smartair.view.DirectoryToolbarFragment;
 import com.example.smartair.view.FragmentListener;
-import com.example.smartair.view.MotivationLogListFragment;
-import com.example.smartair.view.OneTapTriageFragment;
-import com.example.smartair.view.ParentHomePageView;
+import com.example.smartair.view.InventoryFragment;
 import com.example.smartair.view.PersonalBestZonesFragment;
-import com.example.smartair.view.SigninFragmentView;
 
-import com.example.smartair.view.DailyCheckInLogFragment;
-import com.example.smartair.view.DailyCheckInLogListFragment;
-import com.example.smartair.view.DoseCheckView;
-import com.example.smartair.view.InventoryLogListFragment;
-import com.example.smartair.view.MedicineLogFragment;
-import com.example.smartair.view.MedicineLogListFragment;
 import com.example.smartair.view.ViewFragment;
 
 public class MainActivity extends AppCompatActivity implements FragmentListener {
@@ -40,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
-            ViewFragment view = new ChildrenHomePageView();
+            ViewFragment view = new InventoryFragment();
             onFragmentAction(view, null, false);
             DirectoryToolbarFragment toolbar = new DirectoryToolbarFragment();
             toolbar.setDirectoryToolbarPresenter(new ChildDirectoryToolbarPresenter(toolbar));

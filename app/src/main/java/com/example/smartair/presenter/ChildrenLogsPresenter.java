@@ -2,7 +2,7 @@ package com.example.smartair.presenter;
 
 import com.example.smartair.view.ChildrenLogsView;
 import com.example.smartair.view.DailyCheckInLogListFragment;
-import com.example.smartair.view.InventoryLogListFragment;
+import com.example.smartair.view.InventoryFragment;
 import com.example.smartair.view.MedicineLogListFragment;
 
 public class ChildrenLogsPresenter {
@@ -26,6 +26,6 @@ public class ChildrenLogsPresenter {
     }
 
     public void onInventoryButtonClicked() {
-        view.displayNextFragment(new InventoryLogListFragment(), null, true);
+        view.displayNextFragment(new InventoryFragment(), null, true);
     }
 }
