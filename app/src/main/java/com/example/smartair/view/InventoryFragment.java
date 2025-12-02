@@ -11,18 +11,24 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.smartair.R;
-import com.example.smartair.presenter.InventoryLogListPresenter;
+import com.example.smartair.presenter.InventoryPresenter;
 
-public class InventoryLogListFragment extends LogListFragment<InventoryLogFragment> {
+public class InventoryFragment extends ViewFragment {
 
-    private InventoryLogListPresenter presenter;
+    private InventoryPresenter presenter;
+    private NewInventoryAmountFragment newAmountDialog;
+    private NewInventoryCanisterFragment newCanisterDialog;
     TextView remainingNum, remainingDenom, percentage, purchDate, expDate;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        linearLayoutLogsId = R.id.linear_layout_inventory;
-        presenter = new InventoryLogListPresenter(this);
+        presenter = new InventoryPresenter(this);
+        newAmountDialog = new NewInventoryAmountFragment();
+        newCanisterDialog = new NewInventoryCanisterFragment();
+
+        newAmountDialog.setPresenter(presenter);
+        newCanisterDialog.setPresenter(presenter);
         View view = inflater.inflate(R.layout.fragment_inventory, container, false);
 
         remainingNum = view.findViewById(R.id.text_view_remaining_numerator);
@@ -31,25 +37,17 @@ public class InventoryLogListFragment extends LogListFragment<InventoryLogFragme
         purchDate = view.findViewById(R.id.text_view_purchase_date);
         expDate = view.findViewById(R.id.text_view_expiry_date);
 
-        Button addNewCanisterButton = view.findViewById(R.id.button_log_new_amount);
-        addNewCanisterButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getParentFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.main_fragment_container, new InventoryLogListFragment())
-                        .setReorderingAllowed(true)
-                        .addToBackStack(null)
-                        .commit();
-            }
-        });
+        setUpInputs(view);
+
         return view;
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        presenter.loadLogs();
+    public void setUpInputs(View view) {
+        Button addNewRescueCanisterButton = view.findViewById(R.id.button_new_rescue_canister);
+        Button addNewRescueAmountButton = view.findViewById(R.id.button_log_new_rescue_amount);
+
+        addNewRescueCanisterButton.setOnClickListener(v -> presenter.newCanisterButtonClicked());
+        addNewRescueAmountButton.setOnClickListener(v -> presenter.newAmountButtonClicked());
     }
 
     public void setActiveCanister(String numerator,
@@ -62,5 +60,13 @@ public class InventoryLogListFragment extends LogListFragment<InventoryLogFragme
         percentage.setText(percent);
         purchDate.setText(purchaseDate);
         expDate.setText(expiryDate);
+    }
+
+    public void showNewAmountDialog() {
+        newAmountDialog.show(getParentFragmentManager(), null);
+    }
+
+    public void showNewCanisterDialog() {
+        newCanisterDialog.show(getParentFragmentManager(), null);
     }
 }
