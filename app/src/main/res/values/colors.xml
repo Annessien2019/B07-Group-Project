@@ -21,4 +21,7 @@
     <color name="inventory_log_child_bg">#CFFFE8</color>
     <color name="completed_badge_bg">#658D97</color>
     <color name="incomplete_badge_bg">#4A5B63</color>
+    <color name="yellow_zone_bg">#FFFADC</color>
+    <color name="green_zone_bg">#DCFFDE</color>
+    <color name="red_zone_bg">#FFD5E4</color>
 </resources>
