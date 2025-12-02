@@ -7,81 +7,121 @@
     android:background="#1B3C53"
     android:backgroundTint="#1B3C53">
 
-    <LinearLayout
-        android:layout_width="417dp"
-        android:layout_height="785dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="418dp"
+        android:layout_height="812dp"
+        android:layout_marginTop="48dp"
         android:gravity="center"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="-51dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/switch1"
-            android:layout_width="315dp"
-            android:layout_height="122dp"
-            android:text="Controller medicine"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textColor="#D2C1B6"
-            android:textSize="24sp" />
-
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/switch2"
-            android:layout_width="315dp"
-            android:layout_height="122dp"
-            android:text="Peak-flow (PEF)"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textColor="#D2C1B6"
-            android:textSize="24sp" />
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/switch3"
-            android:layout_width="315dp"
-            android:layout_height="122dp"
+            android:layout_width="290dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="36dp"
+            android:padding="20dp"
             android:text="Personal best (PB)"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="#D2C1B6"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/switch2"
+            app:layout_constraintStart_toStartOf="@+id/switch2"
+            app:layout_constraintTop_toBottomOf="@+id/switch2" />
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/switch4"
-            android:layout_width="315dp"
-            android:layout_height="122dp"
+            android:layout_width="290dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="36dp"
+            android:padding="20dp"
             android:text="Triggers"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="#D2C1B6"
-            android:textSize="24sp" />
-
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/switch3"
+            app:layout_constraintStart_toStartOf="@+id/switch3"
+            app:layout_constraintTop_toBottomOf="@+id/switch3" />
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/switch5"
-            android:layout_width="315dp"
-            android:layout_height="122dp"
+            android:layout_width="290dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="36dp"
+            android:padding="20dp"
             android:text="Dose Counts"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="#D2C1B6"
-            android:textSize="24sp" />
-
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/switch4"
+            app:layout_constraintStart_toStartOf="@+id/switch4"
+            app:layout_constraintTop_toBottomOf="@+id/switch4" />
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/switch6"
-            android:layout_width="315dp"
-            android:layout_height="122dp"
+            android:layout_width="290dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="36dp"
+            android:padding="20dp"
             android:text="Rapid rescue repeats "
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="#D2C1B6"
-            android:textSize="24sp" />
-
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/switch5"
+            app:layout_constraintStart_toStartOf="@+id/switch5"
+            app:layout_constraintTop_toBottomOf="@+id/switch5" />
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/switch7"
-            android:layout_width="315dp"
-            android:layout_height="122dp"
+            android:layout_width="290dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="36dp"
+            android:padding="20dp"
             android:text="Low rescue month"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="#D2C1B6"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/switch6"
+            app:layout_constraintHorizontal_bias="0.675"
+            app:layout_constraintStart_toStartOf="@+id/switch6"
+            app:layout_constraintTop_toBottomOf="@+id/switch6"
+            app:layout_constraintVertical_bias="0.151" />
 
-    </LinearLayout>
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch2"
+            android:layout_width="290dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="40dp"
+            android:padding="20dp"
+            android:text="Peak-flow (PEF)"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#D2C1B6"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/switch1"
+            app:layout_constraintStart_toStartOf="@+id/switch1"
+            app:layout_constraintTop_toBottomOf="@+id/switch1" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch1"
+            android:layout_width="290dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="36dp"
+            android:padding="20dp"
+            android:text="Controller medicine"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#D2C1B6"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.555"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/textView"
@@ -98,4 +138,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
