@@ -30,6 +30,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:background="@color/primary_light_shade_1"
         android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraint_layout_parent_home_bar">
@@ -45,7 +46,7 @@
 
         <Button
             android:id="@+id/button_parent_home_manage_children"
-            android:layout_width="300dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:background="@drawable/button_rect"
@@ -62,9 +63,9 @@
 
         <Button
             android:id="@+id/button_parent_home_inventory"
-            android:layout_width="300dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/button_rect"
             android:backgroundTint="@color/primary_dark"
             android:padding="20dp"

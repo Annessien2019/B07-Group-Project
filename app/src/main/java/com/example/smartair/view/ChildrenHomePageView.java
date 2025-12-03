@@ -61,9 +61,7 @@ public class ChildrenHomePageView extends ViewFragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // 1. Inflate the layout and assign it to a variable named 'view'
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_children_home_page_view, container, false);
 
         setUpInputs(view);
@@ -73,12 +71,14 @@ public class ChildrenHomePageView extends ViewFragment {
 
     public void setUpInputs(View view) {
         Button logsButton = view.findViewById(R.id.children_home_log_data);
-        Button learnButton = view.findViewById(R.id.children_home_learn);
+        Button techniqueHelperButton = view.findViewById(R.id.children_home_technique_helper);
         Button motivationButton = view.findViewById(R.id.children_home_motivation);
+        Button pbzButton = view.findViewById(R.id.button_children_home_pbz);
 
         logsButton.setOnClickListener(v-> presenter.logsButtonClicked());
-        learnButton.setOnClickListener(v-> presenter.learnButtonClicked());
+        techniqueHelperButton.setOnClickListener(v-> presenter.techniqueHelperButtonClicked());
         motivationButton.setOnClickListener(v -> presenter.motivationButtonClicked());
+        pbzButton.setOnClickListener(v -> presenter.personalBestZonesButtonClicked());
     }
 
 }
