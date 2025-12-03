@@ -64,8 +64,10 @@ public class SigninPresenter implements CallbackAuth, CallbackReadDB{
         switch(this.userData.second.toLowerCase()){
             case "child":
                 this.view.displayNextFragment(new ChildrenHomePageView(), bundleData, false);
+                break;
             case "provider":
                 this.view.displayNextFragment(new ProviderHomePageView(), bundleData, false);
+                break;
             case "parent":
                 this.view.displayNextFragment(new ParentHomePageView(), bundleData, false);
         }

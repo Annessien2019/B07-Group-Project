@@ -1,11 +1,16 @@
 package com.example.smartair.model;
 
 import android.util.Log;
+import android.widget.Toast;
+
 import com.example.smartair.presenter.CallbackAuth;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignupModel{
     private FirebaseAuth mAuth;
@@ -70,5 +75,6 @@ public class SignupModel{
                     }
                 });;
     }
+
 
 }

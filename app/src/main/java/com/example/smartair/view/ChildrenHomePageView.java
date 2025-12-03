@@ -19,6 +19,12 @@ import com.example.smartair.presenter.ChildrenHomePagePresenter;
  */
 public class ChildrenHomePageView extends ViewFragment {
 
+
+
+
+
+
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -65,6 +71,8 @@ public class ChildrenHomePageView extends ViewFragment {
         View view = inflater.inflate(R.layout.fragment_children_home_page_view, container, false);
 
         setUpInputs(view);
+
+
 
         return view;
     }

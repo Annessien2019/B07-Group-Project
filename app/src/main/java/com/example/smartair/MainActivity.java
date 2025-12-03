@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentManager;
 
 import com.example.smartair.presenter.ChildDirectoryToolbarPresenter;
 import com.example.smartair.presenter.ParentDirectoryToolbarPresenter;
+import com.example.smartair.view.AddChildView;
 import com.example.smartair.view.ChildrenHomePageView;
 import com.example.smartair.view.DirectoryToolbarFragment;
 import com.example.smartair.view.FragmentListener;
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
-            ViewFragment view = new ChildrenHomePageView();
+            ViewFragment view = new SigninFragmentView();
             onFragmentAction(view, null, false);
             DirectoryToolbarFragment toolbar = new DirectoryToolbarFragment();
             toolbar.setDirectoryToolbarPresenter(new ParentDirectoryToolbarPresenter(toolbar));

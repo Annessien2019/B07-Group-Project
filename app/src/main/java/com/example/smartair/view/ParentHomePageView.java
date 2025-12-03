@@ -12,6 +12,11 @@ import com.example.smartair.presenter.ParentHomePagePresenter;
 
 
 public class ParentHomePageView extends ViewFragment {
+     Button manage_children;
+     Button inventory, dashboards;
+
+
+
 
     ParentHomePagePresenter presenter;
 
