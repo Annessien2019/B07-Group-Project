@@ -36,9 +36,10 @@ public class GranularSharingView extends ViewFragment{
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Bundle args = getArguments();
-        //TODO: Fix the hsrdcoded value
-        presenter = new GranularSharingPresenter(this, "CHILD_ID");
+        Bundle args = getArguments();
+        assert args != null;
+        presenter = new GranularSharingPresenter(this,
+                String.valueOf(args.get("user")));
     }
 
     @Nullable

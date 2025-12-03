@@ -24,19 +24,20 @@ public class ChildrenHomePageView extends ViewFragment {
 
 
 
-
+    Bundle args = getArguments();
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_PARAM1 = "userID";
+    private static final String ARG_PARAM2 = "userRole";
+
 
     // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private String mParam1 = String.valueOf(args.get(ARG_PARAM1));
+    private String mParam2 = String.valueOf(args.getSizeF(ARG_PARAM2));
     ChildrenHomePagePresenter presenter;
 
     public ChildrenHomePageView() {
-        presenter = new ChildrenHomePagePresenter(this);
+        presenter = new ChildrenHomePagePresenter(this, args);
     }
 
     /**
@@ -69,11 +70,7 @@ public class ChildrenHomePageView extends ViewFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_children_home_page_view, container, false);
-
         setUpInputs(view);
-
-
-
         return view;
     }
 

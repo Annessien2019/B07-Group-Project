@@ -22,12 +22,16 @@ public class ParentHomePageView extends ViewFragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+
+    Bundle args = getArguments();
+    String userID = String.valueOf(args.get("userID"));
+    String userRole = String.valueOf(args.get("userRole"));
+    private static final String ARG_PARAM1 = "userID";
+    private static final String ARG_PARAM2 = "userRole";
 
     // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private String mParam1 = String.valueOf(args.get(ARG_PARAM1));
+    private String mParam2 = String.valueOf(args.get(ARG_PARAM2));
 
     /**
      * Use this factory method to create a new instance of
@@ -58,7 +62,7 @@ public class ParentHomePageView extends ViewFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        presenter = new ParentHomePagePresenter(this);
+        presenter = new ParentHomePagePresenter(this, mParam1, mParam2);
         View view = inflater.inflate(R.layout.fragment_parent_home_page_view, container, false);
         setUpInputs(view);
         return view;
@@ -67,7 +71,11 @@ public class ParentHomePageView extends ViewFragment {
     public void setUpInputs(View view) {
         Button manageChildrenButton = view.findViewById(R.id.button_parent_home_manage_children);
         Button inventoryButton = view.findViewById(R.id.button_parent_home_inventory);
+        Button toggleButton = view.findViewById(R.id.button_parent_home_page_toggle);
         manageChildrenButton.setOnClickListener(v -> presenter.manageChildrenButtonClicked());
         inventoryButton.setOnClickListener(v -> presenter.inventoryButtonClicked());
+        toggleButton.setOnClickListener(v -> presenter.toggleButtonClicked());
     }
+
+
 }

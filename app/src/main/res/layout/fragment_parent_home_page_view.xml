@@ -48,7 +48,9 @@
         android:background="@color/primary_light_shade_1"
         android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraint_layout_parent_home_bar">
+        app:layout_constraintTop_toBottomOf="@+id/constraint_layout_parent_home_bar"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp">
 
         <ImageView
             android:id="@+id/profile_pic"
@@ -82,7 +84,7 @@
             android:id="@+id/button_parent_home_inventory"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="32dp"
             android:background="@drawable/button_rect"
             android:backgroundTint="@color/primary_dark"
             android:padding="20dp"
@@ -90,13 +92,26 @@
             android:textColor="@color/primary_text_light"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.529"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button_parent_home_manage_children" />
 
+        <Button
+            android:id="@+id/button_parent_home_page_toggle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:background="@drawable/button_rect"
+            android:backgroundTint="@color/primary_dark"
+            android:padding="20dp"
+            android:text="Toggle Setting"
+            android:textColor="@color/primary_text_light"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_parent_home_inventory" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
