@@ -48,6 +48,10 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         if(stackState) {
             this.manager.beginTransaction()
                     .setReorderingAllowed(true)
+                    .setCustomAnimations(R.anim.slide_in_from_right,
+                            R.anim.slide_out_to_left,
+                            R.anim.slide_in_from_right,
+                            R.anim.slide_out_to_left)
                     .replace(R.id.main_fragment_container, nextFragment)
                     .addToBackStack(null)
                     .commit();
@@ -55,6 +59,10 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         }
         this.manager.beginTransaction()
                 .setReorderingAllowed(true)
+                .setCustomAnimations(R.anim.slide_in_from_right,
+                        R.anim.slide_out_to_left,
+                        R.anim.slide_in_from_right,
+                        R.anim.slide_out_to_left)
                 .replace(R.id.main_fragment_container, nextFragment)
                 .commit();
     }
