@@ -16,7 +16,7 @@ import java.util.Map;
 public class AddChildModel {
     private FirebaseAuth mAuth;
     private DatabaseReference dbRef;
-    private String email, name, additional_notes, password;
+    private String email, name, additional_notes, password, age;
     private FirebaseUser currentUser;
 
     public AddChildModel() {
@@ -29,6 +29,7 @@ public class AddChildModel {
         this.email = email;
         this.password = password;
         this.additional_notes = additional_notes;
+        this.age = age;
     }
 
     public void AddChildAttempt(CallbackAuth callback) {
@@ -87,8 +88,9 @@ public class AddChildModel {
 
     public void updateProfile(String name, String additionalNotes, String age) {
 
+        //String parentID = String.valueOf(dbRef.child("accountData").child(this.currentUser.getUid()));
         String uid = mAuth.getCurrentUser().getUid();
-        DatabaseReference profileRef =
+        DatabaseReference childprofileRef =
                 FirebaseDatabase.getInstance()
                         .getReference("childProfiles")
                         .child(uid);
@@ -96,15 +98,14 @@ public class AddChildModel {
         updates.put("name", name);
         updates.put("additionalNotes", additionalNotes);
         updates.put("age", age);
+        //updates.put("parentID", parentID);
 
-        profileRef.updateChildren(updates)
+
+        childprofileRef.updateChildren(updates)
                 .addOnSuccessListener(unused ->
                         Log.d("PROFILE_UPDATE", "Child profile saved"))
                 .addOnFailureListener(e ->
                         Log.e("PROFILE_UPDATE", "Failed: " + e.getMessage()));
-        //dbRef.child(uid).updateChildren(updates)
-           //     .addOnSuccessListener(unused -> Toast.makeText(AddChildModel.this, "Profile updated!", Toast.LENGTH_SHORT).show())
-          //      .addOnFailureListener(e -> Toast.makeText(AddChildModel .this, "Update failed!", Toast.LENGTH_SHORT).show());
     }
     }
 

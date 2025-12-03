@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
-            ViewFragment view = new DailyCheckInLogFragment();
+            ViewFragment view = new SigninFragmentView();
             onFragmentAction(view, null, false);
             DirectoryToolbarFragment toolbar = new DirectoryToolbarFragment();
             toolbar.setDirectoryToolbarPresenter(new ChildDirectoryToolbarPresenter(toolbar));

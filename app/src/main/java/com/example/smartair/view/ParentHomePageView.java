@@ -5,10 +5,36 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
 import com.example.smartair.R;
 
 
 public class ParentHomePageView extends ViewFragment {
+     Button manage_children;
+     Button inventory, dashboards;
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // 1. Inflate the layout and assign it to a variable named 'view'
+        View view = inflater.inflate(R.layout.fragment_parent_home_page_view, container, false);
+
+        // 2. Now 'view' is defined, and this code is reachable
+        manage_children = view.findViewById(R.id.parent_home_manage_children);
+        inventory = view.findViewById(R.id.parent_home_inventory);
+        dashboards = view.findViewById(R.id.parent_home_dashboards);
+
+
+
+        manage_children.setOnClickListener(v -> listener.onFragmentAction(new ManageChildrenView(), null, true));
+        inventory.setOnClickListener(v -> listener.onFragmentAction(new InventoryLogListFragment(), null, true));
+        dashboards.setOnClickListener(v -> listener.onFragmentAction(new GeneralProfileView(), null, true));
+
+        return view;
+    }
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -50,10 +76,5 @@ public class ParentHomePageView extends ViewFragment {
         }
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_parent_home_page_view, container, false);
-    }
+
 }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,6 +18,8 @@ public class InventoryLogListFragment extends LogListFragment<InventoryLogFragme
 
     private InventoryLogListPresenter presenter;
     TextView remainingNum, remainingDenom, percentage, purchDate, expDate;
+    ImageView backButton;
+
 
     @Nullable
     @Override
@@ -30,6 +33,9 @@ public class InventoryLogListFragment extends LogListFragment<InventoryLogFragme
         percentage = view.findViewById(R.id.text_view_remaining_percentage);
         purchDate = view.findViewById(R.id.text_view_purchase_date);
         expDate = view.findViewById(R.id.text_view_expiry_date);
+        backButton = view.findViewById(R.id.parent_inventory_back_button);
+
+        backButton.setOnClickListener(v -> listener.onFragmentAction(new ManageChildrenView(), null, true));
 
         Button addNewCanisterButton = view.findViewById(R.id.button_log_new_amount);
         addNewCanisterButton.setOnClickListener(new View.OnClickListener() {

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.AddChildView">
+    tools:context=".view.GeneralProfileView">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/imageView2"
             app:layout_constraintTop_toBottomOf="@+id/add_child_email"
-            app:layout_constraintVertical_bias="0.055" />
+            app:layout_constraintVertical_bias="0.033" />
 
         <Button
             android:id="@+id/add_child_save"
@@ -49,6 +49,26 @@
             app:layout_constraintStart_toEndOf="@+id/textView8"
             app:layout_constraintTop_toBottomOf="@+id/imageView2"
             app:layout_constraintVertical_bias="0.0" />
+
+
+        <Button
+            android:id="@+id/sign_out"
+            android:layout_width="250dp"
+            android:layout_height="34dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="@color/primary_dark"
+            android:padding="5dp"
+            android:text="Sign Out"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@color/primary_light"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.123"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:layout_constraintVertical_bias="0.065" />
 
         <EditText
             android:id="@+id/textView9"
@@ -71,6 +91,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView8"
             app:layout_constraintVertical_bias="0.014" />
 
+
         <EditText
             android:id="@+id/add_child_email"
             android:layout_width="157dp"
@@ -90,28 +111,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/imageView2"
             app:layout_constraintTop_toBottomOf="@+id/textView9"
-            app:layout_constraintVertical_bias="0.046" />
-
-        <EditText
-            android:id="@+id/add_child_password"
-            android:layout_width="157dp"
-            android:layout_height="37dp"
-            android:layout_marginBottom="6dp"
-            android:background="@drawable/rounded_corner"
-            android:backgroundTint="@color/primary_dark"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="10dp"
-            android:text="Password (Optional)"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textColor="@color/primary_text_light"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/textView6"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.169"
-            app:layout_constraintStart_toEndOf="@+id/add_child_email"
-            app:layout_constraintTop_toBottomOf="@+id/add_child_save"
-            app:layout_constraintVertical_bias="0.441" />
+            app:layout_constraintVertical_bias="0.023" />
 
         <EditText
             android:id="@+id/textView8"
@@ -152,7 +152,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/imageView2"
             app:layout_constraintTop_toBottomOf="@+id/textView5"
-            app:layout_constraintVertical_bias="0.177" />
+            app:layout_constraintVertical_bias="0.045" />
 
         <Button
             android:id="@+id/button"
