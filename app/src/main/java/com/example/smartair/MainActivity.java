@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.example.smartair.presenter.ChildDirectoryToolbarPresenter;
+import com.example.smartair.presenter.ParentDirectoryToolbarPresenter;
 import com.example.smartair.view.ChildrenHomePageView;
 import com.example.smartair.view.DirectoryToolbarFragment;
 import com.example.smartair.view.FragmentListener;
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
             ViewFragment view = new ChildrenHomePageView();
             onFragmentAction(view, null, false);
             DirectoryToolbarFragment toolbar = new DirectoryToolbarFragment();
-            toolbar.setDirectoryToolbarPresenter(new ChildDirectoryToolbarPresenter(toolbar));
+            toolbar.setDirectoryToolbarPresenter(new ParentDirectoryToolbarPresenter(toolbar));
             view.showDirectoryBar(toolbar);
         }
     }
@@ -48,6 +49,10 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         if(stackState) {
             this.manager.beginTransaction()
                     .setReorderingAllowed(true)
+                    .setCustomAnimations(R.anim.slide_in_from_right,
+                            R.anim.slide_out_to_left,
+                            R.anim.slide_in_from_right,
+                            R.anim.slide_out_to_left)
                     .replace(R.id.main_fragment_container, nextFragment)
                     .addToBackStack(null)
                     .commit();
@@ -55,6 +60,10 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         }
         this.manager.beginTransaction()
                 .setReorderingAllowed(true)
+                .setCustomAnimations(R.anim.slide_in_from_right,
+                        R.anim.slide_out_to_left,
+                        R.anim.slide_in_from_right,
+                        R.anim.slide_out_to_left)
                 .replace(R.id.main_fragment_container, nextFragment)
                 .commit();
     }

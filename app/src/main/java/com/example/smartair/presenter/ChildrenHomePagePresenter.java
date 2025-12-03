@@ -1,9 +1,10 @@
 package com.example.smartair.presenter;
 
 import com.example.smartair.view.ChildrenHomePageView;
-import com.example.smartair.view.ChildrenLearnView;
 import com.example.smartair.view.ChildrenLogsView;
 import com.example.smartair.view.MotivationLogListFragment;
+import com.example.smartair.view.PersonalBestZonesFragment;
+import com.example.smartair.view.TechniqueHelperFragment;
 
 public class ChildrenHomePagePresenter {
 
@@ -18,11 +19,15 @@ public class ChildrenHomePagePresenter {
 
     }
 
-    public void learnButtonClicked() {
-        view.displayNextFragment(new ChildrenLearnView(), null, true);
+    public void techniqueHelperButtonClicked() {
+        view.displayNextFragment(new TechniqueHelperFragment(), null, true);
     }
 
     public void motivationButtonClicked() {
         view.displayNextFragment(new MotivationLogListFragment(), null, true);
+    }
+
+    public void personalBestZonesButtonClicked() {
+        view.displayNextFragment(new PersonalBestZonesFragment(), null, true);
     }
 }
