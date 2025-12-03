@@ -14,16 +14,10 @@ import com.example.smartair.view.AddChildView;
 import com.example.smartair.view.ChildrenHomePageView;
 import com.example.smartair.view.DirectoryToolbarFragment;
 import com.example.smartair.view.FragmentListener;
-import com.example.smartair.view.MotivationLogListFragment;
+import com.example.smartair.view.InventoryFragment;
 import com.example.smartair.view.ParentHomePageView;
-import com.example.smartair.view.SigninFragmentView;
+import com.example.smartair.view.PersonalBestZonesFragment;
 
-import com.example.smartair.view.DailyCheckInLogFragment;
-import com.example.smartair.view.DailyCheckInLogListFragment;
-import com.example.smartair.view.DoseCheckView;
-import com.example.smartair.view.InventoryLogListFragment;
-import com.example.smartair.view.MedicineLogFragment;
-import com.example.smartair.view.MedicineLogListFragment;
 import com.example.smartair.view.ViewFragment;
 
 public class MainActivity extends AppCompatActivity implements FragmentListener {
@@ -42,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
             ViewFragment view = new SigninFragmentView();
             onFragmentAction(view, null, false);
             DirectoryToolbarFragment toolbar = new DirectoryToolbarFragment();
-            toolbar.setDirectoryToolbarPresenter(new ChildDirectoryToolbarPresenter(toolbar));
+            toolbar.setDirectoryToolbarPresenter(new ParentDirectoryToolbarPresenter(toolbar));
             view.showDirectoryBar(toolbar);
         }
     }
@@ -56,6 +50,10 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         if(stackState) {
             this.manager.beginTransaction()
                     .setReorderingAllowed(true)
+                    .setCustomAnimations(R.anim.slide_in_from_right,
+                            R.anim.slide_out_to_left,
+                            R.anim.slide_in_from_right,
+                            R.anim.slide_out_to_left)
                     .replace(R.id.main_fragment_container, nextFragment)
                     .addToBackStack(null)
                     .commit();
@@ -63,17 +61,16 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         }
         this.manager.beginTransaction()
                 .setReorderingAllowed(true)
+                .setCustomAnimations(R.anim.slide_in_from_right,
+                        R.anim.slide_out_to_left,
+                        R.anim.slide_in_from_right,
+                        R.anim.slide_out_to_left)
                 .replace(R.id.main_fragment_container, nextFragment)
                 .commit();
     }
     @Override
     public void removeFragment(){
-        Fragment fragmentToRemove = manager.findFragmentById(R.id.main_fragment_container);
-        if (fragmentToRemove != null) {
-            manager.beginTransaction()
-                    .remove(fragmentToRemove)
-                    .commit();
-        }
+        manager.popBackStack();
     }
 
     public void clearFragments() {
