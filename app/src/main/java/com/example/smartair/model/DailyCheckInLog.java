@@ -1,10 +1,10 @@
 package com.example.smartair.model;
 
-import java.lang.reflect.Array;
+import com.example.smartair.R;
+
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Objects;
 
 public class DailyCheckInLog extends Log{
 
@@ -19,17 +19,29 @@ public class DailyCheckInLog extends Log{
     public static final int ILLNESS = 512;
     public static final int  PERFUME = 1024;
     public static final int OTHER_TRIGGER = 2048;
-    private String markedBy;
+    private String logger;
     private int symptomTriggerBitMap;
     private ArrayList<String> symptoms, triggers;
     private Date date;
     private int bgColorId;
 
-    public DailyCheckInLog(int symptomTriggerBitMap, String markedBy, Date date, int bgColorId) {
+
+    public DailyCheckInLog(String logger, long time, int data){
+        this.logger = logger;
+        this.date = new Date(time);
+        this.symptomTriggerBitMap = data;
+        this.symptoms = new ArrayList<>();
+        this.triggers = new ArrayList<>();
+        int bgColorId = R.color.rescue_log_bg;
+
+    }
+
+
+    public DailyCheckInLog(int symptomTriggerBitMap, String markedBy, String logger, Date date, int bgColorId) {
+        this.logger = markedBy;
         symptoms = new ArrayList<>();
         triggers = new ArrayList<>();
         setSymptomsAndTriggers(symptomTriggerBitMap);
-        this.markedBy = markedBy;
         this.date = date;
         this.bgColorId = bgColorId;
     }
@@ -69,7 +81,7 @@ public class DailyCheckInLog extends Log{
     }
 
     public String getMarkedBy() {
-        return markedBy;
+        return logger;
     }
 
     public Date getDate() {
@@ -77,5 +89,21 @@ public class DailyCheckInLog extends Log{
     }
     public int getBgColorId() {
         return bgColorId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof DailyCheckInLog)) return false;
+
+        DailyCheckInLog that = (DailyCheckInLog) o;
+        return date == that.date &&
+                symptomTriggerBitMap == that.symptomTriggerBitMap &&
+                Objects.equals(logger, that.logger);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(logger, date, symptomTriggerBitMap);
     }
 }

@@ -23,11 +23,20 @@ public class DailyCheckInLogListFragment extends LogListFragment<DailyCheckInLog
         linearLayoutLogsId = R.id.linear_layout_daily_check_in;
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //TODO: Fix the hardcoding
+        Bundle args = getArguments();
+
+        presenter = new DailyCheckInLogListPresenter(this, "CHILD_ID", "child");
+
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        presenter = new DailyCheckInLogListPresenter(this);
         filterFragment = new DailyCheckInFiltersFragment();
         filterFragment.setPresenter(presenter);
         addLogFragment = new DailyCheckInAddLogFragment();
@@ -42,7 +51,7 @@ public class DailyCheckInLogListFragment extends LogListFragment<DailyCheckInLog
     @Override
     public void onStart() {
         super.onStart();
-        presenter.loadLogs();
+        presenter.fetchData();
     }
 
     public void setUpButtons(View view) {

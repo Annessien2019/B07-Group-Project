@@ -1,4 +1,6 @@
+/*
 package com.example.smartair.view;
+
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -36,7 +38,7 @@ public class GranularSharingView extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle args = getArguments();
-        presenter = new GranularSharingPresenter(args.get("userID"));
+        presenter = new GranularSharingPresenter();
 
     }
 
@@ -60,10 +62,10 @@ public class GranularSharingView extends Fragment {
         return view;
     }
 
-    /**
+
      * Public method to retrieve the current state of the 'Controller medicine' switch.
      * @return true if the switch is checked, false otherwise.
-     */
+
     public boolean isControllerMedicineEnabled() {
         if (controllerSwitch != null) {
             return controllerSwitch.isChecked();
@@ -78,3 +80,4 @@ public class GranularSharingView extends Fragment {
 
     // You can add similar public getters/setters for the state of all 7 switches as needed.
 }
+*/
