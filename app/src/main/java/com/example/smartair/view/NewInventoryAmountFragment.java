@@ -36,7 +36,9 @@ public class NewInventoryAmountFragment extends DialogFragment {
                 .setPositiveButton("Log New Amount", (dialog, which) -> {
                     presenter.addNewAmount(targetTB.getText().toString(), newAmount.getText().toString());
                 })
-                .setNegativeButton("Cancel", (dialog, which) -> getDialog().cancel());
+                .setNegativeButton("Cancel", (dialog, which) -> {
+                    getDialog().cancel();
+                });
     }
 
     public void setPresenter(InventoryPresenter presenter) {

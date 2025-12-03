@@ -38,33 +38,25 @@ public class NewInventoryCanisterFragment extends DialogFragment {
 
         purchaseDate.setOnClickListener(v -> {
             DatePickerDialog datePicker = new DatePickerDialog(getContext());
-            datePicker.setOnDateSetListener((view1, year, month, dayOfMonth) -> {
-                String dayString = ((dayOfMonth < 10) ? "0" : "") + dayOfMonth;
-                String monthString = ((month < 10) ? "0" : "") + month;
-                purchaseDate.setText(dayString + "/" + monthString + "/" + year);;
-            });
+            datePicker.setOnDateSetListener(new TextViewOnDateListener(purchaseDate));
             datePicker.show();
         });
 
         expiryDate.setOnClickListener(v -> {
             DatePickerDialog datePicker = new DatePickerDialog(getContext());
-            datePicker.setOnDateSetListener((view1, year, month, dayOfMonth) -> {
-                String dayString = ((dayOfMonth < 10) ? "0" : "") + dayOfMonth;
-                String monthString = ((month < 10) ? "0" : "") + month;
-                expiryDate.setText(dayString + "/" + monthString + "/" + year);
-            });
+            datePicker.setOnDateSetListener(new TextViewOnDateListener(expiryDate));
             datePicker.show();
         });
 
         builder.setView(view)
-                .setPositiveButton("Create New Canister", (dialog, which) -> {
-                    presenter.addNewCanister(targetTB.getText().toString(),
-                            startingAmount.getText().toString(),
-                            purchaseDate.getText().toString(),
-                            expiryDate.getText().toString());
-                }).setNegativeButton("Cancel", (dialog, which) -> {
-                    getDialog().cancel();
-                });
+                .setPositiveButton("Create New Canister",
+                        (dialog, which) -> {
+                            presenter.addNewCanister(targetTB.getText().toString(),
+                                            startingAmount.getText().toString(),
+                                            purchaseDate.getText().toString(),
+                                            expiryDate.getText().toString());
+                }).setNegativeButton("Cancel",
+                        (dialog, which) -> getDialog().cancel());
     }
 
     public void setPresenter(InventoryPresenter presenter) {

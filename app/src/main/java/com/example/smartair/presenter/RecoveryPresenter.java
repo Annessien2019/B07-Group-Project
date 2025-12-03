@@ -15,16 +15,13 @@ public class RecoveryPresenter implements CallbackRecovery{
     }
 
     public void sendEmail(String email) {
-        if (email.isEmpty()) {
-            Toast.makeText(view.getContext(), "Please enter an email", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        this.model.attemptRecovery(this, email);
+        if (email.isEmpty()) view.makeToast("Please enter an email");
+        else model.attemptRecovery(this, email);
     }
 
     @Override
     public void onRecoverySuccess(){
-        this.view.makeToast("If the email belongs to a valid user, an email has been sent");
+        view.makeToast("If the email belongs to a valid user, an email has been sent");
     }
     @Override
     public void onRecoveryFailure(Exception e){

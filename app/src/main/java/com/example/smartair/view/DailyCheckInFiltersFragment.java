@@ -51,21 +51,13 @@ public class DailyCheckInFiltersFragment extends DialogFragment {
 
             afterDate.setOnClickListener(v -> {
                 DatePickerDialog datePicker = new DatePickerDialog(getContext());
-                datePicker.setOnDateSetListener((view1, year, month, dayOfMonth) -> {
-                    String dayString = ((dayOfMonth < 10) ? "0" : "") + dayOfMonth;
-                    String monthString = ((month < 10) ? "0" : "") + month;
-                    afterDate.setText(dayString + "/" + monthString + "/" + year);
-                });
+                datePicker.setOnDateSetListener(new TextViewOnDateListener(afterDate));
                 datePicker.show();
             });
 
             beforeDate.setOnClickListener(v -> {
                 DatePickerDialog datePicker = new DatePickerDialog(getContext());
-                datePicker.setOnDateSetListener((view1, year, month, dayOfMonth) -> {
-                    String dayString = ((dayOfMonth < 10) ? "0" : "") + dayOfMonth;
-                    String monthString = ((month < 10) ? "0" : "") + month;
-                    beforeDate.setText(dayString + "/" + monthString + "/" + year);
-                });
+                datePicker.setOnDateSetListener(new TextViewOnDateListener(beforeDate));
                 datePicker.show();
             });
 

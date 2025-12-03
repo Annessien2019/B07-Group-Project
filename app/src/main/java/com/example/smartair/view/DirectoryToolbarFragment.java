@@ -20,11 +20,11 @@ public class DirectoryToolbarFragment extends ViewFragment{
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_directory_bar, container, false);
-        setupButtons(view);
+        setUpInputs(view);
         return view;
     }
 
-    public void setupButtons(View view) {
+    public void setUpInputs(View view) {
         Button homeButton = view.findViewById(R.id.button_home_icon);
         Button notificationsButton = view.findViewById(R.id.button_notification_icon);
         Button profileButton = view.findViewById(R.id.button_profile_icon);

@@ -106,13 +106,12 @@ public class DailyCheckInLogListPresenter implements LogListPresenter{
      * into the View
      */
     public void loadLogs() {
-        queryLogs();
-
-        System.out.println("Filtering: " + filter.getSymptomTriggerBitMap() + "\nAfter: " + afterDate + "\nBefore: " + beforeDate);
-        filterLogs(logData, filter, afterDate, beforeDate);
         ArrayList<DailyCheckInLogFragment> logFragments = new ArrayList<>();
         DailyCheckInLogFragment logFragment;
         String tempSymptoms, tempTriggers, tempDate;
+
+        queryLogs();
+        filterLogs(logData, filter, afterDate, beforeDate);
 
         for (DailyCheckInLog log : logData) {
             logFragment = new DailyCheckInLogFragment();
@@ -133,7 +132,6 @@ public class DailyCheckInLogListPresenter implements LogListPresenter{
             logFragments.add(logFragment);
         }
 
-        // Convert ArrayList to array and add to view
         DailyCheckInLogFragment[] arr = new DailyCheckInLogFragment[logFragments.size()];
         logFragments.toArray(arr);
         view.setLogs(arr);
@@ -206,8 +204,8 @@ public class DailyCheckInLogListPresenter implements LogListPresenter{
     public Date getDateFromString(String string) {
         if (!stringIsValidDate(string)) return null;
         return new Date(Integer.parseInt(string.substring(6, 10))-1900,
-                        Integer.parseInt(string.substring(3, 5)),
-                    Integer.parseInt(string.substring(0, 2))-1);
+                      Integer.parseInt(string.substring(3, 5)),
+                Integer.parseInt(string.substring(0, 2))-1);
     }
     public void modifyFilterButtonClicked() {
         view.showFilters();
