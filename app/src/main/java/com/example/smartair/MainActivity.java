@@ -14,6 +14,7 @@ import com.example.smartair.view.AddChildView;
 import com.example.smartair.view.ChildrenHomePageView;
 import com.example.smartair.view.DirectoryToolbarFragment;
 import com.example.smartair.view.FragmentListener;
+import com.example.smartair.view.SigninFragmentView;
 import com.example.smartair.view.InventoryFragment;
 import com.example.smartair.view.ParentHomePageView;
 import com.example.smartair.view.PersonalBestZonesFragment;
